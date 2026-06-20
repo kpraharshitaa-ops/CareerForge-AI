@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareerForge AI — Transform Your Career</title>
+  <meta name="description" content="AI-powered career guidance platform. Get resume analysis, career recommendations, job discovery, and interview preparation."/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🚀</text></svg>"/>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">🚀 <span>CareerForge AI</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#how-it-works">How It Works</a></li>
+      <li><a href="/#testimonials">Testimonials</a></li>
+      <li><a href="/jobs">Jobs</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"></button>
+      <a href="/login" class="btn btn-ghost btn-sm" id="navLoginBtn">Log In</a>
+      <a href="/register" class="btn btn-primary btn-sm" id="navRegisterBtn">Get Started</a>
+      <div class="d-flex align-center gap-8" id="navUserMenu" style="display:none!important">
+        <a href="/dashboard" class="btn btn-primary btn-sm">Dashboard</a>
+        <span style="font-size:0.9rem;font-weight:600;" id="navUserName"></span>
+        <button onclick="Auth.logout()" class="btn btn-ghost btn-sm">Logout</button>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">✨ AI-Powered Career Platform</div>
+      <h1 class="hero-title">Transform Your Skills Into Your <span class="gradient-text">Dream Career</span></h1>
+      <p class="hero-desc">CareerForge AI helps students, graduates, and job seekers unlock their potential with AI-powered resume analysis, personalized career roadmaps, job discovery, and interview preparation.</p>
+      <div class="hero-actions">
+        <a href="/register" class="btn btn-primary btn-lg">🚀 Start for Free</a>
+        <a href="/#features" class="btn btn-outline btn-lg">Explore Features</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item"><div class="stat-num">50K+</div><div class="stat-label">Users</div></div>
+        <div class="stat-item"><div class="stat-num">95%</div><div class="stat-label">Success Rate</div></div>
+        <div class="stat-item"><div class="stat-num">25+</div><div class="stat-label">Career Roles</div></div>
+        <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Questions</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#4F46E5,#06B6D4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800">A</div>
+          <div><div style="font-weight:700">Alex Johnson</div><div style="font-size:0.8rem;color:var(--text-muted)">Resume Analysis Complete</div></div>
+          <div style="margin-left:auto"><span class="badge badge-success">✓ 87/100</span></div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-label"><span>ATS Score</span><span style="color:var(--primary);font-weight:700">82%</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:82%"></div></div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-label"><span>Skill Match</span><span style="color:var(--success);font-weight:700">91%</span></div>
+          <div class="progress-bar"><div class="progress-fill success" style="width:91%"></div></div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-label"><span>Interview Ready</span><span style="color:var(--warning);font-weight:700">74%</span></div>
+          <div class="progress-bar"><div class="progress-fill warning" style="width:74%"></div></div>
+        </div>
+        <div style="margin-top:16px;padding:12px;background:rgba(34,197,94,0.08);border-radius:8px;border:1px solid rgba(34,197,94,0.2)">
+          <div style="font-size:0.82rem;color:#15803D;font-weight:600">🎯 Top Match: Senior React Developer</div>
+        </div>
+      </div>
+      <div class="floating-badge" style="top:-20px;right:-20px;background:linear-gradient(135deg,#EEF2FF,#fff)">
+        <span>🎤</span><span style="font-weight:700;color:var(--primary)">Voice Interview</span>
+      </div>
+      <div class="floating-badge" style="bottom:20px;left:-30px;background:linear-gradient(135deg,#F0FDFF,#fff)">
+        <span>💼</span><span style="font-weight:700;color:var(--secondary-dark)">1,247 Live Jobs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section" id="features" style="background:#fff">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">🔥 Features</div>
+      <h2 class="section-title">Everything You Need to <span class="gradient-text">Land Your Dream Job</span></h2>
+      <p class="section-desc">Comprehensive AI-powered tools to guide you from resume to offer letter</p>
+    </div>
+    <div class="features-grid">
+      <a href="/resume" class="feature-card" style="text-decoration:none;color:inherit">
+        <div class="feature-icon" style="background:rgba(79,70,229,0.10)">📄</div>
+        <div class="feature-title">AI Resume Analyzer</div>
+        <div class="feature-desc">Get instant ATS score, identify strengths and weaknesses, and receive personalized improvement suggestions powered by Gemini AI.</div>
+      </a>
+      <a href="/careers" class="feature-card" style="text-decoration:none;color:inherit">
+        <div class="feature-icon" style="background:rgba(6,182,212,0.10)">🎯</div>
+        <div class="feature-title">Career Recommendations</div>
+        <div class="feature-desc">Match your skills against 25+ tech roles and get ranked recommendations with skill gap analysis and next steps.</div>
+      </a>
+      <a href="/roadmap" class="feature-card" style="text-decoration:none;color:inherit">
+        <div class="feature-icon" style="background:rgba(34,197,94,0.10)">🗺️</div>
+        <div class="feature-title">Career Roadmaps</div>
+        <div class="feature-desc">Structured learning paths for every role with resources, projects, and career progression timelines.</div>
+      </a>
+      <a href="/jobs" class="feature-card" style="text-decoration:none;color:inherit">
+        <div class="feature-icon" style="background:rgba(245,158,11,0.10)">💼</div>
+        <div class="feature-title">Job Discovery</div>
+        <div class="feature-desc">Search thousands of real job listings by role, location, and experience level with direct apply links.</div>
+      </a>
+      <a href="/hr-interview" class="feature-card" style="text-decoration:none;color:inherit">
+        <div class="feature-icon" style="background:rgba(239,68,68,0.10)">🤝</div>
+        <div class="feature-title">HR Interview Prep</div>
+        <div class="feature-desc">100+ behavioral and HR interview questions from top companies like Amazon, Microsoft, and TCS.</div>
+      </a>
+      <a href="/technical-interview" class="feature-card" style="text-decoration:none;color:inherit">
+        <div class="feature-icon" style="background:rgba(168,85,247,0.10)">💻</div>
+        <div class="feature-title">Technical Interview</div>
+        <div class="feature-desc">Comprehensive technical questions covering JavaScript, React, Python, Java, DSA, System Design, and more.</div>
+      </a>
+      <a href="/aptitude" class="feature-card" style="text-decoration:none;color:inherit">
+        <div class="feature-icon" style="background:rgba(20,184,166,0.10)">🧮</div>
+        <div class="feature-title">Aptitude Practice</div>
+        <div class="feature-desc">100+ placement-focused aptitude questions with a timed quiz mode, instant scoring, and detailed explanations.</div>
+      </a>
+      <a href="/voice-interview" class="feature-card" style="text-decoration:none;color:inherit">
+        <div class="feature-icon" style="background:rgba(244,63,94,0.10)">🎤</div>
+        <div class="feature-title">Voice Mock Interview</div>
+        <div class="feature-desc">Practice answering questions aloud with live speech-to-text transcription and AI-powered feedback scores.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- How it Works -->
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">📋 How It Works</div>
+      <h2 class="section-title">Get Hired in <span class="gradient-text">4 Simple Steps</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px">
+      <div style="text-align:center">
+        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;font-weight:800;margin:0 auto 20px">1</div>
+        <h3 style="font-weight:700;margin-bottom:10px">Create Account</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem">Sign up with your name and email to get started for free</p>
+      </div>
+      <div style="text-align:center">
+        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;font-weight:800;margin:0 auto 20px">2</div>
+        <h3 style="font-weight:700;margin-bottom:10px">Upload Resume</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem">Upload your PDF or DOCX resume for instant AI analysis</p>
+      </div>
+      <div style="text-align:center">
+        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;font-weight:800;margin:0 auto 20px">3</div>
+        <h3 style="font-weight:700;margin-bottom:10px">Get Insights</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem">Receive personalized career recommendations and roadmaps</p>
+      </div>
+      <div style="text-align:center">
+        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;font-weight:800;margin:0 auto 20px">4</div>
+        <h3 style="font-weight:700;margin-bottom:10px">Land the Job</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem">Prepare with mock interviews and apply to matched jobs</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section" id="testimonials" style="background:#fff">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">💬 Testimonials</div>
+      <h2 class="section-title">Loved by <span class="gradient-text">10,000+ Users</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"CareerForge AI completely transformed my job search. The resume analyzer identified gaps I never noticed, and within 3 weeks I had 5 interview calls!"</p>
+        <div class="testimonial-author"><div class="author-avatar">P</div><div><div class="author-name">Priya Sharma</div><div class="author-role">Frontend Developer at Flipkart</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The voice mock interview feature is incredible. I practiced 50+ questions before my Google interview and landed the offer. Highly recommend to every CS student!"</p>
+        <div class="testimonial-author"><div class="author-avatar">R</div><div><div class="author-name">Rahul Verma</div><div class="author-role">Software Engineer at Google</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"As a bootcamp graduate, I was lost about where to start. CareerForge's career roadmaps gave me a clear path and the aptitude practice helped me crack TCS National qualifier."</p>
+        <div class="testimonial-author"><div class="author-avatar">A</div><div><div class="author-name">Ananya Singh</div><div class="author-role">Data Analyst at Infosys</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="cta-title">Ready to Launch Your Career?</h2>
+    <p class="cta-desc">Join 50,000+ users who have accelerated their career journey with CareerForge AI</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="/register" class="btn btn-primary btn-lg">Get Started Free</a>
+      <a href="/login" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.5);color:#fff">Log In</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-size:1.4rem;font-weight:800">🚀 CareerForge AI</div>
+        <p>AI-powered career guidance platform helping students and job seekers transform their skills into career opportunities.</p>
+      </div>
+      <div>
+        <div class="footer-title">Platform</div>
+        <div class="footer-links">
+          <a href="/resume">Resume Analyzer</a>
+          <a href="/careers">Career Roles</a>
+          <a href="/roadmap">Roadmaps</a>
+          <a href="/jobs">Job Search</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Interview Prep</div>
+        <div class="footer-links">
+          <a href="/hr-interview">HR Interview</a>
+          <a href="/technical-interview">Technical</a>
+          <a href="/aptitude">Aptitude</a>
+          <a href="/voice-interview">Voice Mock</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Account</div>
+        <div class="footer-links">
+          <a href="/register">Register</a>
+          <a href="/login">Login</a>
+          <a href="/dashboard">Dashboard</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 CareerForge AI. Built with ❤️ for job seekers.</p>
+      <p>Powered by Gemini AI</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/utils.js"></script>
+</body>
+</html>

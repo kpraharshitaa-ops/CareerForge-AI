@@ -1,0 +1,472 @@
+{
+    "javascript": [
+        {
+            "id": "js1",
+            "question": "What is the difference between var, let, and const in JavaScript?",
+            "difficulty": "Medium",
+            "answer": "var is function-scoped and hoisted. let and const are block-scoped. const cannot be reassigned after declaration, but its object properties can be mutated. let can be reassigned."
+        },
+        {
+            "id": "js2",
+            "question": "Explain closures in JavaScript with an example.",
+            "difficulty": "Medium",
+            "answer": "A closure is a function that retains access to its outer (lexical) scope even when executed outside that scope. Example: function counter() { let count = 0; return () => ++count; }"
+        },
+        {
+            "id": "js3",
+            "question": "What is the event loop in JavaScript?",
+            "difficulty": "Advanced",
+            "answer": "The event loop processes the call stack and callback queue. When the call stack is empty, it moves callbacks from the queue to the stack. This enables asynchronous operations in a single-threaded environment."
+        },
+        {
+            "id": "js4",
+            "question": "What is the difference between == and === in JavaScript?",
+            "difficulty": "Medium",
+            "answer": "== performs type coercion before comparison (loose equality). === compares both value and type without coercion (strict equality). Always prefer === to avoid unexpected bugs."
+        },
+        {
+            "id": "js5",
+            "question": "Explain Promises and async/await in JavaScript.",
+            "difficulty": "Medium",
+            "answer": "Promises represent eventual completion/failure of async operations. async/await is syntactic sugar over Promises, making async code look synchronous. await pauses execution until the Promise resolves."
+        },
+        {
+            "id": "js6",
+            "question": "What is prototypal inheritance in JavaScript?",
+            "difficulty": "Advanced",
+            "answer": "JavaScript uses prototypal inheritance where objects inherit properties from other objects via the prototype chain. Each object has an internal [[Prototype]] pointing to its prototype object."
+        },
+        {
+            "id": "js7",
+            "question": "Explain the differences between call, apply, and bind.",
+            "difficulty": "Advanced",
+            "answer": "All three set the 'this' context. call() invokes immediately with individual args. apply() invokes immediately with args as array. bind() returns a new function with bound 'this'."
+        },
+        {
+            "id": "js8",
+            "question": "What are arrow functions and how do they differ from regular functions?",
+            "difficulty": "Medium",
+            "answer": "Arrow functions have a shorter syntax and do not have their own 'this' binding—they inherit 'this' from the enclosing scope. They also cannot be used as constructors."
+        },
+        {
+            "id": "js9",
+            "question": "What is event bubbling and event capturing?",
+            "difficulty": "Medium",
+            "answer": "In bubbling, events propagate from the target up to the root. In capturing, events go from root down to the target. addEventListener's third parameter controls this (false=bubble, true=capture)."
+        },
+        {
+            "id": "js10",
+            "question": "Explain the concept of debouncing and throttling.",
+            "difficulty": "Advanced",
+            "answer": "Debouncing delays execution until after a period of inactivity. Throttling limits execution to once per time interval. Both optimize performance for high-frequency events like scroll or resize."
+        },
+        {
+            "id": "js11",
+            "question": "What is the difference between shallow copy and deep copy in JavaScript?",
+            "difficulty": "Medium",
+            "answer": "Shallow copy copies only the first level references (Object.assign, spread operator). Deep copy recursively copies all nested objects. Use JSON.parse(JSON.stringify()) or structuredClone() for deep copy."
+        },
+        {
+            "id": "js12",
+            "question": "What are generators in JavaScript?",
+            "difficulty": "Advanced",
+            "answer": "Generators are functions that can pause and resume execution using yield. They return an iterator object. Useful for lazy evaluation and implementing async patterns."
+        },
+        {
+            "id": "js13",
+            "question": "What is the purpose of Symbol in JavaScript?",
+            "difficulty": "Advanced",
+            "answer": "Symbol creates unique, immutable primitive values. Used as unique property keys to avoid name collisions, especially in library code and for implementing well-known symbols."
+        },
+        {
+            "id": "js14",
+            "question": "Explain WeakMap and WeakSet.",
+            "difficulty": "Advanced",
+            "answer": "WeakMap and WeakSet hold weak references to objects, allowing garbage collection when no other references exist. Keys in WeakMap must be objects. They are not iterable."
+        },
+        {
+            "id": "js15",
+            "question": "What is memoization and how would you implement it?",
+            "difficulty": "Advanced",
+            "answer": "Memoization caches the results of function calls based on inputs. Implementation: const memo = (fn) => { const cache = {}; return (...args) => cache[args] ?? (cache[args] = fn(...args)); };"
+        }
+    ],
+    "react": [
+        {
+            "id": "r1",
+            "question": "What is the Virtual DOM and how does React use it?",
+            "difficulty": "Medium",
+            "answer": "Virtual DOM is a lightweight in-memory representation of the real DOM. React uses it to batch updates, diff against the real DOM, and apply minimal changes—improving performance."
+        },
+        {
+            "id": "r2",
+            "question": "Explain the useEffect hook and its cleanup function.",
+            "difficulty": "Medium",
+            "answer": "useEffect runs side effects after renders. The cleanup function (returned from useEffect) runs before the next effect and on unmount—used to clear subscriptions, timers, or event listeners."
+        },
+        {
+            "id": "r3",
+            "question": "What is the difference between useMemo and useCallback?",
+            "difficulty": "Advanced",
+            "answer": "useMemo memoizes a computed value. useCallback memoizes a function reference. Both prevent unnecessary re-computation and re-renders in child components when dependencies don't change."
+        },
+        {
+            "id": "r4",
+            "question": "Explain React's reconciliation algorithm.",
+            "difficulty": "Advanced",
+            "answer": "React's reconciliation uses a diff algorithm (Fiber) to compare the previous and current virtual DOM trees. It applies the minimum set of changes to the real DOM, using keys to optimize list updates."
+        },
+        {
+            "id": "r5",
+            "question": "What are higher-order components (HOC)?",
+            "difficulty": "Advanced",
+            "answer": "An HOC is a function that takes a component and returns a new enhanced component. Used for cross-cutting concerns like authentication, logging, or data fetching. Example: withAuth(Component)."
+        },
+        {
+            "id": "r6",
+            "question": "Explain the Context API and when to use it vs Redux.",
+            "difficulty": "Medium",
+            "answer": "Context API provides a way to share values without prop drilling, suitable for low-frequency updates (theme, locale). Redux is better for complex state with frequent updates, time-travel debugging, and middleware."
+        },
+        {
+            "id": "r7",
+            "question": "What is React.memo and when should you use it?",
+            "difficulty": "Medium",
+            "answer": "React.memo is a HOC that memoizes a functional component, preventing re-renders when props haven't changed. Use it for expensive components that receive the same props frequently."
+        },
+        {
+            "id": "r8",
+            "question": "What are controlled vs uncontrolled components?",
+            "difficulty": "Medium",
+            "answer": "Controlled components have their form state managed by React (via useState). Uncontrolled components store state in the DOM itself (accessed via refs). Controlled is preferred for most use cases."
+        },
+        {
+            "id": "r9",
+            "question": "Explain lazy loading and code splitting in React.",
+            "difficulty": "Advanced",
+            "answer": "React.lazy() enables component-level code splitting—components are loaded on demand. Combine with Suspense for a fallback UI. Route-based splitting with React Router is common."
+        },
+        {
+            "id": "r10",
+            "question": "What are React Portals?",
+            "difficulty": "Advanced",
+            "answer": "Portals render children into a DOM node outside the parent hierarchy (e.g., modals, tooltips). Use ReactDOM.createPortal(child, container). Events still bubble through the React tree."
+        },
+        {
+            "id": "r11",
+            "question": "How does useReducer differ from useState?",
+            "difficulty": "Medium",
+            "answer": "useReducer manages complex state logic with a reducer function—similar to Redux. Preferred when state transitions depend on multiple sub-values or when the next state depends on the previous."
+        },
+        {
+            "id": "r12",
+            "question": "What is the Fiber architecture in React?",
+            "difficulty": "Advanced",
+            "answer": "Fiber is React's reimplemented reconciliation engine. It enables incremental rendering—breaking work into chunks and prioritizing updates. This enables concurrent features, Suspense, and transitions."
+        }
+    ],
+    "nodejs": [
+        {
+            "id": "node1",
+            "question": "Explain the Node.js event-driven architecture.",
+            "difficulty": "Medium",
+            "answer": "Node.js uses an event loop for non-blocking I/O. The EventEmitter pattern allows objects to emit events and register listeners. This enables handling thousands of concurrent connections without threads."
+        },
+        {
+            "id": "node2",
+            "question": "What is the difference between process.nextTick() and setImmediate()?",
+            "difficulty": "Advanced",
+            "answer": "process.nextTick() fires before the next iteration of the event loop (before I/O events). setImmediate() fires in the check phase after I/O events in the current iteration."
+        },
+        {
+            "id": "node3",
+            "question": "What are streams in Node.js and what types exist?",
+            "difficulty": "Advanced",
+            "answer": "Streams handle data in chunks rather than loading it all in memory. Types: Readable (source), Writable (destination), Duplex (both), Transform (modify data in transit)."
+        },
+        {
+            "id": "node4",
+            "question": "How does clustering work in Node.js?",
+            "difficulty": "Advanced",
+            "answer": "The cluster module creates child processes (workers) that share a server port. The master process distributes incoming connections. This leverages multi-core systems since Node.js is single-threaded."
+        },
+        {
+            "id": "node5",
+            "question": "Explain middleware in Express.js.",
+            "difficulty": "Medium",
+            "answer": "Middleware are functions with access to req, res, and next. They execute in sequence and can modify req/res, end the cycle, or call next() to pass control. Used for logging, auth, parsing."
+        },
+        {
+            "id": "node6",
+            "question": "What is the difference between require() and ES modules import?",
+            "difficulty": "Medium",
+            "answer": "require() is CommonJS—synchronous and dynamic. ES modules import is static, asynchronous, and enables tree-shaking. Node.js supports both; ES modules use .mjs or 'type: module' in package.json."
+        },
+        {
+            "id": "node7",
+            "question": "How do you handle errors in Express.js?",
+            "difficulty": "Medium",
+            "answer": "Use error-handling middleware with 4 parameters (err, req, res, next). Pass errors to next(err). Use try/catch in async handlers. Differentiate between operational and programmer errors."
+        },
+        {
+            "id": "node8",
+            "question": "What is the purpose of the package-lock.json file?",
+            "difficulty": "Medium",
+            "answer": "package-lock.json locks exact dependency versions and the full dependency tree, ensuring reproducible installs across environments. It should be committed to version control."
+        }
+    ],
+    "python": [
+        {
+            "id": "py1",
+            "question": "What is the difference between a list and a tuple in Python?",
+            "difficulty": "Medium",
+            "answer": "Lists are mutable—can be modified after creation. Tuples are immutable. Tuples are faster and use less memory. Use tuples for data that shouldn't change (coordinates, DB records)."
+        },
+        {
+            "id": "py2",
+            "question": "Explain Python's GIL (Global Interpreter Lock).",
+            "difficulty": "Advanced",
+            "answer": "The GIL is a mutex that allows only one thread to execute Python bytecode at a time. It prevents true multi-threading for CPU-bound tasks. Use multiprocessing or async/await for concurrency."
+        },
+        {
+            "id": "py3",
+            "question": "What are decorators in Python?",
+            "difficulty": "Medium",
+            "answer": "Decorators are functions that modify other functions using the @syntax. They wrap a function to add behavior. Common uses: logging, authentication, caching. Use functools.wraps to preserve metadata."
+        },
+        {
+            "id": "py4",
+            "question": "Explain list comprehensions vs generator expressions.",
+            "difficulty": "Medium",
+            "answer": "List comprehensions create the entire list in memory [x for x in range]. Generator expressions produce values lazily (x for x in range). Use generators for large datasets to save memory."
+        },
+        {
+            "id": "py5",
+            "question": "What is *args and **kwargs in Python?",
+            "difficulty": "Medium",
+            "answer": "*args allows a function to accept any number of positional arguments as a tuple. **kwargs accepts keyword arguments as a dictionary. They enable flexible function signatures."
+        },
+        {
+            "id": "py6",
+            "question": "Explain the difference between @staticmethod, @classmethod, and instance methods.",
+            "difficulty": "Advanced",
+            "answer": "Instance methods take self, access instance state. Class methods take cls, access/modify class state, used as alternative constructors. Static methods take no implicit argument—utility functions."
+        },
+        {
+            "id": "py7",
+            "question": "What are Python metaclasses?",
+            "difficulty": "Advanced",
+            "answer": "Metaclasses are classes of classes. They define how classes behave. type is the default metaclass. Custom metaclasses override __new__ or __init__ to customize class creation—used in ORMs and frameworks."
+        },
+        {
+            "id": "py8",
+            "question": "Explain Python's memory management and garbage collection.",
+            "difficulty": "Advanced",
+            "answer": "Python uses reference counting as primary memory management. When count reaches zero, object is deallocated. A cyclic garbage collector handles reference cycles. The gc module provides manual control."
+        }
+    ],
+    "java": [
+        {
+            "id": "java1",
+            "question": "What is the difference between an abstract class and an interface in Java?",
+            "difficulty": "Medium",
+            "answer": "Abstract classes can have state, constructors, and concrete methods. Interfaces define contracts with default/static methods (Java 8+). A class can implement multiple interfaces but extend only one abstract class."
+        },
+        {
+            "id": "java2",
+            "question": "Explain Java's memory model (Stack vs Heap).",
+            "difficulty": "Advanced",
+            "answer": "Stack stores primitive values and object references—thread-specific, LIFO. Heap stores objects—shared across threads. Stack frames are created per method call. Heap is managed by GC."
+        },
+        {
+            "id": "java3",
+            "question": "What is the difference between HashMap and ConcurrentHashMap?",
+            "difficulty": "Advanced",
+            "answer": "HashMap is not thread-safe. ConcurrentHashMap allows concurrent reads and partitioned writes without locking the entire map, making it suitable for multi-threaded environments."
+        },
+        {
+            "id": "java4",
+            "question": "Explain the SOLID principles.",
+            "difficulty": "Medium",
+            "answer": "S: Single Responsibility. O: Open/Closed. L: Liskov Substitution. I: Interface Segregation. D: Dependency Inversion. These principles guide maintainable, extensible OOP design."
+        },
+        {
+            "id": "java5",
+            "question": "What are Java Streams and how do they work?",
+            "difficulty": "Medium",
+            "answer": "Streams provide declarative data processing pipelines. Operations are lazy—executed only when a terminal operation is called. Types: intermediate (filter, map) and terminal (collect, forEach, reduce)."
+        },
+        {
+            "id": "java6",
+            "question": "Explain the difference between checked and unchecked exceptions.",
+            "difficulty": "Medium",
+            "answer": "Checked exceptions must be handled or declared (IOException). Unchecked exceptions (RuntimeException subclasses) don't require explicit handling. They typically indicate programming errors."
+        },
+        {
+            "id": "java7",
+            "question": "What is Spring Boot and how does auto-configuration work?",
+            "difficulty": "Advanced",
+            "answer": "Spring Boot simplifies Spring application setup. Auto-configuration uses @Conditional annotations to configure beans based on classpath, properties, and existing beans. @SpringBootApplication enables it."
+        }
+    ],
+    "databases": [
+        {
+            "id": "db1",
+            "question": "What is the difference between INNER JOIN, LEFT JOIN, and FULL OUTER JOIN?",
+            "difficulty": "Medium",
+            "answer": "INNER JOIN returns rows with matches in both tables. LEFT JOIN returns all left table rows plus matching right rows. FULL OUTER JOIN returns all rows from both tables, with NULLs for non-matches."
+        },
+        {
+            "id": "db2",
+            "question": "Explain database normalization and the first three normal forms.",
+            "difficulty": "Medium",
+            "answer": "1NF: Atomic values, no repeating groups. 2NF: 1NF + no partial dependencies on composite keys. 3NF: 2NF + no transitive dependencies. Reduces redundancy and improves data integrity."
+        },
+        {
+            "id": "db3",
+            "question": "What is an index and how does it affect performance?",
+            "difficulty": "Medium",
+            "answer": "An index is a data structure (B-tree, hash) that speeds up read queries. It improves SELECT performance but slows down INSERT/UPDATE/DELETE due to index maintenance overhead."
+        },
+        {
+            "id": "db4",
+            "question": "Explain ACID properties in database transactions.",
+            "difficulty": "Medium",
+            "answer": "Atomicity: all or nothing. Consistency: data remains valid. Isolation: transactions don't interfere. Durability: committed data persists. These ensure reliable transaction processing."
+        },
+        {
+            "id": "db5",
+            "question": "What is the N+1 query problem and how do you solve it?",
+            "difficulty": "Advanced",
+            "answer": "N+1 occurs when one query fetches N records, then N additional queries fetch related data. Solve with eager loading (JOINs), batch loading, or ORM-level includes."
+        },
+        {
+            "id": "db6",
+            "question": "What is the difference between SQL and NoSQL databases?",
+            "difficulty": "Medium",
+            "answer": "SQL: relational, structured schema, ACID, vertical scaling. NoSQL: flexible schema, horizontal scaling, eventual consistency. Choose based on data structure, scalability needs, and consistency requirements."
+        }
+    ],
+    "dataStructures": [
+        {
+            "id": "ds1",
+            "question": "Explain the time complexity of common operations on a HashMap.",
+            "difficulty": "Medium",
+            "answer": "Average case: O(1) for get, put, delete. Worst case O(n) with hash collisions. Java 8+ uses balanced BST for collision buckets, making worst case O(log n)."
+        },
+        {
+            "id": "ds2",
+            "question": "What is the difference between a stack and a queue?",
+            "difficulty": "Medium",
+            "answer": "Stack: LIFO (Last In First Out)—used for function calls, undo operations. Queue: FIFO (First In First Out)—used for BFS, task scheduling. Both can be implemented with arrays or linked lists."
+        },
+        {
+            "id": "ds3",
+            "question": "Explain binary search trees (BST) and their time complexity.",
+            "difficulty": "Medium",
+            "answer": "BST: left child < node < right child. Search/insert/delete: O(log n) average, O(n) worst (unbalanced). Balanced BSTs (AVL, Red-Black) guarantee O(log n) for all operations."
+        },
+        {
+            "id": "ds4",
+            "question": "What is dynamic programming? Explain with an example.",
+            "difficulty": "Advanced",
+            "answer": "DP solves problems by breaking them into overlapping subproblems and storing results (memoization/tabulation). Example: Fibonacci—cache computed values to avoid exponential recursion."
+        },
+        {
+            "id": "ds5",
+            "question": "Explain BFS vs DFS and when to use each.",
+            "difficulty": "Medium",
+            "answer": "BFS uses a queue, explores level by level—best for shortest path. DFS uses a stack/recursion, explores depth-first—best for detecting cycles, topological sort, maze solving."
+        },
+        {
+            "id": "ds6",
+            "question": "What is a heap data structure and what is it used for?",
+            "difficulty": "Medium",
+            "answer": "A heap is a complete binary tree where each parent satisfies the heap property (max-heap: parent ≥ children). Used for priority queues and heapsort. Insert/delete: O(log n), peek: O(1)."
+        }
+    ],
+    "systemDesign": [
+        {
+            "id": "sd1",
+            "question": "How would you design a URL shortener like bit.ly?",
+            "difficulty": "Advanced",
+            "answer": "Key components: Base62 encoding for short URLs, distributed DB for storage, caching layer (Redis) for hot URLs, load balancer, analytics service. Consider collision handling and custom URLs."
+        },
+        {
+            "id": "sd2",
+            "question": "Explain the CAP theorem.",
+            "difficulty": "Advanced",
+            "answer": "CAP: a distributed system can guarantee at most two of: Consistency (all nodes see same data), Availability (every request gets a response), Partition Tolerance (works despite network failures). Partition tolerance is usually required."
+        },
+        {
+            "id": "sd3",
+            "question": "How would you design a caching strategy for a high-traffic application?",
+            "difficulty": "Advanced",
+            "answer": "Use Redis/Memcached. Strategies: cache-aside, write-through, write-behind. Handle cache invalidation with TTL or event-driven invalidation. Consider cache stampede protection with locks."
+        },
+        {
+            "id": "sd4",
+            "question": "What is horizontal vs vertical scaling?",
+            "difficulty": "Medium",
+            "answer": "Vertical scaling (scale up): add more resources to existing server—limited by hardware ceiling. Horizontal scaling (scale out): add more servers—requires stateless services, load balancing, distributed data."
+        },
+        {
+            "id": "sd5",
+            "question": "Explain microservices vs monolithic architecture.",
+            "difficulty": "Advanced",
+            "answer": "Monolith: single deployable unit—simple to develop/debug but hard to scale/change independently. Microservices: independent services—better scalability and resilience but adds operational complexity."
+        }
+    ],
+    "networking": [
+        {
+            "id": "net1",
+            "question": "Explain the OSI model layers.",
+            "difficulty": "Medium",
+            "answer": "7 layers: Physical, Data Link, Network, Transport, Session, Presentation, Application. Each layer has specific responsibilities. Common protocols: IP (Network), TCP/UDP (Transport), HTTP (Application)."
+        },
+        {
+            "id": "net2",
+            "question": "What is the difference between TCP and UDP?",
+            "difficulty": "Medium",
+            "answer": "TCP: connection-oriented, reliable, ordered, error-checked—used for HTTP, email. UDP: connectionless, no delivery guarantee, faster—used for streaming, gaming, DNS."
+        },
+        {
+            "id": "net3",
+            "question": "How does HTTPS work?",
+            "difficulty": "Medium",
+            "answer": "HTTPS uses TLS to encrypt HTTP traffic. Process: TLS handshake negotiates cipher suite, server presents certificate, client verifies it, session keys are exchanged, then data is encrypted."
+        },
+        {
+            "id": "net4",
+            "question": "What is DNS and how does a DNS lookup work?",
+            "difficulty": "Medium",
+            "answer": "DNS translates domain names to IP addresses. Lookup order: browser cache → OS cache → resolver cache → root server → TLD server → authoritative server. Result is cached with TTL."
+        }
+    ],
+    "operatingSystems": [
+        {
+            "id": "os1",
+            "question": "What is the difference between a process and a thread?",
+            "difficulty": "Medium",
+            "answer": "A process is an independent program with its own memory space. Threads are lighter execution units within a process sharing memory. Context switching between threads is faster than between processes."
+        },
+        {
+            "id": "os2",
+            "question": "Explain deadlock and the four necessary conditions.",
+            "difficulty": "Advanced",
+            "answer": "Deadlock: processes wait indefinitely for each other. Four conditions: Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait. Prevention involves eliminating at least one condition."
+        },
+        {
+            "id": "os3",
+            "question": "What is virtual memory?",
+            "difficulty": "Advanced",
+            "answer": "Virtual memory creates an abstraction that makes each process think it has full memory access. Pages are mapped to physical RAM or disk (swap). Enables memory isolation and running larger programs than physical RAM."
+        },
+        {
+            "id": "os4",
+            "question": "Explain different CPU scheduling algorithms.",
+            "difficulty": "Advanced",
+            "answer": "FCFS: first come first served. SJF: shortest job first. Round Robin: each process gets a time slice. Priority Scheduling: based on priority. MLFQ: multi-level feedback queue—balances fairness and efficiency."
+        }
+    ]
+}

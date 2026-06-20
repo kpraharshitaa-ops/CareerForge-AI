@@ -1,0 +1,610 @@
+{
+    "frontend-developer": {
+        "title": "Frontend Developer Roadmap",
+        "totalDuration": "6-9 months",
+        "phases": [
+            {
+                "phase": 1,
+                "title": "Web Fundamentals",
+                "duration": "4-6 weeks",
+                "skills": [
+                    "HTML5 Semantics",
+                    "CSS3 & Flexbox",
+                    "CSS Grid",
+                    "Responsive Design",
+                    "Browser DevTools"
+                ],
+                "resources": [
+                    "MDN Web Docs",
+                    "freeCodeCamp",
+                    "CSS-Tricks"
+                ],
+                "projects": [
+                    "Personal Portfolio Page",
+                    "Responsive Landing Page",
+                    "CSS Animation Gallery"
+                ]
+            },
+            {
+                "phase": 2,
+                "title": "JavaScript Mastery",
+                "duration": "6-8 weeks",
+                "skills": [
+                    "ES6+ Syntax",
+                    "DOM Manipulation",
+                    "Async/Await",
+                    "Fetch API",
+                    "Local Storage",
+                    "Error Handling"
+                ],
+                "resources": [
+                    "JavaScript.info",
+                    "Eloquent JavaScript",
+                    "You Don't Know JS"
+                ],
+                "projects": [
+                    "Todo App",
+                    "Weather App with API",
+                    "Quiz Application"
+                ]
+            },
+            {
+                "phase": 3,
+                "title": "React Ecosystem",
+                "duration": "6-8 weeks",
+                "skills": [
+                    "React Components",
+                    "Hooks",
+                    "State Management",
+                    "React Router",
+                    "Context API",
+                    "Redux Toolkit"
+                ],
+                "resources": [
+                    "React Official Docs",
+                    "Scrimba React Course",
+                    "Jack Herrington YouTube"
+                ],
+                "projects": [
+                    "E-commerce Product Page",
+                    "Task Manager App",
+                    "Social Media Clone"
+                ]
+            },
+            {
+                "phase": 4,
+                "title": "Tools & Workflow",
+                "duration": "2-3 weeks",
+                "skills": [
+                    "Git & GitHub",
+                    "npm/yarn",
+                    "Webpack basics",
+                    "TypeScript basics",
+                    "Testing with Jest"
+                ],
+                "resources": [
+                    "Git Documentation",
+                    "TypeScript Handbook"
+                ],
+                "projects": [
+                    "Contribution to Open Source",
+                    "Full Project with Git workflow"
+                ]
+            },
+            {
+                "phase": 5,
+                "title": "Job Ready",
+                "duration": "2-4 weeks",
+                "skills": [
+                    "Portfolio Polish",
+                    "Interview Prep",
+                    "Leetcode (Easy)",
+                    "System Design basics"
+                ],
+                "resources": [
+                    "Frontend Interview Handbook",
+                    "Blind 75 LeetCode"
+                ],
+                "projects": [
+                    "Final Portfolio Project",
+                    "Capstone Application"
+                ]
+            }
+        ],
+        "careerPath": [
+            "Junior Frontend Dev",
+            "Frontend Developer",
+            "Senior Frontend Dev",
+            "Frontend Lead",
+            "Principal Engineer"
+        ]
+    },
+    "backend-developer": {
+        "title": "Backend Developer Roadmap",
+        "totalDuration": "7-10 months",
+        "phases": [
+            {
+                "phase": 1,
+                "title": "Programming Foundation",
+                "duration": "4-6 weeks",
+                "skills": [
+                    "Python or Node.js basics",
+                    "OOP Concepts",
+                    "Data Structures",
+                    "Error Handling",
+                    "File I/O"
+                ],
+                "resources": [
+                    "Python.org",
+                    "Node.js Docs",
+                    "CS50"
+                ],
+                "projects": [
+                    "CLI Calculator",
+                    "File Processing Script",
+                    "OOP Library System"
+                ]
+            },
+            {
+                "phase": 2,
+                "title": "Web Backend & APIs",
+                "duration": "6-8 weeks",
+                "skills": [
+                    "HTTP Protocol",
+                    "REST API Design",
+                    "Express.js or Django",
+                    "Authentication (JWT)",
+                    "Middleware"
+                ],
+                "resources": [
+                    "Express.js Docs",
+                    "Django Official Tutorial",
+                    "REST API Design Guide"
+                ],
+                "projects": [
+                    "CRUD REST API",
+                    "Authentication System",
+                    "Blog API"
+                ]
+            },
+            {
+                "phase": 3,
+                "title": "Databases",
+                "duration": "4-6 weeks",
+                "skills": [
+                    "SQL & PostgreSQL",
+                    "MongoDB",
+                    "ORM/ODM",
+                    "Database Design",
+                    "Indexing",
+                    "Transactions"
+                ],
+                "resources": [
+                    "PostgreSQL Tutorial",
+                    "MongoDB University",
+                    "SQLZoo"
+                ],
+                "projects": [
+                    "Database Schema Design",
+                    "Full API with DB",
+                    "Data Migration Script"
+                ]
+            },
+            {
+                "phase": 4,
+                "title": "DevOps & Deployment",
+                "duration": "3-4 weeks",
+                "skills": [
+                    "Linux basics",
+                    "Docker",
+                    "CI/CD basics",
+                    "Cloud Deployment (AWS/Render)",
+                    "Environment Variables"
+                ],
+                "resources": [
+                    "Docker Docs",
+                    "AWS Free Tier",
+                    "DigitalOcean Tutorials"
+                ],
+                "projects": [
+                    "Dockerized Application",
+                    "Deployed API on Cloud"
+                ]
+            },
+            {
+                "phase": 5,
+                "title": "Advanced Topics",
+                "duration": "3-5 weeks",
+                "skills": [
+                    "Caching (Redis)",
+                    "Message Queues",
+                    "Microservices",
+                    "Security Best Practices",
+                    "Performance"
+                ],
+                "resources": [
+                    "Redis Docs",
+                    "Martin Fowler Blog",
+                    "OWASP Guide"
+                ],
+                "projects": [
+                    "Microservice Architecture",
+                    "High-Performance API"
+                ]
+            }
+        ],
+        "careerPath": [
+            "Junior Backend Dev",
+            "Backend Developer",
+            "Senior Backend Dev",
+            "Backend Architect",
+            "CTO"
+        ]
+    },
+    "data-scientist": {
+        "title": "Data Scientist Roadmap",
+        "totalDuration": "8-12 months",
+        "phases": [
+            {
+                "phase": 1,
+                "title": "Python for Data Science",
+                "duration": "4-6 weeks",
+                "skills": [
+                    "Python Basics",
+                    "NumPy",
+                    "Pandas",
+                    "Data Cleaning",
+                    "Matplotlib",
+                    "Seaborn"
+                ],
+                "resources": [
+                    "Kaggle Python Course",
+                    "Python Data Science Handbook",
+                    "Real Python"
+                ],
+                "projects": [
+                    "Exploratory Data Analysis",
+                    "Data Cleaning Project",
+                    "Visualization Dashboard"
+                ]
+            },
+            {
+                "phase": 2,
+                "title": "Statistics & Mathematics",
+                "duration": "4-6 weeks",
+                "skills": [
+                    "Descriptive Statistics",
+                    "Probability",
+                    "Hypothesis Testing",
+                    "Linear Algebra basics",
+                    "Calculus basics"
+                ],
+                "resources": [
+                    "Khan Academy Statistics",
+                    "StatQuest with Josh Starmer",
+                    "3Blue1Brown"
+                ],
+                "projects": [
+                    "Statistical Analysis Report",
+                    "A/B Testing Analysis"
+                ]
+            },
+            {
+                "phase": 3,
+                "title": "Machine Learning",
+                "duration": "8-10 weeks",
+                "skills": [
+                    "Scikit-learn",
+                    "Supervised Learning",
+                    "Unsupervised Learning",
+                    "Model Evaluation",
+                    "Cross-Validation",
+                    "Feature Engineering"
+                ],
+                "resources": [
+                    "Hands-on ML Book",
+                    "fast.ai",
+                    "Kaggle Learn ML"
+                ],
+                "projects": [
+                    "Prediction Model",
+                    "Classification System",
+                    "Clustering Analysis"
+                ]
+            },
+            {
+                "phase": 4,
+                "title": "Deep Learning",
+                "duration": "6-8 weeks",
+                "skills": [
+                    "Neural Networks",
+                    "TensorFlow/PyTorch",
+                    "CNNs",
+                    "RNNs",
+                    "Transfer Learning",
+                    "NLP basics"
+                ],
+                "resources": [
+                    "Deep Learning Specialization (Coursera)",
+                    "PyTorch Tutorials",
+                    "fast.ai DL"
+                ],
+                "projects": [
+                    "Image Classifier",
+                    "Sentiment Analysis",
+                    "Text Generation"
+                ]
+            },
+            {
+                "phase": 5,
+                "title": "Production & MLOps",
+                "duration": "3-4 weeks",
+                "skills": [
+                    "Model Deployment",
+                    "Flask/FastAPI",
+                    "MLflow",
+                    "Data Pipelines",
+                    "Cloud ML Services"
+                ],
+                "resources": [
+                    "MLflow Docs",
+                    "Google Cloud AI Platform"
+                ],
+                "projects": [
+                    "Deployed ML Model API",
+                    "End-to-end ML Pipeline"
+                ]
+            }
+        ],
+        "careerPath": [
+            "Junior Data Scientist",
+            "Data Scientist",
+            "Senior Data Scientist",
+            "Lead Data Scientist",
+            "Head of Data"
+        ]
+    },
+    "devops-engineer": {
+        "title": "DevOps Engineer Roadmap",
+        "totalDuration": "8-12 months",
+        "phases": [
+            {
+                "phase": 1,
+                "title": "Linux & Networking",
+                "duration": "4-6 weeks",
+                "skills": [
+                    "Linux Commands",
+                    "Shell Scripting",
+                    "Networking Fundamentals",
+                    "SSH",
+                    "File Permissions",
+                    "Process Management"
+                ],
+                "resources": [
+                    "Linux Command Line Book",
+                    "OverTheWire Wargames",
+                    "LPIC-1 Study"
+                ],
+                "projects": [
+                    "Automation Shell Scripts",
+                    "Linux Server Setup"
+                ]
+            },
+            {
+                "phase": 2,
+                "title": "Version Control & CI/CD",
+                "duration": "3-4 weeks",
+                "skills": [
+                    "Git Advanced",
+                    "GitHub Actions",
+                    "Jenkins",
+                    "GitLab CI",
+                    "Pipeline Design",
+                    "Automated Testing"
+                ],
+                "resources": [
+                    "GitHub Actions Docs",
+                    "Jenkins Documentation"
+                ],
+                "projects": [
+                    "CI/CD Pipeline",
+                    "Automated Deployment"
+                ]
+            },
+            {
+                "phase": 3,
+                "title": "Containers & Orchestration",
+                "duration": "6-8 weeks",
+                "skills": [
+                    "Docker",
+                    "Docker Compose",
+                    "Kubernetes basics",
+                    "Helm Charts",
+                    "Container Security",
+                    "Registry"
+                ],
+                "resources": [
+                    "Docker Official Tutorial",
+                    "Kubernetes by Example",
+                    "CKA Study Guide"
+                ],
+                "projects": [
+                    "Containerized App",
+                    "K8s Cluster Deployment"
+                ]
+            },
+            {
+                "phase": 4,
+                "title": "Cloud Platforms",
+                "duration": "6-8 weeks",
+                "skills": [
+                    "AWS Core Services",
+                    "Infrastructure as Code",
+                    "Terraform",
+                    "Cloud Networking",
+                    "IAM",
+                    "S3/EC2/RDS"
+                ],
+                "resources": [
+                    "AWS Free Tier",
+                    "Terraform Docs",
+                    "A Cloud Guru"
+                ],
+                "projects": [
+                    "AWS Infrastructure",
+                    "Terraform Modules"
+                ]
+            },
+            {
+                "phase": 5,
+                "title": "Monitoring & Security",
+                "duration": "3-4 weeks",
+                "skills": [
+                    "Prometheus",
+                    "Grafana",
+                    "ELK Stack",
+                    "Alerting",
+                    "Security Best Practices",
+                    "Compliance"
+                ],
+                "resources": [
+                    "Prometheus Docs",
+                    "Grafana Tutorials"
+                ],
+                "projects": [
+                    "Monitoring Dashboard",
+                    "Security Audit Script"
+                ]
+            }
+        ],
+        "careerPath": [
+            "Junior DevOps",
+            "DevOps Engineer",
+            "Senior DevOps",
+            "DevOps Architect",
+            "VP Engineering"
+        ]
+    },
+    "ml-engineer": {
+        "title": "Machine Learning Engineer Roadmap",
+        "totalDuration": "10-14 months",
+        "phases": [
+            {
+                "phase": 1,
+                "title": "Programming & Math",
+                "duration": "6-8 weeks",
+                "skills": [
+                    "Python Advanced",
+                    "NumPy/Pandas",
+                    "Linear Algebra",
+                    "Calculus",
+                    "Statistics",
+                    "Probability"
+                ],
+                "resources": [
+                    "Python Fluent",
+                    "Mathematics for ML Book",
+                    "3Blue1Brown"
+                ],
+                "projects": [
+                    "Mathematical Implementations",
+                    "Data Analysis Projects"
+                ]
+            },
+            {
+                "phase": 2,
+                "title": "Core ML Algorithms",
+                "duration": "8-10 weeks",
+                "skills": [
+                    "Scikit-learn",
+                    "Regression/Classification",
+                    "Ensemble Methods",
+                    "Clustering",
+                    "Dimensionality Reduction"
+                ],
+                "resources": [
+                    "ISLR Book",
+                    "Kaggle Competitions",
+                    "Papers With Code"
+                ],
+                "projects": [
+                    "Kaggle Competition",
+                    "ML Model from Scratch"
+                ]
+            },
+            {
+                "phase": 3,
+                "title": "Deep Learning & Frameworks",
+                "duration": "8-10 weeks",
+                "skills": [
+                    "PyTorch",
+                    "TensorFlow",
+                    "CNNs/RNNs/Transformers",
+                    "NLP",
+                    "Computer Vision",
+                    "Model Fine-tuning"
+                ],
+                "resources": [
+                    "Deep Learning Book",
+                    "fast.ai",
+                    "Hugging Face Tutorials"
+                ],
+                "projects": [
+                    "Custom Neural Network",
+                    "Transfer Learning Project"
+                ]
+            },
+            {
+                "phase": 4,
+                "title": "MLOps & Production",
+                "duration": "6-8 weeks",
+                "skills": [
+                    "MLflow",
+                    "Model Serving",
+                    "Docker",
+                    "Kubernetes",
+                    "Feature Stores",
+                    "Model Monitoring"
+                ],
+                "resources": [
+                    "Chip Huyen ML Systems Design",
+                    "MLflow Docs",
+                    "Evidently AI"
+                ],
+                "projects": [
+                    "Production ML Pipeline",
+                    "Model Monitoring System"
+                ]
+            },
+            {
+                "phase": 5,
+                "title": "LLMs & Modern AI",
+                "duration": "4-6 weeks",
+                "skills": [
+                    "LLM APIs",
+                    "Prompt Engineering",
+                    "RAG",
+                    "Vector Databases",
+                    "LangChain",
+                    "Fine-tuning"
+                ],
+                "resources": [
+                    "OpenAI Docs",
+                    "LangChain Docs",
+                    "Hugging Face"
+                ],
+                "projects": [
+                    "LLM-powered Application",
+                    "RAG System"
+                ]
+            }
+        ],
+        "careerPath": [
+            "ML Engineer",
+            "Senior ML Engineer",
+            "Staff ML Engineer",
+            "ML Architect",
+            "Director of AI/ML"
+        ]
+    }
+}

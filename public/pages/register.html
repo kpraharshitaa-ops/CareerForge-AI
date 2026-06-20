@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register — CareerForge AI</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <div class="auth-page">
+        <div class="auth-container animate-slideUp" style="max-width:520px">
+            <div class="auth-logo">
+                <a href="/" style="font-size:1.8rem;font-weight:800;color:var(--primary);text-decoration:none">🚀
+                    CareerForge AI</a>
+            </div>
+
+            <!-- Step 1: Account Details -->
+            <div id="step1">
+                <h1 class="auth-title">Create Your Account</h1>
+                <p class="auth-subtitle">Start your AI-powered career journey today — it's free</p>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <div class="input-group">
+                            <span class="input-icon">👤</span>
+                            <input type="text" id="fullName" class="form-control" placeholder="Alex Johnson" required
+                                autocomplete="name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <div class="input-group">
+                            <span class="input-icon">📧</span>
+                            <input type="email" id="email" class="form-control" placeholder="you@example.com" required
+                                autocomplete="email" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <div class="input-group">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="password" class="form-control" placeholder="Min. 6 characters"
+                                required autocomplete="new-password" />
+                            <span class="input-icon input-icon-right" id="togglePassword"
+                                style="cursor:pointer">👁️</span>
+                        </div>
+                        <p class="form-hint">At least 6 characters</p>
+                    </div>
+                    <div id="regErrorMsg" style="display:none" class="form-error mb-16"></div>
+                    <button type="submit" class="btn btn-primary" id="registerBtn"
+                        style="width:100%;justify-content:center">Create Account</button>
+                </form>
+                <p style="text-align:center;margin-top:20px;font-size:0.9rem;color:var(--text-muted)">
+                    Already have an account? <a href="/login" style="font-weight:700">Sign in</a>
+                </p>
+            </div>
+
+            <!-- Step 2: Resume Upload -->
+            <div id="step2" style="display:none">
+                <div style="text-align:center;margin-bottom:24px">
+                    <div style="font-size:2.5rem;margin-bottom:12px">📄</div>
+                    <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:8px">Upload Your Resume</h2>
+                    <p style="color:var(--text-muted);font-size:0.9rem">Our AI will analyze it and personalize your
+                        experience</p>
+                </div>
+
+                <div class="upload-zone" id="uploadZone">
+                    <div class="upload-icon">📤</div>
+                    <div class="upload-title">Drag & drop your resume here</div>
+                    <div class="upload-desc">or click to browse files</div>
+                    <div style="margin-top:12px;font-size:0.8rem;color:var(--text-light)">Supported: PDF, DOCX, TXT •
+                        Max 5MB</div>
+                    <input type="file" id="resumeFile" accept=".pdf,.docx,.doc,.txt" style="display:none" />
+                </div>
+
+                <div id="uploadPreview"
+                    style="display:none;margin-top:16px;padding:14px;background:rgba(34,197,94,0.08);border-radius:var(--radius);border:1px solid rgba(34,197,94,0.2)">
+                    <div style="display:flex;align-items:center;gap:10px">
+                        <span>📎</span>
+                        <span id="fileName" style="font-weight:600;font-size:0.9rem"></span>
+                        <button onclick="resetUpload()"
+                            style="margin-left:auto;background:none;border:none;color:var(--danger);cursor:pointer;font-size:0.85rem">Remove</button>
+                    </div>
+                </div>
+
+                <div id="uploadProgress" style="display:none;margin-top:16px">
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+                        <div class="spinner spinner-sm"></div>
+                        <span style="font-size:0.9rem;color:var(--text-muted)" id="uploadStatus">Analyzing your resume
+                            with AI...</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="uploadProgressBar" style="width:0%"></div>
+                    </div>
+                </div>
+
+                <div id="uploadError" style="display:none" class="form-error mt-16"></div>
+
+                <div style="display:flex;gap:12px;margin-top:24px">
+                    <button id="uploadBtn" class="btn btn-primary" style="flex:1;justify-content:center" disabled>
+                        📤 Analyze Resume
+                    </button>
+                    <button onclick="skipUpload()" class="btn btn-ghost" style="flex:1;justify-content:center">
+                        Skip for now →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/utils.js"></script>
+    <script>
+        if (Auth.isLoggedIn()) window.location.href = '/dashboard';
+
+        let authToken = null, authUser = null, selectedFile = null;
+
+        // Toggle password
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const pwd = document.getElementById('password');
+            pwd.type = pwd.type === 'password' ? 'text' : 'password';
+            this.textContent = pwd.type === 'password' ? '👁️' : '🙈';
+        });
+
+        // Step 1: Register
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('registerBtn');
+            const errMsg = document.getElementById('regErrorMsg');
+            errMsg.style.display = 'none';
+            UI.setLoading(btn, true, 'Creating account...');
+            try {
+                const res = await API.post('/auth/register', {
+                    fullName: document.getElementById('fullName').value,
+                    email: document.getElementById('email').value,
+                    password: document.getElementById('password').value
+                });
+                if (res.success) {
+                    authToken = res.token;
+                    authUser = res.user;
+                    Auth.setSession(res.token, res.user);
+                    document.getElementById('step1').style.display = 'none';
+                    document.getElementById('step2').style.display = 'block';
+                } else {
+                    errMsg.textContent = res.message || 'Registration failed';
+                    errMsg.style.display = 'block';
+                    UI.setLoading(btn, false, 'Create Account');
+                }
+            } catch {
+                errMsg.textContent = 'Connection error. Please try again.';
+                errMsg.style.display = 'block';
+                UI.setLoading(btn, false, 'Create Account');
+            }
+        });
+
+        // File upload setup
+        const uploadZone = document.getElementById('uploadZone');
+        const fileInput = document.getElementById('resumeFile');
+        const uploadBtn = document.getElementById('uploadBtn');
+
+        uploadZone.addEventListener('click', () => fileInput.click());
+        uploadZone.addEventListener('dragover', (e) => { e.preventDefault(); uploadZone.classList.add('drag-over'); });
+        uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('drag-over'));
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.classList.remove('drag-over');
+            const file = e.dataTransfer.files[0];
+            if (file) handleFileSelect(file);
+        });
+        fileInput.addEventListener('change', (e) => { if (e.target.files[0]) handleFileSelect(e.target.files[0]); });
+
+        function handleFileSelect(file) {
+            selectedFile = file;
+            document.getElementById('fileName').textContent = file.name + ' (' + (file.size / 1024).toFixed(0) + ' KB)';
+            document.getElementById('uploadPreview').style.display = 'block';
+            uploadBtn.disabled = false;
+        }
+
+        function resetUpload() {
+            selectedFile = null;
+            fileInput.value = '';
+            document.getElementById('uploadPreview').style.display = 'none';
+            uploadBtn.disabled = true;
+        }
+
+        uploadBtn.addEventListener('click', async () => {
+            if (!selectedFile) return;
+            const formData = new FormData();
+            formData.append('resume', selectedFile);
+            document.getElementById('uploadProgress').style.display = 'block';
+            document.getElementById('uploadError').style.display = 'none';
+            uploadBtn.disabled = true;
+
+            const progBar = document.getElementById('uploadProgressBar');
+            const status = document.getElementById('uploadStatus');
+            let prog = 0;
+            const interval = setInterval(() => {
+                prog = Math.min(prog + 8, 85);
+                progBar.style.width = prog + '%';
+                if (prog > 40) status.textContent = 'Extracting resume content...';
+                if (prog > 70) status.textContent = 'Generating career insights...';
+            }, 200);
+
+            try {
+                const res = await API.upload('/resume/upload', formData);
+                clearInterval(interval);
+                progBar.style.width = '100%';
+                status.textContent = 'Analysis complete! ✅';
+                if (res.success) {
+                    Toast.success('Resume analyzed successfully!');
+                    setTimeout(() => window.location.href = '/dashboard', 1200);
+                } else {
+                    document.getElementById('uploadError').textContent = res.message || 'Upload failed';
+                    document.getElementById('uploadError').style.display = 'block';
+                    document.getElementById('uploadProgress').style.display = 'none';
+                    uploadBtn.disabled = false;
+                }
+            } catch {
+                clearInterval(interval);
+                document.getElementById('uploadError').textContent = 'Upload failed. Please try again.';
+                document.getElementById('uploadError').style.display = 'block';
+                document.getElementById('uploadProgress').style.display = 'none';
+                uploadBtn.disabled = false;
+            }
+        });
+
+        function skipUpload() {
+            Toast.info('You can upload your resume anytime from the dashboard');
+            setTimeout(() => window.location.href = '/dashboard', 600);
+        }
+    </script>
+</body>
+
+</html>

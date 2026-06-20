@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — CareerForge AI</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">🚀 <span>CareerForge AI</span></a>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"></button>
+                <span style="font-size:0.9rem;font-weight:600;color:var(--text-muted)">Welcome, <span id="navUserName"
+                        style="color:var(--primary)">User</span></span>
+                <button onclick="Auth.logout()" class="btn btn-ghost btn-sm">Logout</button>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div style="padding:20px 24px;border-bottom:1px solid var(--border)">
+                <div style="display:flex;align-items:center;gap:12px">
+                    <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.1rem"
+                        id="sidebarAvatar">U</div>
+                    <div>
+                        <div style="font-weight:700;font-size:0.95rem" id="sidebarName">Loading...</div>
+                        <div style="font-size:0.75rem;color:var(--text-muted)" id="sidebarEmail"></div>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Overview</div>
+                    <a href="/dashboard" class="sidebar-link active"><span class="sidebar-icon">🏠</span>Dashboard</a>
+                    <a href="/resume" class="sidebar-link"><span class="sidebar-icon">📄</span>Resume Analyzer</a>
+                    <a href="/careers" class="sidebar-link"><span class="sidebar-icon">🎯</span>Career Roles</a>
+                    <a href="/roadmap" class="sidebar-link"><span class="sidebar-icon">🗺️</span>Roadmaps</a>
+                    <a href="/jobs" class="sidebar-link"><span class="sidebar-icon">💼</span>Job Discovery</a>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Interview Prep</div>
+                    <a href="/hr-interview" class="sidebar-link"><span class="sidebar-icon">🤝</span>HR Interview</a>
+                    <a href="/technical-interview" class="sidebar-link"><span
+                            class="sidebar-icon">💻</span>Technical</a>
+                    <a href="/aptitude" class="sidebar-link"><span class="sidebar-icon">🧮</span>Aptitude</a>
+                    <a href="/voice-interview" class="sidebar-link"><span class="sidebar-icon">🎤</span>Voice Mock</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="page-header"
+                style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px">
+                <div>
+                    <h1 class="page-title">Welcome back, <span id="userName" style="color:var(--primary)">User</span>!
+                        👋</h1>
+                    <p class="page-subtitle">Here's your career progress overview</p>
+                </div>
+                <a href="/resume" class="btn btn-primary">📄 Update Resume</a>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-icon" style="background:rgba(79,70,229,0.10)">📊</div>
+                    <div>
+                        <div class="stat-card-value" id="resumeScoreVal">—</div>
+                        <div class="stat-card-label">Resume Score</div>
+                        <div class="stat-card-change positive" id="resumeScoreChange"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon" style="background:rgba(34,197,94,0.10)">🎯</div>
+                    <div>
+                        <div class="stat-card-value" id="skillMatchVal">—</div>
+                        <div class="stat-card-label">Skill Match Score</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon" style="background:rgba(6,182,212,0.10)">🎤</div>
+                    <div>
+                        <div class="stat-card-value" id="interviewVal">—</div>
+                        <div class="stat-card-label">Interview Readiness</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon" style="background:rgba(245,158,11,0.10)">💼</div>
+                    <div>
+                        <div class="stat-card-value" id="rolesVal">—</div>
+                        <div class="stat-card-label">Matched Roles</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resume Score Overview -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px" id="resumeScoreSection">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title mb-16">📊 Score Breakdown</div>
+                        <div id="scoreBreakdown">
+                            <div style="text-align:center;padding:32px;color:var(--text-muted)">
+                                <div style="font-size:2.5rem;margin-bottom:12px">📄</div>
+                                <p>Upload your resume to see your score breakdown</p>
+                                <a href="/resume" class="btn btn-primary btn-sm mt-16" style="margin-top:16px">Upload
+                                    Resume</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title mb-16">🎯 Top Career Matches</div>
+                        <div id="topRoles">
+                            <div style="text-align:center;padding:32px;color:var(--text-muted)">
+                                <div style="font-size:2.5rem;margin-bottom:12px">🎯</div>
+                                <p>Your career recommendations will appear here after resume upload</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Cards -->
+            <div class="card-title mb-16">⚡ Quick Access</div>
+            <div class="features-grid">
+                <a href="/resume" style="text-decoration:none;color:inherit" class="feature-card">
+                    <div class="feature-icon" style="background:rgba(79,70,229,0.10)">📄</div>
+                    <div class="feature-title">Resume Analyzer</div>
+                    <div class="feature-desc">Upload and analyze your resume with AI. Get ATS score and improvement
+                        tips.</div>
+                </a>
+                <a href="/careers" style="text-decoration:none;color:inherit" class="feature-card">
+                    <div class="feature-icon" style="background:rgba(6,182,212,0.10)">🎯</div>
+                    <div class="feature-title">Career Recommendations</div>
+                    <div class="feature-desc">Discover roles that match your skills with detailed gap analysis.</div>
+                </a>
+                <a href="/roadmap" style="text-decoration:none;color:inherit" class="feature-card">
+                    <div class="feature-icon" style="background:rgba(34,197,94,0.10)">🗺️</div>
+                    <div class="feature-title">Career Roadmaps</div>
+                    <div class="feature-desc">Step-by-step learning paths to reach your target role.</div>
+                </a>
+                <a href="/jobs" style="text-decoration:none;color:inherit" class="feature-card">
+                    <div class="feature-icon" style="background:rgba(245,158,11,0.10)">💼</div>
+                    <div class="feature-title">Job Discovery</div>
+                    <div class="feature-desc">Search and apply to thousands of matching job opportunities.</div>
+                </a>
+                <a href="/hr-interview" style="text-decoration:none;color:inherit" class="feature-card">
+                    <div class="feature-icon" style="background:rgba(239,68,68,0.10)">🤝</div>
+                    <div class="feature-title">HR Interview</div>
+                    <div class="feature-desc">Practice 100+ behavioral questions from top companies.</div>
+                </a>
+                <a href="/technical-interview" style="text-decoration:none;color:inherit" class="feature-card">
+                    <div class="feature-icon" style="background:rgba(168,85,247,0.10)">💻</div>
+                    <div class="feature-title">Technical Interview</div>
+                    <div class="feature-desc">Master technical questions across all major domains and languages.</div>
+                </a>
+                <a href="/aptitude" style="text-decoration:none;color:inherit" class="feature-card">
+                    <div class="feature-icon" style="background:rgba(20,184,166,0.10)">🧮</div>
+                    <div class="feature-title">Aptitude Practice</div>
+                    <div class="feature-desc">Timed quizzes with 100+ placement-focused aptitude questions.</div>
+                </a>
+                <a href="/voice-interview" style="text-decoration:none;color:inherit" class="feature-card">
+                    <div class="feature-icon" style="background:rgba(244,63,94,0.10)">🎤</div>
+                    <div class="feature-title">Voice Mock Interview</div>
+                    <div class="feature-desc">Practice speaking your answers with real-time transcription and AI
+                        feedback.</div>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/utils.js"></script>
+    <script>
+        Auth.requireAuth();
+        ThemeManager.init();
+
+        const user = Auth.getUser();
+        if (user) {
+            document.getElementById('userName').textContent = user.fullName?.split(' ')[0] || 'User';
+            document.getElementById('navUserName').textContent = user.fullName?.split(' ')[0] || 'User';
+            document.getElementById('sidebarName').textContent = user.fullName;
+            document.getElementById('sidebarEmail').textContent = user.email;
+            document.getElementById('sidebarAvatar').textContent = (user.fullName || 'U')[0].toUpperCase();
+        }
+
+        // Hamburger for mobile sidebar
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('mobile-open');
+        });
+
+        // Load user profile from server
+        async function loadDashboard() {
+            try {
+                const res = await API.get('/auth/profile');
+                if (res?.success) {
+                    const u = res.user;
+                    Auth.setSession(Auth.getToken(), u);
+
+                    // Update stats
+                    const rs = u.resumeScore || 0;
+                    const sm = u.skillMatchScore || 0;
+                    const ir = u.interviewReadiness || 0;
+                    const mr = u.recommendedRoles?.length || 0;
+
+                    document.getElementById('resumeScoreVal').textContent = rs > 0 ? rs + '/100' : '—';
+                    document.getElementById('skillMatchVal').textContent = sm > 0 ? sm + '%' : '—';
+                    document.getElementById('interviewVal').textContent = ir > 0 ? ir + '%' : '—';
+                    document.getElementById('rolesVal').textContent = mr > 0 ? mr + '+' : '—';
+
+                    if (rs > 0) document.getElementById('resumeScoreChange').textContent = rs >= 70 ? '✅ Good Score' : '⚠️ Needs Improvement';
+
+                    // Score breakdown
+                    if (u.resumeAnalysis) {
+                        const a = u.resumeAnalysis;
+                        document.getElementById('scoreBreakdown').innerHTML = `
+            <div class="progress-container">
+              <div class="progress-label"><span>Resume Score</span><span style="color:var(--primary);font-weight:700">${a.resumeScore || 0}/100</span></div>
+              <div class="progress-bar"><div class="progress-fill" style="width:0%" data-target="${a.resumeScore || 0}"></div></div>
+            </div>
+            <div class="progress-container">
+              <div class="progress-label"><span>ATS Compatibility</span><span style="color:var(--secondary-dark);font-weight:700">${a.atsScore || 0}%</span></div>
+              <div class="progress-bar"><div class="progress-fill" style="width:0%;background:linear-gradient(90deg,var(--secondary),var(--secondary-dark))" data-target="${a.atsScore || 0}"></div></div>
+            </div>
+            <div class="progress-container">
+              <div class="progress-label"><span>Skills Identified</span><span style="font-weight:700">${(a.skills || []).length}</span></div>
+            </div>
+            <div style="margin-top:16px">
+              <div style="font-size:0.82rem;font-weight:600;color:var(--text-muted);margin-bottom:8px">Detected Skills:</div>
+              <div class="skills-chips">${(a.skills || []).map(s => `<span class="skill-chip">${s}</span>`).join('')}</div>
+            </div>`;
+                        // Animate progress bars
+                        setTimeout(() => {
+                            document.querySelectorAll('[data-target]').forEach(bar => {
+                                bar.style.width = bar.dataset.target + '%';
+                            });
+                        }, 200);
+                    }
+
+                    // Top roles
+                    if (u.recommendedRoles && u.recommendedRoles.length > 0) {
+                        document.getElementById('topRoles').innerHTML = u.recommendedRoles.map((role, i) => `
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)">
+              <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.8rem;flex-shrink:0">${i + 1}</div>
+              <div>
+                <div style="font-weight:700;font-size:0.9rem">${role}</div>
+                <a href="/careers" style="font-size:0.78rem;color:var(--primary)">View details →</a>
+              </div>
+            </div>`).join('');
+                    }
+                }
+            } catch (e) { console.error(e); }
+        }
+
+        loadDashboard();
+    </script>
+</body>
+
+</html>

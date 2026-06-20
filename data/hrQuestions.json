@@ -1,0 +1,702 @@
+[
+    {
+        "id": 1,
+        "question": "Tell me about yourself.",
+        "category": "Introduction",
+        "company": "All",
+        "tip": "Use the Present-Past-Future formula. Start with your current role, mention relevant past experience, and connect it to why you're excited about this opportunity."
+    },
+    {
+        "id": 2,
+        "question": "Why do you want to work at our company?",
+        "category": "Motivation",
+        "company": "All",
+        "tip": "Research the company's mission, values, recent news. Connect their goals to your own career aspirations."
+    },
+    {
+        "id": 3,
+        "question": "Where do you see yourself in 5 years?",
+        "category": "Career Goals",
+        "company": "All",
+        "tip": "Show ambition aligned with the company's growth. Mention skills you want to develop and how the role contributes."
+    },
+    {
+        "id": 4,
+        "question": "What is your greatest strength?",
+        "category": "Self-Assessment",
+        "company": "All",
+        "tip": "Choose a strength relevant to the role and back it up with a specific example or achievement."
+    },
+    {
+        "id": 5,
+        "question": "What is your greatest weakness?",
+        "category": "Self-Assessment",
+        "company": "All",
+        "tip": "Choose a real weakness and immediately explain the steps you've taken to improve it. Show self-awareness."
+    },
+    {
+        "id": 6,
+        "question": "Describe a time you handled conflict within a team.",
+        "category": "Behavioral",
+        "company": "Amazon",
+        "tip": "Use STAR method. Focus on listening, understanding all perspectives, and reaching a resolution that benefited the team."
+    },
+    {
+        "id": 7,
+        "question": "Tell me about a professional failure and what you learned.",
+        "category": "Behavioral",
+        "company": "Microsoft",
+        "tip": "Be honest about a real failure. The key is to emphasize the lesson and how you applied it going forward."
+    },
+    {
+        "id": 8,
+        "question": "How do you handle competing priorities?",
+        "category": "Work Style",
+        "company": "Deloitte",
+        "tip": "Talk about prioritization frameworks (urgent vs important), communication with stakeholders, and using tools like JIRA or Trello."
+    },
+    {
+        "id": 9,
+        "question": "What feedback was hardest for you to accept?",
+        "category": "Behavioral",
+        "company": "Infosys",
+        "tip": "Show emotional maturity. Describe how you initially felt, how you processed it, and what you changed as a result."
+    },
+    {
+        "id": 10,
+        "question": "Describe a situation where you showed leadership.",
+        "category": "Leadership",
+        "company": "TCS",
+        "tip": "Even if you weren't in a formal leadership role, describe a time you took initiative, motivated others, or drove a project forward."
+    },
+    {
+        "id": 11,
+        "question": "How do you handle stress and pressure?",
+        "category": "Work Style",
+        "company": "Accenture",
+        "tip": "Give concrete strategies: prioritization, breaks, physical exercise, focus. Provide an example from your experience."
+    },
+    {
+        "id": 12,
+        "question": "Why are you leaving your current job?",
+        "category": "Motivation",
+        "company": "All",
+        "tip": "Keep it professional and positive. Focus on growth opportunities rather than negatives about your current employer."
+    },
+    {
+        "id": 13,
+        "question": "Tell me about a time you went above and beyond.",
+        "category": "Behavioral",
+        "company": "Amazon",
+        "tip": "Use STAR. Choose an example where your extra effort had a measurable impact on the team, project, or customer."
+    },
+    {
+        "id": 14,
+        "question": "How do you deal with a difficult coworker?",
+        "category": "Behavioral",
+        "company": "All",
+        "tip": "Focus on empathy, communication, and professionalism. Describe steps: understand their perspective, have a direct conversation, escalate if needed."
+    },
+    {
+        "id": 15,
+        "question": "Describe your ideal work environment.",
+        "category": "Culture Fit",
+        "company": "Startup",
+        "tip": "Research the company culture beforehand. Be honest but align your answer with what you know about their environment."
+    },
+    {
+        "id": 16,
+        "question": "How do you stay updated with industry trends?",
+        "category": "Learning",
+        "company": "All",
+        "tip": "Mention specific resources: blogs, podcasts, newsletters, conferences, online courses. Show genuine enthusiasm for learning."
+    },
+    {
+        "id": 17,
+        "question": "Tell me about a time you had to learn something quickly.",
+        "category": "Behavioral",
+        "company": "Microsoft",
+        "tip": "Highlight your ability to be a fast learner. Describe your approach: breaking down the topic, using resources, seeking mentorship."
+    },
+    {
+        "id": 18,
+        "question": "How do you prioritize your work?",
+        "category": "Work Style",
+        "company": "TCS",
+        "tip": "Describe your method: understanding deadlines, impact, urgency. Mention tools you use and how you communicate changes to stakeholders."
+    },
+    {
+        "id": 19,
+        "question": "Describe a time you made a decision without complete information.",
+        "category": "Decision Making",
+        "company": "Amazon",
+        "tip": "Explain your decision-making framework under uncertainty: gathering available data, consulting stakeholders, making the best call, monitoring outcomes."
+    },
+    {
+        "id": 20,
+        "question": "What motivates you?",
+        "category": "Motivation",
+        "company": "All",
+        "tip": "Be authentic. Connect your motivators (problem-solving, growth, impact) to how this role provides those opportunities."
+    },
+    {
+        "id": 21,
+        "question": "Tell me about a successful project you led.",
+        "category": "Leadership",
+        "company": "Deloitte",
+        "tip": "Use STAR. Highlight your planning, execution, team coordination, and the quantifiable result of the project."
+    },
+    {
+        "id": 22,
+        "question": "How do you handle criticism?",
+        "category": "Behavioral",
+        "company": "All",
+        "tip": "Show that you welcome constructive feedback, seek to understand it, and use it as an opportunity to improve."
+    },
+    {
+        "id": 23,
+        "question": "Describe a time you had to adapt to a major change at work.",
+        "category": "Adaptability",
+        "company": "Accenture",
+        "tip": "Flexibility and adaptability are key. Describe how you embraced change, helped your team adapt, and what positive outcomes resulted."
+    },
+    {
+        "id": 24,
+        "question": "What is your approach to teamwork?",
+        "category": "Teamwork",
+        "company": "All",
+        "tip": "Talk about communication, trust, leveraging each team member's strengths, and your experience working in collaborative environments."
+    },
+    {
+        "id": 25,
+        "question": "Tell me about a time you mentored someone.",
+        "category": "Leadership",
+        "company": "Microsoft",
+        "tip": "Describe the relationship, what you taught, how you tailored your approach to the mentee's learning style, and the outcome."
+    },
+    {
+        "id": 26,
+        "question": "How do you ensure the quality of your work?",
+        "category": "Work Style",
+        "company": "TCS",
+        "tip": "Mention code reviews, testing, checklists, peer review, documentation, and iterative improvement processes."
+    },
+    {
+        "id": 27,
+        "question": "Describe a time you failed to meet a deadline.",
+        "category": "Behavioral",
+        "company": "Infosys",
+        "tip": "Be honest and take responsibility. Focus on what caused the delay, how you communicated it, and what you changed to prevent it in the future."
+    },
+    {
+        "id": 28,
+        "question": "What do you do when you disagree with your manager?",
+        "category": "Behavioral",
+        "company": "Amazon",
+        "tip": "Show respect while being assertive. Describe how you present your perspective with data, listen to theirs, and commit to the final decision."
+    },
+    {
+        "id": 29,
+        "question": "How do you build relationships at work?",
+        "category": "Interpersonal",
+        "company": "All",
+        "tip": "Talk about active listening, finding common ground, being reliable, following through on commitments, and showing genuine interest in colleagues."
+    },
+    {
+        "id": 30,
+        "question": "Tell me about a time you improved a process.",
+        "category": "Problem Solving",
+        "company": "Deloitte",
+        "tip": "Identify the problem, explain your analysis, describe the solution you implemented, and quantify the improvement."
+    },
+    {
+        "id": 31,
+        "question": "How do you handle ambiguity?",
+        "category": "Work Style",
+        "company": "Amazon",
+        "tip": "Describe your approach to clarifying requirements, making assumptions explicit, moving forward with what you know while checking in regularly."
+    },
+    {
+        "id": 32,
+        "question": "What are your salary expectations?",
+        "category": "Compensation",
+        "company": "All",
+        "tip": "Research market rates beforehand. Give a range based on your experience and the role requirements. Express flexibility."
+    },
+    {
+        "id": 33,
+        "question": "Tell me about a time you took initiative.",
+        "category": "Behavioral",
+        "company": "Startup",
+        "tip": "Proactivity is highly valued. Describe seeing a need that wasn't assigned to you, deciding to address it, and the positive impact."
+    },
+    {
+        "id": 34,
+        "question": "How do you manage your time effectively?",
+        "category": "Work Style",
+        "company": "All",
+        "tip": "Describe specific techniques: time-blocking, Pomodoro, prioritization matrices, minimizing distractions, using productivity tools."
+    },
+    {
+        "id": 35,
+        "question": "Describe a situation where you had to persuade someone.",
+        "category": "Communication",
+        "company": "Accenture",
+        "tip": "Show logical reasoning, empathy, and communication skills. Describe how you understood their perspective and presented a compelling case."
+    },
+    {
+        "id": 36,
+        "question": "Tell me about a time you exceeded customer expectations.",
+        "category": "Customer Focus",
+        "company": "Amazon",
+        "tip": "Describe the context, what the customer expected, what you did differently, and how it resulted in exceptional satisfaction."
+    },
+    {
+        "id": 37,
+        "question": "How do you approach setting and achieving goals?",
+        "category": "Goal Setting",
+        "company": "All",
+        "tip": "Describe using SMART goals, breaking them into milestones, regular progress reviews, and adjusting when needed."
+    },
+    {
+        "id": 38,
+        "question": "What does success look like to you?",
+        "category": "Values",
+        "company": "All",
+        "tip": "Align your definition of success with the company's mission. Include both personal and professional dimensions."
+    },
+    {
+        "id": 39,
+        "question": "Tell me about a time you worked with a cross-functional team.",
+        "category": "Teamwork",
+        "company": "Microsoft",
+        "tip": "Describe how you collaborated with different departments, navigated different priorities, and delivered a cohesive result."
+    },
+    {
+        "id": 40,
+        "question": "How do you handle a situation where requirements keep changing?",
+        "category": "Adaptability",
+        "company": "TCS",
+        "tip": "Show agility. Describe staying flexible, maintaining communication, documenting changes, and keeping the team aligned."
+    },
+    {
+        "id": 41,
+        "question": "Describe your communication style.",
+        "category": "Communication",
+        "company": "All",
+        "tip": "Be specific: direct but empathetic, adapt to audience (technical vs non-technical), proactive in sharing updates."
+    },
+    {
+        "id": 42,
+        "question": "Tell me about a time you had to deliver bad news.",
+        "category": "Communication",
+        "company": "Deloitte",
+        "tip": "Describe your approach: preparing thoroughly, delivering clearly and compassionately, focusing on solutions, and following up."
+    },
+    {
+        "id": 43,
+        "question": "What's your approach to learning new technologies?",
+        "category": "Learning",
+        "company": "All",
+        "tip": "Describe a structured approach: documentation first, building small projects, joining communities, and applying to real problems."
+    },
+    {
+        "id": 44,
+        "question": "How do you deal with tight deadlines?",
+        "category": "Pressure",
+        "company": "Infosys",
+        "tip": "Describe breaking the work into chunks, focusing on must-haves vs nice-to-haves, communicating proactively about scope, and maintaining quality."
+    },
+    {
+        "id": 45,
+        "question": "Tell me about a time you collaborated remotely.",
+        "category": "Remote Work",
+        "company": "All",
+        "tip": "Highlight communication tools, asynchronous collaboration, maintaining team cohesion, and delivering results despite distance."
+    },
+    {
+        "id": 46,
+        "question": "What makes you unique as a candidate?",
+        "category": "Self-Assessment",
+        "company": "All",
+        "tip": "Identify your unique combination of skills, experiences, and perspectives that specifically address the company's needs."
+    },
+    {
+        "id": 47,
+        "question": "How do you handle a situation where you don't know the answer?",
+        "category": "Honesty",
+        "company": "All",
+        "tip": "Be honest about not knowing, then describe your research process, who you would consult, and how you'd find the answer."
+    },
+    {
+        "id": 48,
+        "question": "Tell me about a time you advocated for a user or customer.",
+        "category": "Customer Focus",
+        "company": "Amazon",
+        "tip": "Describe putting the customer's needs at the center of a decision, even when it was challenging internally."
+    },
+    {
+        "id": 49,
+        "question": "What do you think makes a great team?",
+        "category": "Teamwork",
+        "company": "All",
+        "tip": "Mention psychological safety, diverse perspectives, clear communication, shared goals, and mutual respect and accountability."
+    },
+    {
+        "id": 50,
+        "question": "Tell me about a complex problem you solved.",
+        "category": "Problem Solving",
+        "company": "Microsoft",
+        "tip": "Use STAR. Emphasize your analytical approach, how you broke down the complexity, who you involved, and the measured outcome."
+    },
+    {
+        "id": 51,
+        "question": "How do you approach giving feedback to peers?",
+        "category": "Communication",
+        "company": "All",
+        "tip": "Describe being specific, constructive, timely, and private when possible. Show you focus on behavior, not personality."
+    },
+    {
+        "id": 52,
+        "question": "Describe a time you had to balance multiple stakeholders' needs.",
+        "category": "Stakeholder Management",
+        "company": "Deloitte",
+        "tip": "Describe identifying all stakeholders, understanding their priorities, finding common ground, and communicating decisions transparently."
+    },
+    {
+        "id": 53,
+        "question": "What professional development have you pursued recently?",
+        "category": "Learning",
+        "company": "All",
+        "tip": "Mention specific courses, certifications, books, or conferences. Connect what you learned to how it's already benefiting your work."
+    },
+    {
+        "id": 54,
+        "question": "Tell me about a time you had to be creative to solve a problem.",
+        "category": "Creativity",
+        "company": "Startup",
+        "tip": "Describe the constraint, your creative thinking process, the unconventional solution you devised, and its effectiveness."
+    },
+    {
+        "id": 55,
+        "question": "How do you ensure alignment with your team?",
+        "category": "Communication",
+        "company": "All",
+        "tip": "Describe regular check-ins, clear documentation, shared dashboards, and proactive communication of blockers and progress."
+    },
+    {
+        "id": 56,
+        "question": "Tell me about a time you had to make an unpopular decision.",
+        "category": "Decision Making",
+        "company": "Amazon",
+        "tip": "Show backbone and thoughtfulness. Explain your reasoning clearly, how you communicated it empathetically, and the long-term positive outcome."
+    },
+    {
+        "id": 57,
+        "question": "How do you approach onboarding to a new role?",
+        "category": "Adaptability",
+        "company": "All",
+        "tip": "Describe your 30-60-90 day approach: learning the domain, building relationships, understanding priorities, and delivering early wins."
+    },
+    {
+        "id": 58,
+        "question": "What questions do you have for us?",
+        "category": "Engagement",
+        "company": "All",
+        "tip": "Always have 2-3 thoughtful questions. Ask about the team, growth opportunities, current challenges, or the interviewer's own experience."
+    },
+    {
+        "id": 59,
+        "question": "Tell me about a time you demonstrated ownership.",
+        "category": "Ownership",
+        "company": "Amazon",
+        "tip": "Describe taking full responsibility for a project or problem—from identifying it to driving the solution, even outside your formal responsibilities."
+    },
+    {
+        "id": 60,
+        "question": "How do you approach diversity and inclusion in the workplace?",
+        "category": "Values",
+        "company": "All",
+        "tip": "Share concrete examples of how you've fostered inclusive environments, amplified different voices, and challenged bias."
+    },
+    {
+        "id": 61,
+        "question": "Describe a time you received recognition for your work.",
+        "category": "Achievements",
+        "company": "All",
+        "tip": "Be specific about what you did and why it was recognized. Stay humble while clearly articulating the impact."
+    },
+    {
+        "id": 62,
+        "question": "How do you approach estimating project timelines?",
+        "category": "Project Management",
+        "company": "TCS",
+        "tip": "Describe breaking work into tasks, factoring in dependencies and risks, padding for unknowns, and communicating estimates clearly."
+    },
+    {
+        "id": 63,
+        "question": "Tell me about a time you built something from scratch.",
+        "category": "Initiative",
+        "company": "Startup",
+        "tip": "Highlight your ability to work with ambiguity, your design thinking, execution discipline, and the end result."
+    },
+    {
+        "id": 64,
+        "question": "How do you handle a situation when your team misses a goal?",
+        "category": "Leadership",
+        "company": "All",
+        "tip": "Show accountability and constructive leadership: understand root causes, support the team, adjust the plan, and focus on learning."
+    },
+    {
+        "id": 65,
+        "question": "What are three words your colleagues would use to describe you?",
+        "category": "Self-Assessment",
+        "company": "All",
+        "tip": "Choose words that are authentic and backed by specific examples. Show self-awareness by aligning them with the role's requirements."
+    },
+    {
+        "id": 66,
+        "question": "Tell me about a time you had to deal with a significant change in company direction.",
+        "category": "Adaptability",
+        "company": "Accenture",
+        "tip": "Show resilience and flexibility. Describe how you adapted, helped your team through the change, and stayed focused on goals."
+    },
+    {
+        "id": 67,
+        "question": "How do you build trust with a new team?",
+        "category": "Interpersonal",
+        "company": "All",
+        "tip": "Describe being reliable, transparent, following through on commitments, showing genuine interest, and delivering early results."
+    },
+    {
+        "id": 68,
+        "question": "Tell me about a time you influenced without authority.",
+        "category": "Influence",
+        "company": "Microsoft",
+        "tip": "Describe building relationships, using data and logic, finding common ground, and earning buy-in through demonstrated credibility."
+    },
+    {
+        "id": 69,
+        "question": "How do you approach documentation?",
+        "category": "Work Style",
+        "company": "All",
+        "tip": "Show that you value documentation for knowledge transfer. Describe documenting decisions, processes, and learnings proactively."
+    },
+    {
+        "id": 70,
+        "question": "Describe a time you helped a colleague who was struggling.",
+        "category": "Teamwork",
+        "company": "All",
+        "tip": "Show empathy and generosity. Describe identifying the struggle, offering support, and the positive outcome for both of you."
+    },
+    {
+        "id": 71,
+        "question": "How do you think about risk when making decisions?",
+        "category": "Decision Making",
+        "company": "Amazon",
+        "tip": "Describe assessing probability and impact, having mitigation plans, and making calculated risks rather than avoiding all risk."
+    },
+    {
+        "id": 72,
+        "question": "Tell me about a time you delivered a project under budget.",
+        "category": "Resource Management",
+        "company": "Deloitte",
+        "tip": "Describe your planning, trade-off decisions, and how you achieved the objective with fewer resources than allocated."
+    },
+    {
+        "id": 73,
+        "question": "How do you approach performance reviews?",
+        "category": "Professional Growth",
+        "company": "All",
+        "tip": "Show that you take them seriously: prepare with evidence, set goals, invite 360 feedback, and use them as a growth tool."
+    },
+    {
+        "id": 74,
+        "question": "Tell me about a time you had to say no to a request.",
+        "category": "Boundaries",
+        "company": "All",
+        "tip": "Show that you can prioritize effectively. Describe how you explained the trade-offs clearly and offered an alternative solution."
+    },
+    {
+        "id": 75,
+        "question": "What does your ideal manager look like?",
+        "category": "Culture Fit",
+        "company": "All",
+        "tip": "Be honest but frame it constructively. Describe someone who provides guidance and autonomy, clear expectations, and growth opportunities."
+    },
+    {
+        "id": 76,
+        "question": "Tell me about a time you had to present to senior leadership.",
+        "category": "Communication",
+        "company": "Accenture",
+        "tip": "Describe preparing thoroughly, tailoring your message to the executive audience, handling questions confidently, and the outcome."
+    },
+    {
+        "id": 77,
+        "question": "How do you contribute to a positive team culture?",
+        "category": "Culture",
+        "company": "All",
+        "tip": "Describe specific behaviors: celebrating wins, being supportive during failures, being inclusive, and modeling the behavior you want to see."
+    },
+    {
+        "id": 78,
+        "question": "Tell me about a time you had to work with limited resources.",
+        "category": "Resourcefulness",
+        "company": "Startup",
+        "tip": "Show creativity and pragmatism. Describe how you prioritized, found creative solutions, and still delivered value."
+    },
+    {
+        "id": 79,
+        "question": "How do you stay focused when working on long-term projects?",
+        "category": "Focus",
+        "company": "All",
+        "tip": "Describe setting milestones, celebrating small wins, maintaining a connection to the bigger purpose, and regular review cycles."
+    },
+    {
+        "id": 80,
+        "question": "Tell me about your most significant professional achievement.",
+        "category": "Achievements",
+        "company": "All",
+        "tip": "Choose something with measurable impact. Use STAR and connect it directly to the skills required for this new role."
+    },
+    {
+        "id": 81,
+        "question": "How do you approach onboarding a new team member?",
+        "category": "Leadership",
+        "company": "Microsoft",
+        "tip": "Describe creating a welcoming environment, providing structured onboarding, pairing them with mentors, and checking in regularly."
+    },
+    {
+        "id": 82,
+        "question": "Tell me about a time you worked with someone very different from you.",
+        "category": "Diversity",
+        "company": "All",
+        "tip": "Highlight how the difference brought value, how you navigated it, and what you learned from the experience."
+    },
+    {
+        "id": 83,
+        "question": "How do you measure the success of your work?",
+        "category": "Metrics",
+        "company": "All",
+        "tip": "Describe setting clear KPIs upfront, tracking them consistently, and learning from both successes and shortfalls."
+    },
+    {
+        "id": 84,
+        "question": "Tell me about a time you pivoted strategy mid-project.",
+        "category": "Adaptability",
+        "company": "Startup",
+        "tip": "Show data-driven decision making. Describe what new information prompted the pivot and how you managed the change effectively."
+    },
+    {
+        "id": 85,
+        "question": "How do you contribute to hiring and team building?",
+        "category": "Hiring",
+        "company": "All",
+        "tip": "Describe participating in interviews, writing job descriptions, building an inclusive hiring process, and evaluating cultural addition."
+    },
+    {
+        "id": 86,
+        "question": "Tell me about a time you had to balance speed vs quality.",
+        "category": "Trade-offs",
+        "company": "All",
+        "tip": "Show mature engineering judgment. Describe the trade-offs, how you made the decision, and how you managed any resulting technical debt."
+    },
+    {
+        "id": 87,
+        "question": "How do you approach working with ambiguous requirements?",
+        "category": "Problem Solving",
+        "company": "Amazon",
+        "tip": "Describe asking clarifying questions, making assumptions explicit, building iteratively, and validating with stakeholders early."
+    },
+    {
+        "id": 88,
+        "question": "Tell me about a time you made your team more efficient.",
+        "category": "Optimization",
+        "company": "TCS",
+        "tip": "Describe identifying an inefficiency, proposing and implementing a solution, measuring the improvement, and sharing the learnings."
+    },
+    {
+        "id": 89,
+        "question": "What role do you usually play in a team?",
+        "category": "Teamwork",
+        "company": "All",
+        "tip": "Be honest and show versatility. Describe your natural strengths and how you adapt your role to what the team needs."
+    },
+    {
+        "id": 90,
+        "question": "Tell me about a time you had to juggle personal and professional challenges.",
+        "category": "Resilience",
+        "company": "All",
+        "tip": "Keep it professional. Focus on how you maintained performance, sought support, and maintained boundaries appropriately."
+    },
+    {
+        "id": 91,
+        "question": "How do you keep yourself accountable?",
+        "category": "Accountability",
+        "company": "All",
+        "tip": "Describe personal systems: to-do lists, regular reviews, sharing commitments publicly, and tracking progress against goals."
+    },
+    {
+        "id": 92,
+        "question": "Tell me about a time you advocated for a change in policy or process.",
+        "category": "Initiative",
+        "company": "Microsoft",
+        "tip": "Show that you can identify systemic issues and drive change. Describe building the case, getting buy-in, and implementing the change."
+    },
+    {
+        "id": 93,
+        "question": "How do you approach a project you know very little about?",
+        "category": "Learning",
+        "company": "All",
+        "tip": "Describe your learning process: domain research, stakeholder interviews, reviewing existing work, and asking the right questions early."
+    },
+    {
+        "id": 94,
+        "question": "Tell me about a time you mitigated a risk.",
+        "category": "Risk Management",
+        "company": "Deloitte",
+        "tip": "Describe identifying a potential risk proactively, analyzing its impact, developing a mitigation plan, and monitoring it continuously."
+    },
+    {
+        "id": 95,
+        "question": "What legacy do you want to leave at this company?",
+        "category": "Vision",
+        "company": "All",
+        "tip": "Be aspirational but grounded. Describe the impact you want to have on the team, product, and culture."
+    },
+    {
+        "id": 96,
+        "question": "How do you approach giving a difficult performance review?",
+        "category": "Leadership",
+        "company": "All",
+        "tip": "Show empathy and directness. Describe preparing with specific examples, focusing on behaviors, and creating a development plan together."
+    },
+    {
+        "id": 97,
+        "question": "Tell me about a time you had to rebuild trust after a mistake.",
+        "category": "Integrity",
+        "company": "Amazon",
+        "tip": "Own the mistake fully. Describe how you acknowledged it, made amends, communicated transparently, and took actions to restore confidence."
+    },
+    {
+        "id": 98,
+        "question": "How do you balance technical debt vs new features?",
+        "category": "Engineering",
+        "company": "Startup",
+        "tip": "Show mature engineering thinking. Describe making technical debt visible, quantifying its impact, and advocating for regular debt reduction sprints."
+    },
+    {
+        "id": 99,
+        "question": "Tell me about a time you used data to change someone's mind.",
+        "category": "Data-Driven",
+        "company": "All",
+        "tip": "Describe the situation, how you gathered and presented data compellingly, and how it led to a better decision."
+    },
+    {
+        "id": 100,
+        "question": "Why should we hire you over other candidates?",
+        "category": "Sales Pitch",
+        "company": "All",
+        "tip": "Confidently summarize your unique value proposition—specific skills, experiences, and personal qualities that directly address the company's needs."
+    }
+]

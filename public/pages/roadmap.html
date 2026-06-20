@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Roadmap — CareerForge AI</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <style>
+        /* ── Role selector card ─────────────────────────── */
+        .role-selector-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            border: 1px solid var(--border);
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .role-selector-card label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .role-selector-card select {
+            flex: 1;
+            min-width: 220px;
+            padding: 11px 16px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--bg-input);
+            color: var(--text);
+            font-size: 0.95rem;
+            font-family: inherit;
+            font-weight: 600;
+            outline: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .role-selector-card select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.10);
+            background: var(--bg-card);
+        }
+
+        /* ── Roadmap header ─────────────────────────────── */
+        .roadmap-header-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: var(--radius-lg);
+            padding: 28px 32px;
+            color: #fff;
+            margin-bottom: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .roadmap-header-card h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .roadmap-header-card p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+
+        .roadmap-duration-badge {
+            background: rgba(255, 255, 255, 0.20);
+            border: 1px solid rgba(255, 255, 255, 0.30);
+            border-radius: var(--radius);
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-align: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .roadmap-duration-badge small {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 500;
+            opacity: 0.8;
+            margin-bottom: 2px;
+        }
+
+        /* ── Phase card expand/collapse ─────────────────── */
+        .phase-card {
+            cursor: default;
+        }
+
+        .phase-header {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .phase-header:hover .phase-title {
+            color: var(--primary);
+        }
+
+        .phase-toggle-icon {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            transition: transform 0.25s ease;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        .phase-card.expanded .phase-toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .phase-body {
+            display: none;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            margin-top: 16px;
+            animation: fadeIn 0.25s ease;
+        }
+
+        .phase-card.expanded .phase-body {
+            display: block;
+        }
+
+        /* ── Phase number badge ─────────────────────────── */
+        .phase-number-badge {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* ── Resources & Projects lists ─────────────────── */
+        .resource-list,
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .resource-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            padding: 8px 12px;
+            background: var(--bg-input);
+            border-radius: var(--radius);
+        }
+
+        .resource-item .resource-icon {
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .project-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--text);
+            padding: 8px 12px;
+            background: rgba(79, 70, 229, 0.04);
+            border-radius: var(--radius);
+            border: 1px solid rgba(79, 70, 229, 0.12);
+        }
+
+        /* ── Career progression path ────────────────────── */
+        .career-path-section {
+            margin-top: 40px;
+        }
+
+        .career-path-flow {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            flex-wrap: wrap;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 24px 28px;
+            border: 1px solid var(--border);
+            overflow-x: auto;
+        }
+
+        .career-path-step {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            flex-shrink: 0;
+        }
+
+        .career-step-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .career-step-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: var(--bg-card);
+            transition: var(--transition);
+        }
+
+        .career-step-circle.first {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .career-step-circle.last {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .career-step-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-align: center;
+            max-width: 80px;
+            line-height: 1.3;
+        }
+
+        .career-step-arrow {
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            position: relative;
+            flex-shrink: 0;
+            align-self: center;
+            margin-bottom: 20px;
+            /* offset for label */
+        }
+
+        .career-step-arrow::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid var(--secondary);
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+
+        /* ── Loading & empty states ─────────────────────── */
+        .roadmap-loading {
+            text-align: center;
+            padding: 60px 24px;
+            color: var(--text-muted);
+        }
+
+        .roadmap-empty {
+            text-align: center;
+            padding: 60px 24px;
+        }
+
+        @media (max-width: 768px) {
+            .roadmap-header-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .career-path-flow {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+            }
+
+            .career-step-arrow {
+                width: 2px;
+                height: 30px;
+                background: linear-gradient(180deg, var(--primary), var(--secondary));
+                margin-bottom: 0;
+                margin-left: 23px;
+            }
+
+            .career-step-arrow::after {
+                right: -4px;
+                top: auto;
+                bottom: -6px;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 8px solid var(--secondary);
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">🚀 <span>CareerForge AI</span></a>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"></button>
+                <span style="font-size:0.9rem;font-weight:600;color:var(--text-muted)">Welcome, <span id="navUserName"
+                        style="color:var(--primary)">User</span></span>
+                <button onclick="Auth.logout()" class="btn btn-ghost btn-sm">Logout</button>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div style="padding:20px 24px;border-bottom:1px solid var(--border)">
+                <div style="display:flex;align-items:center;gap:12px">
+                    <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.1rem"
+                        id="sidebarAvatar">U</div>
+                    <div>
+                        <div style="font-weight:700;font-size:0.95rem" id="sidebarName">Loading...</div>
+                        <div style="font-size:0.75rem;color:var(--text-muted)" id="sidebarEmail"></div>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Overview</div>
+                    <a href="/dashboard" class="sidebar-link"><span class="sidebar-icon">🏠</span>Dashboard</a>
+                    <a href="/resume" class="sidebar-link"><span class="sidebar-icon">📄</span>Resume Analyzer</a>
+                    <a href="/careers" class="sidebar-link"><span class="sidebar-icon">🎯</span>Career Roles</a>
+                    <a href="/roadmap" class="sidebar-link active"><span class="sidebar-icon">🗺️</span>Roadmaps</a>
+                    <a href="/jobs" class="sidebar-link"><span class="sidebar-icon">💼</span>Job Discovery</a>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Interview Prep</div>
+                    <a href="/hr-interview" class="sidebar-link"><span class="sidebar-icon">🤝</span>HR Interview</a>
+                    <a href="/technical-interview" class="sidebar-link"><span
+                            class="sidebar-icon">💻</span>Technical</a>
+                    <a href="/aptitude" class="sidebar-link"><span class="sidebar-icon">🧮</span>Aptitude</a>
+                    <a href="/voice-interview" class="sidebar-link"><span class="sidebar-icon">🎤</span>Voice Mock</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header"
+                style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px">
+                <div>
+                    <h1 class="page-title">🗺️ Career Roadmap</h1>
+                    <p class="page-subtitle">Step-by-step learning paths to reach your target role</p>
+                </div>
+                <a href="/jobs" class="btn btn-outline btn-sm">💼 Browse Jobs</a>
+            </div>
+
+            <!-- Role Selector -->
+            <div class="role-selector-card">
+                <label for="roleSelect">🎯 Select your target role:</label>
+                <select id="roleSelect" onchange="loadRoadmap(this.value)">
+                    <option value="">— Choose a role —</option>
+                </select>
+                <div id="roleLoadingSpinner" style="display:none">
+                    <div class="spinner spinner-sm"></div>
+                </div>
+            </div>
+
+            <!-- Roadmap Content -->
+            <div id="roadmapContent">
+                <!-- Default prompt -->
+                <div class="roadmap-empty" id="emptyPrompt">
+                    <div class="empty-state-icon">🗺️</div>
+                    <div class="empty-state-title">Select a role to view its roadmap</div>
+                    <p style="font-size:0.9rem;color:var(--text-muted);max-width:400px;margin:8px auto 0">
+                        Choose your target career role above to see a detailed, phase-by-phase learning roadmap.
+                    </p>
+                </div>
+
+                <!-- Roadmap loading -->
+                <div class="roadmap-loading hidden" id="roadmapLoading">
+                    <div class="spinner" style="margin:0 auto 16px"></div>
+                    <p>Building your roadmap…</p>
+                </div>
+
+                <!-- Rendered roadmap -->
+                <div id="roadmapBody" class="hidden">
+                    <!-- Roadmap header info -->
+                    <div class="roadmap-header-card" id="roadmapHeaderCard"></div>
+
+                    <!-- Timeline -->
+                    <div class="roadmap-timeline" id="roadmapTimeline"></div>
+
+                    <!-- Career Path -->
+                    <div class="career-path-section" id="careerPathSection"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/utils.js"></script>
+    <script>
+        Auth.requireAuth();
+        ThemeManager.init();
+
+        // ── User info ─────────────────────────────────────────────────────────
+        const user = Auth.getUser();
+        if (user) {
+            document.getElementById('navUserName').textContent = user.fullName?.split(' ')[0] || 'User';
+            document.getElementById('sidebarName').textContent = user.fullName || 'User';
+            document.getElementById('sidebarEmail').textContent = user.email || '';
+            document.getElementById('sidebarAvatar').textContent = (user.fullName || 'U')[0].toUpperCase();
+        }
+
+        // Hamburger
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('mobile-open');
+        });
+
+        // ── HTML escape helper ────────────────────────────────────────────────
+        function escHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // ── Load roadmap list ─────────────────────────────────────────────────
+        async function loadRoadmapList() {
+            try {
+                const data = await API.get('/roadmaps');
+                if (!data || !data.success) throw new Error('Failed to load');
+
+                const select = document.getElementById('roleSelect');
+                select.innerHTML = '<option value="">— Choose a role —</option>';
+
+                (data.roadmaps || []).forEach(rm => {
+                    const opt = document.createElement('option');
+                    opt.value = rm.id;
+                    opt.textContent = `${rm.title}  (${rm.phases} phases · ${rm.totalDuration})`;
+                    select.appendChild(opt);
+                });
+
+                // Check URL param ?role=frontend-developer
+                const urlRole = new URLSearchParams(window.location.search).get('role');
+                if (urlRole) {
+                    select.value = urlRole;
+                    if (select.value) loadRoadmap(urlRole);
+                }
+
+            } catch (err) {
+                console.error('Failed to load roadmap list:', err);
+                Toast.error('Could not load roadmap list.');
+            }
+        }
+
+        // ── Load individual roadmap ───────────────────────────────────────────
+        async function loadRoadmap(roleId) {
+            if (!roleId) {
+                document.getElementById('emptyPrompt').classList.remove('hidden');
+                document.getElementById('roadmapBody').classList.add('hidden');
+                document.getElementById('roadmapLoading').classList.add('hidden');
+                // Update URL
+                window.history.replaceState({}, '', window.location.pathname);
+                return;
+            }
+
+            // Update URL param
+            window.history.replaceState({}, '', `?role=${roleId}`);
+
+            // Show loading
+            document.getElementById('emptyPrompt').classList.add('hidden');
+            document.getElementById('roadmapBody').classList.add('hidden');
+            document.getElementById('roadmapLoading').classList.remove('hidden');
+            document.getElementById('roleLoadingSpinner').style.display = 'flex';
+
+            try {
+                const data = await API.get(`/roadmaps/${roleId}`);
+
+                document.getElementById('roadmapLoading').classList.add('hidden');
+                document.getElementById('roleLoadingSpinner').style.display = 'none';
+
+                if (!data || !data.success || !data.roadmap) {
+                    throw new Error('Roadmap not found');
+                }
+
+                renderRoadmap(data.roadmap);
+
+            } catch (err) {
+                console.error('Failed to load roadmap:', err);
+                document.getElementById('roadmapLoading').classList.add('hidden');
+                document.getElementById('roleLoadingSpinner').style.display = 'none';
+                document.getElementById('emptyPrompt').classList.remove('hidden');
+                Toast.error('Failed to load roadmap. Please try another role.');
+            }
+        }
+
+        // ── Render roadmap ────────────────────────────────────────────────────
+        function renderRoadmap(roadmap) {
+            const phases = roadmap.phases || [];
+            const careerPath = roadmap.careerPath || [];
+
+            // ── Header card ───────────────────────────────────────────────────
+            document.getElementById('roadmapHeaderCard').innerHTML = `
+                <div>
+                    <h2>🗺️ ${escHtml(roadmap.title || 'Career Roadmap')}</h2>
+                    <p>${phases.length} phases · Complete step-by-step learning path</p>
+                </div>
+                <div class="roadmap-duration-badge">
+                    <small>⏱️ Total Duration</small>
+                    ${escHtml(roadmap.totalDuration || '6–12 months')}
+                </div>`;
+
+            // ── Timeline ──────────────────────────────────────────────────────
+            const timelineEl = document.getElementById('roadmapTimeline');
+            timelineEl.innerHTML = phases.map((phase, idx) => renderPhaseCard(phase, idx, phases.length)).join('');
+
+            // Add toggle listeners
+            timelineEl.querySelectorAll('.phase-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const card = header.closest('.phase-card');
+                    card.classList.toggle('expanded');
+                });
+            });
+
+            // Auto-expand first phase
+            const firstCard = timelineEl.querySelector('.phase-card');
+            if (firstCard) firstCard.classList.add('expanded');
+
+            // ── Career path ───────────────────────────────────────────────────
+            const pathSection = document.getElementById('careerPathSection');
+            if (careerPath.length > 0) {
+                pathSection.innerHTML = `
+                    <div class="card-title mb-16" style="margin-bottom:16px">🚀 Career Progression Path</div>
+                    <div class="career-path-flow">
+                        ${careerPath.map((step, i) => `
+                            <div class="career-path-step">
+                                <div class="career-step-node">
+                                    <div class="career-step-circle ${i === 0 ? 'first' : i === careerPath.length - 1 ? 'last' : ''}">
+                                        ${i + 1}
+                                    </div>
+                                    <div class="career-step-label">${escHtml(step)}</div>
+                                </div>
+                                ${i < careerPath.length - 1 ? '<div class="career-step-arrow"></div>' : ''}
+                            </div>
+                        `).join('')}
+                    </div>`;
+                pathSection.classList.remove('hidden');
+            } else {
+                pathSection.innerHTML = '';
+            }
+
+            // Show roadmap body
+            document.getElementById('roadmapBody').classList.remove('hidden');
+        }
+
+        // ── Render single phase card ──────────────────────────────────────────
+        function renderPhaseCard(phase, idx, total) {
+            const isLast = idx === total - 1;
+            const skills = phase.skills || [];
+            const resources = phase.resources || [];
+            const projects = phase.projects || [];
+
+            const resourceIcons = ['📖', '🎥', '🌐', '📝', '🎓', '💡'];
+
+            return `
+            <div class="roadmap-phase ${isLast ? '' : ''}">
+                <div class="phase-card">
+                    <div class="phase-header" role="button" aria-expanded="false" tabindex="0">
+                        <div style="display:flex;align-items:center;gap:12px;flex:1">
+                            <div class="phase-number-badge">${phase.phase || idx + 1}</div>
+                            <div style="flex:1">
+                                <div class="phase-title">${escHtml(phase.title || 'Phase ' + (idx + 1))}</div>
+                            </div>
+                            <span class="phase-duration">${escHtml(phase.duration || '')}</span>
+                            <span class="phase-toggle-icon">▼</span>
+                        </div>
+                    </div>
+
+                    <div class="phase-body">
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px" class="phase-content-grid">
+
+                            <!-- Skills -->
+                            ${skills.length > 0 ? `
+                            <div>
+                                <div style="font-size:0.8rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px">
+                                    🛠️ Skills to Learn
+                                </div>
+                                <div class="skills-chips">
+                                    ${skills.map(s => `<span class="skill-chip">${escHtml(s)}</span>`).join('')}
+                                </div>
+                            </div>` : ''}
+
+                            <!-- Resources -->
+                            ${resources.length > 0 ? `
+                            <div>
+                                <div style="font-size:0.8rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px">
+                                    📚 Resources
+                                </div>
+                                <div class="resource-list">
+                                    ${resources.map((r, i) => `
+                                    <div class="resource-item">
+                                        <span class="resource-icon">${resourceIcons[i % resourceIcons.length]}</span>
+                                        ${escHtml(r)}
+                                    </div>`).join('')}
+                                </div>
+                            </div>` : ''}
+
+                        </div>
+
+                        <!-- Projects -->
+                        ${projects.length > 0 ? `
+                        <div style="margin-top:20px">
+                            <div style="font-size:0.8rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px">
+                                🚀 Suggested Projects
+                            </div>
+                            <div class="project-list">
+                                ${projects.map(p => `
+                                <div class="project-item">
+                                    <span style="font-size:1rem;flex-shrink:0">⚡</span>
+                                    <span>${escHtml(p)}</span>
+                                </div>`).join('')}
+                            </div>
+                        </div>` : ''}
+                    </div>
+                </div>
+            </div>`;
+        }
+
+        // ── Keyboard support for phase toggle ─────────────────────────────────
+        document.getElementById('roadmapTimeline').addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                const header = e.target.closest('.phase-header');
+                if (header) {
+                    e.preventDefault();
+                    header.closest('.phase-card').classList.toggle('expanded');
+                }
+            }
+        });
+
+        // ── Responsive: stack phase content grid on mobile ────────────────────
+        function checkMobile() {
+            const grids = document.querySelectorAll('.phase-content-grid');
+            grids.forEach(g => {
+                g.style.gridTemplateColumns = window.innerWidth < 640 ? '1fr' : '1fr 1fr';
+            });
+        }
+        window.addEventListener('resize', checkMobile);
+
+        // ── Init ──────────────────────────────────────────────────────────────
+        loadRoadmapList();
+    </script>
+</body>
+
+</html>

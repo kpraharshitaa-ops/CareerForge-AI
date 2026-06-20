@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Discovery — CareerForge AI</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <style>
+        .mock-notice {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(245, 158, 11, 0.10);
+            border: 1px solid rgba(245, 158, 11, 0.30);
+            border-radius: var(--radius);
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            color: #B45309;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .jobs-search-bar {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto auto;
+            gap: 12px;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            border: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .jobs-search-bar {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .search-field {
+            position: relative;
+        }
+
+        .search-field .field-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            pointer-events: none;
+            color: var(--text-light);
+        }
+
+        .search-field input,
+        .search-field select {
+            width: 100%;
+            padding: 11px 16px 11px 42px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--bg-input);
+            color: var(--text);
+            font-size: 0.9rem;
+            font-family: inherit;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-field input:focus,
+        .search-field select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.10);
+            background: var(--bg-card);
+        }
+
+        .search-field select {
+            padding-left: 42px;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .jobs-results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .jobs-count {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .jobs-count span {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .job-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .job-meta {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .loading-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
+        }
+
+        .skeleton-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            border: 1px solid var(--border);
+        }
+
+        .skeleton-line {
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">🚀 <span>CareerForge AI</span></a>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"></button>
+                <span style="font-size:0.9rem;font-weight:600;color:var(--text-muted)">Welcome, <span id="navUserName"
+                        style="color:var(--primary)">User</span></span>
+                <button onclick="Auth.logout()" class="btn btn-ghost btn-sm">Logout</button>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div style="padding:20px 24px;border-bottom:1px solid var(--border)">
+                <div style="display:flex;align-items:center;gap:12px">
+                    <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.1rem"
+                        id="sidebarAvatar">U</div>
+                    <div>
+                        <div style="font-weight:700;font-size:0.95rem" id="sidebarName">Loading...</div>
+                        <div style="font-size:0.75rem;color:var(--text-muted)" id="sidebarEmail"></div>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Overview</div>
+                    <a href="/dashboard" class="sidebar-link"><span class="sidebar-icon">🏠</span>Dashboard</a>
+                    <a href="/resume" class="sidebar-link"><span class="sidebar-icon">📄</span>Resume Analyzer</a>
+                    <a href="/careers" class="sidebar-link"><span class="sidebar-icon">🎯</span>Career Roles</a>
+                    <a href="/roadmap" class="sidebar-link"><span class="sidebar-icon">🗺️</span>Roadmaps</a>
+                    <a href="/jobs" class="sidebar-link active"><span class="sidebar-icon">💼</span>Job Discovery</a>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Interview Prep</div>
+                    <a href="/hr-interview" class="sidebar-link"><span class="sidebar-icon">🤝</span>HR Interview</a>
+                    <a href="/technical-interview" class="sidebar-link"><span
+                            class="sidebar-icon">💻</span>Technical</a>
+                    <a href="/aptitude" class="sidebar-link"><span class="sidebar-icon">🧮</span>Aptitude</a>
+                    <a href="/voice-interview" class="sidebar-link"><span class="sidebar-icon">🎤</span>Voice Mock</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1 class="page-title">💼 Job Discovery</h1>
+                <p class="page-subtitle">Find your next opportunity from thousands of openings</p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="jobs-search-bar">
+                <div class="search-field">
+                    <span class="field-icon">🔍</span>
+                    <input type="text" id="jobQuery" placeholder="Job title, role, or keyword…"
+                        value="software developer" />
+                </div>
+                <div class="search-field">
+                    <span class="field-icon">📍</span>
+                    <input type="text" id="jobLocation" placeholder="Location (e.g. Bangalore, Remote)" value="India" />
+                </div>
+                <div class="search-field">
+                    <span class="field-icon">🎓</span>
+                    <select id="jobExperience">
+                        <option value="">All Experience Levels</option>
+                        <option value="entry_level">Entry Level (0–2 yrs)</option>
+                        <option value="mid_level">Mid Level (2–5 yrs)</option>
+                        <option value="senior_level">Senior Level (5+ yrs)</option>
+                        <option value="director">Director / Lead</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="searchBtn" onclick="searchJobs(1)">
+                    🔍 Search
+                </button>
+            </div>
+
+            <!-- Mock data notice (hidden by default) -->
+            <div class="mock-notice hidden" id="mockNotice">
+                ⚠️ <strong>Demo Mode:</strong> Showing sample job listings. Connect a live Jobs API for real-time
+                results.
+            </div>
+
+            <!-- Results header -->
+            <div class="jobs-results-header" id="resultsHeader" style="display:none">
+                <div class="jobs-count">Showing <span id="jobCountText">0</span> jobs</div>
+                <div style="font-size:0.82rem;color:var(--text-muted)" id="searchSummary"></div>
+            </div>
+
+            <!-- Loading state -->
+            <div id="loadingState" class="loading-grid hidden">
+                <!-- Skeleton cards injected by JS -->
+            </div>
+
+            <!-- Jobs Grid -->
+            <div class="jobs-grid" id="jobsGrid"></div>
+
+            <!-- Empty State -->
+            <div class="empty-state hidden" id="emptyState">
+                <div class="empty-state-icon">🔍</div>
+                <div class="empty-state-title">No jobs found</div>
+                <p style="font-size:0.9rem;max-width:360px;margin:0 auto">
+                    Try adjusting your search terms or location to find more opportunities.
+                </p>
+                <button class="btn btn-primary mt-16" style="margin-top:16px" onclick="searchJobs(1, true)">
+                    Reset Search
+                </button>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination"></div>
+        </main>
+    </div>
+
+    <script src="/js/utils.js"></script>
+    <script>
+        Auth.requireAuth();
+        ThemeManager.init();
+
+        // ── User info ─────────────────────────────────────────────────────────
+        const user = Auth.getUser();
+        if (user) {
+            document.getElementById('navUserName').textContent = user.fullName?.split(' ')[0] || 'User';
+            document.getElementById('sidebarName').textContent = user.fullName || 'User';
+            document.getElementById('sidebarEmail').textContent = user.email || '';
+            document.getElementById('sidebarAvatar').textContent = (user.fullName || 'U')[0].toUpperCase();
+        }
+
+        // Hamburger
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('mobile-open');
+        });
+
+        // ── State ─────────────────────────────────────────────────────────────
+        let currentPage = 1;
+        let totalJobs = 0;
+        const JOBS_PER_PAGE = 10;
+
+        // Employment type display map
+        const EMP_TYPE_LABELS = {
+            FULLTIME: 'Full-Time',
+            PARTTIME: 'Part-Time',
+            CONTRACTOR: 'Contract',
+            INTERN: 'Internship',
+            TEMPORARY: 'Temporary'
+        };
+
+        const EMP_TYPE_COLORS = {
+            FULLTIME: 'tag-blue',
+            PARTTIME: 'tag-orange',
+            CONTRACTOR: 'tag-cyan',
+            INTERN: 'tag-green',
+            TEMPORARY: 'tag-gray'
+        };
+
+        // Company logo placeholder emojis
+        const COMPANY_EMOJIS = ['🏢', '🏗️', '💡', '🚀', '⚡', '🌐', '🔬', '🎯', '🛠️', '📊'];
+
+        // ── Skeleton loader ───────────────────────────────────────────────────
+        function showLoading() {
+            const loadingEl = document.getElementById('loadingState');
+            loadingEl.classList.remove('hidden');
+            document.getElementById('jobsGrid').innerHTML = '';
+            document.getElementById('emptyState').classList.add('hidden');
+            document.getElementById('pagination').innerHTML = '';
+
+            loadingEl.innerHTML = Array(6).fill(0).map(() => `
+                <div class="skeleton-card">
+                    <div style="display:flex;gap:14px;margin-bottom:16px">
+                        <div class="skeleton skeleton-line" style="width:48px;height:48px;border-radius:var(--radius);flex-shrink:0"></div>
+                        <div style="flex:1">
+                            <div class="skeleton skeleton-line" style="height:16px;width:60%"></div>
+                            <div class="skeleton skeleton-line" style="height:12px;width:40%;margin-top:8px"></div>
+                        </div>
+                    </div>
+                    <div class="skeleton skeleton-line" style="height:12px;width:80%"></div>
+                    <div class="skeleton skeleton-line" style="height:12px;width:55%"></div>
+                    <div style="display:flex;gap:8px;margin-top:12px">
+                        <div class="skeleton skeleton-line" style="height:24px;width:80px"></div>
+                        <div class="skeleton skeleton-line" style="height:24px;width:80px"></div>
+                        <div class="skeleton skeleton-line" style="height:24px;width:80px"></div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingState').classList.add('hidden');
+        }
+
+        // ── Render a single job card ──────────────────────────────────────────
+        function renderJobCard(job, index) {
+            const empType = job.job_employment_type || 'FULLTIME';
+            const empLabel = EMP_TYPE_LABELS[empType] || empType;
+            const empColor = EMP_TYPE_COLORS[empType] || 'tag-gray';
+            const salary = UI.formatSalary(job.job_min_salary, job.job_max_salary, '₹');
+            const skills = (job.job_required_skills || []).slice(0, 5);
+            const logoEmoji = COMPANY_EMOJIS[index % COMPANY_EMOJIS.length];
+            const postedAgo = job.job_posted_at_datetime_utc ? UI.timeAgo(job.job_posted_at_datetime_utc) : '';
+            const applyLink = job.job_apply_link || '#';
+
+            return `
+            <div class="job-card animate-fadeIn">
+                <div class="job-card-header">
+                    <div class="company-logo">${logoEmoji}</div>
+                    <div style="flex:1;min-width:0">
+                        <div class="job-title">${escHtml(job.job_title || 'Untitled')}</div>
+                        <div class="company-name">${escHtml(job.employer_name || 'Unknown Company')}</div>
+                    </div>
+                </div>
+
+                <div class="job-tags">
+                    <span class="tag ${empColor}">${empLabel}</span>
+                    ${job.job_city ? `<span class="tag tag-gray">📍 ${escHtml(job.job_city)}${job.job_country ? ', ' + escHtml(job.job_country) : ''}</span>` : ''}
+                </div>
+
+                <div class="job-salary">
+                    💰 ${salary}
+                </div>
+
+                ${skills.length > 0 ? `
+                <div class="skills-chips mb-16" style="margin-bottom:16px">
+                    ${skills.map(s => `<span class="skill-chip">${escHtml(s)}</span>`).join('')}
+                    ${job.job_required_skills?.length > 5 ? `<span class="skill-chip" style="background:var(--bg-input);color:var(--text-muted)">+${job.job_required_skills.length - 5} more</span>` : ''}
+                </div>` : ''}
+
+                <div class="job-card-footer">
+                    <div class="job-meta">
+                        ${postedAgo ? `🕐 ${postedAgo}` : ''}
+                    </div>
+                    <a href="${applyLink}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                        Apply Now →
+                    </a>
+                </div>
+            </div>`;
+        }
+
+        // ── Render pagination ─────────────────────────────────────────────────
+        function renderPagination(total, page) {
+            const totalPages = Math.ceil(total / JOBS_PER_PAGE);
+            if (totalPages <= 1) {
+                document.getElementById('pagination').innerHTML = '';
+                return;
+            }
+
+            const pagEl = document.getElementById('pagination');
+            let html = '';
+
+            // Prev
+            html += `<button class="page-btn" ${page === 1 ? 'disabled' : ''} onclick="searchJobs(${page - 1})">‹</button>`;
+
+            // Page numbers (show max 5 around current)
+            const start = Math.max(1, page - 2);
+            const end = Math.min(totalPages, page + 2);
+
+            if (start > 1) {
+                html += `<button class="page-btn" onclick="searchJobs(1)">1</button>`;
+                if (start > 2) html += `<span class="page-btn" style="cursor:default;pointer-events:none">…</span>`;
+            }
+
+            for (let i = start; i <= end; i++) {
+                html += `<button class="page-btn ${i === page ? 'active' : ''}" onclick="searchJobs(${i})">${i}</button>`;
+            }
+
+            if (end < totalPages) {
+                if (end < totalPages - 1) html += `<span class="page-btn" style="cursor:default;pointer-events:none">…</span>`;
+                html += `<button class="page-btn" onclick="searchJobs(${totalPages})">${totalPages}</button>`;
+            }
+
+            // Next
+            html += `<button class="page-btn" ${page === totalPages ? 'disabled' : ''} onclick="searchJobs(${page + 1})">›</button>`;
+
+            pagEl.innerHTML = html;
+        }
+
+        // ── HTML escape helper ────────────────────────────────────────────────
+        function escHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // ── Main search function ──────────────────────────────────────────────
+        async function searchJobs(page = 1, reset = false) {
+            if (reset) {
+                document.getElementById('jobQuery').value = 'software developer';
+                document.getElementById('jobLocation').value = 'India';
+                document.getElementById('jobExperience').value = '';
+            }
+
+            const query = document.getElementById('jobQuery').value.trim() || 'software developer';
+            const location = document.getElementById('jobLocation').value.trim() || 'India';
+            const experience = document.getElementById('jobExperience').value;
+
+            currentPage = page;
+
+            // UI loading state
+            showLoading();
+            document.getElementById('resultsHeader').style.display = 'none';
+            document.getElementById('mockNotice').classList.add('hidden');
+
+            const searchBtn = document.getElementById('searchBtn');
+            UI.setLoading(searchBtn, true, 'Searching…');
+
+            try {
+                let params = `query=${encodeURIComponent(query)}&location=${encodeURIComponent(location)}&page=${page}`;
+                if (experience) params += `&experience_level=${encodeURIComponent(experience)}`;
+
+                const data = await API.get(`/jobs/search?${params}`);
+
+                hideLoading();
+                UI.setLoading(searchBtn, false);
+
+                if (!data || !data.success) {
+                    throw new Error('API returned unsuccessful response');
+                }
+
+                const jobs = data.data || [];
+                totalJobs = data.total || jobs.length;
+
+                // Mock notice
+                if (data.isMock) {
+                    document.getElementById('mockNotice').classList.remove('hidden');
+                }
+
+                // Results header
+                document.getElementById('resultsHeader').style.display = 'flex';
+                document.getElementById('jobCountText').textContent = totalJobs;
+                document.getElementById('searchSummary').textContent =
+                    `"${query}"${location ? ' in ' + location : ''}${experience ? ' · ' + document.getElementById('jobExperience').options[document.getElementById('jobExperience').selectedIndex].text : ''}`;
+
+                if (jobs.length === 0) {
+                    document.getElementById('jobsGrid').innerHTML = '';
+                    document.getElementById('emptyState').classList.remove('hidden');
+                    document.getElementById('pagination').innerHTML = '';
+                    return;
+                }
+
+                // Render cards
+                document.getElementById('jobsGrid').innerHTML = jobs.map((job, i) => renderJobCard(job, i)).join('');
+                renderPagination(totalJobs, page);
+
+                // Scroll to top of content smoothly
+                document.querySelector('.main-content').scrollTo({ top: 0, behavior: 'smooth' });
+
+            } catch (err) {
+                console.error('Job search error:', err);
+                hideLoading();
+                UI.setLoading(searchBtn, false);
+                Toast.error('Failed to load jobs. Showing demo data.');
+
+                // Fallback to mock data
+                const mockJobs = getMockJobs(query);
+                totalJobs = mockJobs.length;
+
+                document.getElementById('mockNotice').classList.remove('hidden');
+                document.getElementById('resultsHeader').style.display = 'flex';
+                document.getElementById('jobCountText').textContent = totalJobs;
+                document.getElementById('searchSummary').textContent = `Demo results for "${query}"`;
+                document.getElementById('jobsGrid').innerHTML = mockJobs.map((job, i) => renderJobCard(job, i)).join('');
+                renderPagination(totalJobs, 1);
+            }
+        }
+
+        // ── Client-side mock fallback ─────────────────────────────────────────
+        function getMockJobs(query = '') {
+            const jobs = [
+                { job_id: '1', job_title: 'Frontend Developer', employer_name: 'TechCorp Inc.', job_city: 'Bangalore', job_country: 'IN', job_employment_type: 'FULLTIME', job_min_salary: 600000, job_max_salary: 1200000, job_apply_link: '#', job_posted_at_datetime_utc: new Date().toISOString(), job_required_skills: ['React', 'TypeScript', 'CSS', 'JavaScript'] },
+                { job_id: '2', job_title: 'Backend Engineer', employer_name: 'StartupXYZ', job_city: 'Mumbai', job_country: 'IN', job_employment_type: 'FULLTIME', job_min_salary: 800000, job_max_salary: 1500000, job_apply_link: '#', job_posted_at_datetime_utc: new Date(Date.now() - 86400000).toISOString(), job_required_skills: ['Node.js', 'PostgreSQL', 'Docker', 'REST APIs'] },
+                { job_id: '3', job_title: 'Full Stack Developer', employer_name: 'Global Solutions Ltd.', job_city: 'Hyderabad', job_country: 'IN', job_employment_type: 'FULLTIME', job_min_salary: 700000, job_max_salary: 1400000, job_apply_link: '#', job_posted_at_datetime_utc: new Date(Date.now() - 172800000).toISOString(), job_required_skills: ['React', 'Node.js', 'MongoDB', 'Git'] },
+                { job_id: '4', job_title: 'Data Scientist', employer_name: 'Analytics Pro', job_city: 'Pune', job_country: 'IN', job_employment_type: 'FULLTIME', job_min_salary: 1000000, job_max_salary: 2000000, job_apply_link: '#', job_posted_at_datetime_utc: new Date(Date.now() - 259200000).toISOString(), job_required_skills: ['Python', 'Machine Learning', 'SQL', 'Statistics'] },
+                { job_id: '5', job_title: 'DevOps Engineer', employer_name: 'CloudFirst Technologies', job_city: 'Chennai', job_country: 'IN', job_employment_type: 'FULLTIME', job_min_salary: 900000, job_max_salary: 1800000, job_apply_link: '#', job_posted_at_datetime_utc: new Date(Date.now() - 345600000).toISOString(), job_required_skills: ['Kubernetes', 'Docker', 'AWS', 'Terraform'] },
+                { job_id: '6', job_title: 'UI/UX Designer', employer_name: 'Design Studio Co.', job_city: 'Delhi', job_country: 'IN', job_employment_type: 'FULLTIME', job_min_salary: 500000, job_max_salary: 1000000, job_apply_link: '#', job_posted_at_datetime_utc: new Date(Date.now() - 432000000).toISOString(), job_required_skills: ['Figma', 'UI Design', 'Prototyping', 'User Research'] },
+                { job_id: '7', job_title: 'Machine Learning Engineer', employer_name: 'AI Ventures', job_city: 'Bangalore', job_country: 'IN', job_employment_type: 'FULLTIME', job_min_salary: 1200000, job_max_salary: 2500000, job_apply_link: '#', job_posted_at_datetime_utc: new Date(Date.now() - 518400000).toISOString(), job_required_skills: ['Python', 'TensorFlow', 'PyTorch', 'MLOps'] },
+                { job_id: '8', job_title: 'React Native Developer', employer_name: 'MobileFirst Apps', job_city: 'Noida', job_country: 'IN', job_employment_type: 'PARTTIME', job_min_salary: 600000, job_max_salary: 1200000, job_apply_link: '#', job_posted_at_datetime_utc: new Date(Date.now() - 604800000).toISOString(), job_required_skills: ['React Native', 'JavaScript', 'iOS', 'Android'] },
+                { job_id: '9', job_title: 'Java Developer', employer_name: 'Enterprise Systems Corp', job_city: 'Bangalore', job_country: 'IN', job_employment_type: 'CONTRACTOR', job_min_salary: 700000, job_max_salary: 1400000, job_apply_link: '#', job_posted_at_datetime_utc: new Date(Date.now() - 691200000).toISOString(), job_required_skills: ['Java', 'Spring Boot', 'Microservices', 'SQL'] },
+                { job_id: '10', job_title: 'Cybersecurity Analyst', employer_name: 'SecureNet Solutions', job_city: 'Mumbai', job_country: 'IN', job_employment_type: 'FULLTIME', job_min_salary: 800000, job_max_salary: 1600000, job_apply_link: '#', job_posted_at_datetime_utc: new Date(Date.now() - 777600000).toISOString(), job_required_skills: ['SIEM', 'Network Security', 'Incident Response', 'Linux'] }
+            ];
+
+            if (!query) return jobs;
+            const q = query.toLowerCase();
+            const filtered = jobs.filter(j =>
+                j.job_title.toLowerCase().includes(q) ||
+                (j.job_required_skills || []).some(s => s.toLowerCase().includes(q))
+            );
+            return filtered.length > 0 ? filtered : jobs;
+        }
+
+        // ── Enter key support ─────────────────────────────────────────────────
+        ['jobQuery', 'jobLocation'].forEach(id => {
+            document.getElementById(id).addEventListener('keydown', e => {
+                if (e.key === 'Enter') searchJobs(1);
+            });
+        });
+
+        // ── Auto-load on page open ─────────────────────────────────────────────
+        searchJobs(1);
+    </script>
+</body>
+
+</html>

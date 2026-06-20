@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Analyzer — CareerForge AI</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">🚀 <span>CareerForge AI</span></a>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"></button>
+                <span style="font-size:0.9rem;font-weight:600;color:var(--text-muted)">Welcome, <span id="navUserName"
+                        style="color:var(--primary)">User</span></span>
+                <button onclick="Auth.logout()" class="btn btn-ghost btn-sm">Logout</button>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar" id="sidebar">
+            <div style="padding:20px 24px;border-bottom:1px solid var(--border)">
+                <div style="display:flex;align-items:center;gap:12px">
+                    <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.1rem"
+                        id="sidebarAvatar">U</div>
+                    <div>
+                        <div style="font-weight:700;font-size:0.95rem" id="sidebarName">Loading...</div>
+                        <div style="font-size:0.75rem;color:var(--text-muted)" id="sidebarEmail"></div>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Overview</div>
+                    <a href="/dashboard" class="sidebar-link"><span class="sidebar-icon">🏠</span>Dashboard</a>
+                    <a href="/resume" class="sidebar-link active"><span class="sidebar-icon">📄</span>Resume
+                        Analyzer</a>
+                    <a href="/careers" class="sidebar-link"><span class="sidebar-icon">🎯</span>Career Roles</a>
+                    <a href="/roadmap" class="sidebar-link"><span class="sidebar-icon">🗺️</span>Roadmaps</a>
+                    <a href="/jobs" class="sidebar-link"><span class="sidebar-icon">💼</span>Job Discovery</a>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Interview Prep</div>
+                    <a href="/hr-interview" class="sidebar-link"><span class="sidebar-icon">🤝</span>HR Interview</a>
+                    <a href="/technical-interview" class="sidebar-link"><span
+                            class="sidebar-icon">💻</span>Technical</a>
+                    <a href="/aptitude" class="sidebar-link"><span class="sidebar-icon">🧮</span>Aptitude</a>
+                    <a href="/voice-interview" class="sidebar-link"><span class="sidebar-icon">🎤</span>Voice Mock</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="page-header">
+                <h1 class="page-title">📄 Resume Analyzer</h1>
+                <p class="page-subtitle">AI-powered analysis to optimize your resume for ATS and recruiters</p>
+            </div>
+
+            <!-- Upload Section -->
+            <div id="uploadSection">
+                <div class="card mb-24" style="margin-bottom:24px">
+                    <div class="card-body">
+                        <h3 style="font-size:1rem;font-weight:700;margin-bottom:16px">📤 Upload Your Resume</h3>
+                        <div class="upload-zone" id="uploadZone">
+                            <div class="upload-icon">📄</div>
+                            <div class="upload-title">Drag & drop your resume here</div>
+                            <div class="upload-desc">PDF, DOCX, or TXT • Max 5MB</div>
+                            <input type="file" id="resumeFile" accept=".pdf,.docx,.doc,.txt" style="display:none" />
+                        </div>
+                        <div id="filePreview"
+                            style="display:none;margin-top:16px;padding:14px;background:rgba(34,197,94,0.08);border-radius:var(--radius);border:1px solid rgba(34,197,94,0.2)">
+                            <div style="display:flex;align-items:center;gap:10px">
+                                <span>📎</span><span id="fileName" style="font-weight:600;font-size:0.9rem"></span>
+                                <button onclick="resetFile()"
+                                    style="margin-left:auto;background:none;border:none;color:var(--danger);cursor:pointer">✕
+                                    Remove</button>
+                            </div>
+                        </div>
+                        <div id="uploadProgress" style="display:none;margin-top:16px">
+                            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+                                <div class="spinner spinner-sm"></div>
+                                <span id="uploadStatus" style="font-size:0.9rem;color:var(--text-muted)">Analyzing
+                                    resume with AI...</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressBar" style="width:0%"></div>
+                            </div>
+                        </div>
+                        <div id="uploadError" style="display:none;margin-top:12px" class="form-error"></div>
+                        <button id="analyzeBtn" class="btn btn-primary"
+                            style="margin-top:16px;width:100%;justify-content:center" disabled>🔍 Analyze
+                            Resume</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" style="display:none">
+                <div
+                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px">
+                    <h2 style="font-size:1.2rem;font-weight:800">✅ Analysis Results</h2>
+                    <button onclick="resetAnalysis()" class="btn btn-outline btn-sm">📤 Analyze New Resume</button>
+                </div>
+
+                <!-- Score Cards -->
+                <div class="eval-scores-grid" id="scoreCards"></div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px">
+                    <!-- Strengths -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title mb-16" style="color:var(--success)">✅ Strengths</div>
+                            <ul id="strengthsList" style="display:flex;flex-direction:column;gap:10px"></ul>
+                        </div>
+                    </div>
+                    <!-- Weaknesses -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title mb-16" style="color:var(--danger)">⚠️ Areas to Improve</div>
+                            <ul id="weaknessesList" style="display:flex;flex-direction:column;gap:10px"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Missing Skills & Suggestions -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title mb-16">🎯 Missing Skills</div>
+                            <div id="missingSkills" class="skills-chips"></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title mb-16">💡 Improvement Suggestions</div>
+                            <ol id="improvementsList"
+                                style="padding-left:20px;display:flex;flex-direction:column;gap:10px"></ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detected Skills -->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title mb-16">🛠️ Detected Skills</div>
+                        <div id="detectedSkills" class="skills-chips"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/utils.js"></script>
+    <script>
+        Auth.requireAuth(); ThemeManager.init();
+        const user = Auth.getUser();
+        if (user) {
+            document.getElementById('navUserName').textContent = user.fullName?.split(' ')[0] || 'User';
+            document.getElementById('sidebarName').textContent = user.fullName;
+            document.getElementById('sidebarEmail').textContent = user.email;
+            document.getElementById('sidebarAvatar').textContent = (user.fullName || 'U')[0].toUpperCase();
+        }
+        document.getElementById('hamburger').addEventListener('click', () => document.getElementById('sidebar').classList.toggle('mobile-open'));
+
+        let selectedFile = null;
+        const uploadZone = document.getElementById('uploadZone');
+        const fileInput = document.getElementById('resumeFile');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+
+        uploadZone.addEventListener('click', () => fileInput.click());
+        uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('drag-over'); });
+        uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('drag-over'));
+        uploadZone.addEventListener('drop', e => { e.preventDefault(); uploadZone.classList.remove('drag-over'); if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); });
+        fileInput.addEventListener('change', e => { if (e.target.files[0]) handleFile(e.target.files[0]); });
+
+        function handleFile(f) {
+            selectedFile = f;
+            document.getElementById('fileName').textContent = f.name + ' (' + (f.size / 1024).toFixed(0) + ' KB)';
+            document.getElementById('filePreview').style.display = 'block';
+            analyzeBtn.disabled = false;
+        }
+        function resetFile() { selectedFile = null; fileInput.value = ''; document.getElementById('filePreview').style.display = 'none'; analyzeBtn.disabled = true; }
+        function resetAnalysis() { document.getElementById('resultsSection').style.display = 'none'; document.getElementById('uploadSection').style.display = 'block'; resetFile(); }
+
+        analyzeBtn.addEventListener('click', async () => {
+            if (!selectedFile) return;
+            const fd = new FormData();
+            fd.append('resume', selectedFile);
+            document.getElementById('uploadProgress').style.display = 'block';
+            document.getElementById('uploadError').style.display = 'none';
+            analyzeBtn.disabled = true;
+            const bar = document.getElementById('progressBar');
+            const status = document.getElementById('uploadStatus');
+            let p = 0;
+            const iv = setInterval(() => { p = Math.min(p + 6, 88); bar.style.width = p + '%'; if (p > 30) status.textContent = 'Extracting content...'; if (p > 60) status.textContent = 'AI generating insights...'; }, 200);
+            try {
+                const res = await API.upload('/resume/upload', fd);
+                clearInterval(iv); bar.style.width = '100%'; status.textContent = 'Analysis complete! ✅';
+                if (res.success) {
+                    setTimeout(() => { document.getElementById('uploadProgress').style.display = 'none'; document.getElementById('uploadSection').style.display = 'none'; renderResults(res.analysis); document.getElementById('resultsSection').style.display = 'block'; }, 800);
+                } else {
+                    document.getElementById('uploadError').textContent = res.message || 'Analysis failed'; document.getElementById('uploadError').style.display = 'block'; document.getElementById('uploadProgress').style.display = 'none'; analyzeBtn.disabled = false;
+                }
+            } catch { clearInterval(iv); document.getElementById('uploadError').textContent = 'Connection error. Try again.'; document.getElementById('uploadError').style.display = 'block'; document.getElementById('uploadProgress').style.display = 'none'; analyzeBtn.disabled = false; }
+        });
+
+        function renderResults(a) {
+            const scoreColor = (s) => s >= 80 ? '#22C55E' : s >= 60 ? '#4F46E5' : s >= 40 ? '#F59E0B' : '#EF4444';
+            document.getElementById('scoreCards').innerHTML = [
+                { label: 'Resume Score', value: a.resumeScore || 0, suffix: '/100' },
+                { label: 'ATS Score', value: a.atsScore || 0, suffix: '%' },
+                { label: 'Skills Found', value: (a.skills || []).length, suffix: '' },
+                { label: 'Experience Level', value: a.experienceLevel || 'N/A', suffix: '' }
+            ].map(s => `<div class="eval-score-card"><div class="eval-score-value" style="color:${typeof s.value === 'number' ? scoreColor(s.value) : 'var(--primary)'}">${s.value}${s.suffix}</div><div class="eval-score-label">${s.label}</div></div>`).join('');
+
+            document.getElementById('strengthsList').innerHTML = (a.strengths || []).map(s => `<li style="display:flex;align-items:flex-start;gap:8px;font-size:0.9rem"><span>✅</span><span>${s}</span></li>`).join('');
+            document.getElementById('weaknessesList').innerHTML = (a.weaknesses || []).map(w => `<li style="display:flex;align-items:flex-start;gap:8px;font-size:0.9rem"><span>⚠️</span><span>${w}</span></li>`).join('');
+            document.getElementById('missingSkills').innerHTML = (a.missingSkills || []).map(s => `<span class="skill-chip" style="background:rgba(239,68,68,0.08);color:var(--danger)">${s}</span>`).join('');
+            document.getElementById('improvementsList').innerHTML = (a.improvements || []).map(i => `<li style="font-size:0.9rem;color:var(--text-muted)">${i}</li>`).join('');
+            document.getElementById('detectedSkills').innerHTML = (a.skills || []).map(s => `<span class="skill-chip">${s}</span>`).join('');
+
+            // Animate progress bars
+            setTimeout(() => document.querySelectorAll('[data-target]').forEach(b => b.style.width = b.dataset.target + '%'), 200);
+        }
+
+        // Load existing analysis
+        async function loadExisting() {
+            try {
+                const res = await API.get('/resume/analysis');
+                if (res.success && res.analysis) {
+                    document.getElementById('uploadSection').style.display = 'none';
+                    renderResults(res.analysis);
+                    document.getElementById('resultsSection').style.display = 'block';
+                }
+            } catch { }
+        }
+        loadExisting();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,953 @@
+[
+    {
+        "id": "frontend-developer",
+        "title": "Frontend Developer",
+        "category": "Web Development",
+        "description": "Builds user interfaces and client-side functionality for web applications.",
+        "avgSalary": "$75,000 - $130,000",
+        "demandLevel": "High",
+        "requiredSkills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "TypeScript",
+            "Git",
+            "REST APIs",
+            "Responsive Design"
+        ],
+        "niceToHave": [
+            "Vue.js",
+            "Next.js",
+            "GraphQL",
+            "Testing",
+            "Webpack",
+            "Figma"
+        ],
+        "responsibilities": [
+            "Build responsive UI components",
+            "Optimize web performance",
+            "Collaborate with designers",
+            "Write clean maintainable code"
+        ],
+        "careerPath": [
+            "Junior Frontend Developer",
+            "Frontend Developer",
+            "Senior Frontend Developer",
+            "Lead Frontend Engineer",
+            "Frontend Architect"
+        ]
+    },
+    {
+        "id": "backend-developer",
+        "title": "Backend Developer",
+        "category": "Web Development",
+        "description": "Develops server-side logic, databases, and APIs for web applications.",
+        "avgSalary": "$80,000 - $145,000",
+        "demandLevel": "High",
+        "requiredSkills": [
+            "Node.js",
+            "Python",
+            "SQL",
+            "REST APIs",
+            "Git",
+            "Authentication",
+            "Docker",
+            "Linux"
+        ],
+        "niceToHave": [
+            "GraphQL",
+            "Redis",
+            "Kubernetes",
+            "AWS",
+            "MongoDB",
+            "Microservices"
+        ],
+        "responsibilities": [
+            "Design and build APIs",
+            "Manage databases",
+            "Ensure security and scalability",
+            "Write server-side logic"
+        ],
+        "careerPath": [
+            "Junior Backend Developer",
+            "Backend Developer",
+            "Senior Backend Developer",
+            "Backend Architect",
+            "Principal Engineer"
+        ]
+    },
+    {
+        "id": "fullstack-developer",
+        "title": "Full Stack Developer",
+        "category": "Web Development",
+        "description": "Handles both frontend and backend development of web applications.",
+        "avgSalary": "$85,000 - $150,000",
+        "demandLevel": "Very High",
+        "requiredSkills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Node.js",
+            "SQL",
+            "Git",
+            "REST APIs"
+        ],
+        "niceToHave": [
+            "TypeScript",
+            "Docker",
+            "AWS",
+            "GraphQL",
+            "Redis",
+            "Testing"
+        ],
+        "responsibilities": [
+            "Build end-to-end features",
+            "Manage databases",
+            "Deploy applications",
+            "Code review"
+        ],
+        "careerPath": [
+            "Junior Full Stack",
+            "Full Stack Developer",
+            "Senior Full Stack",
+            "Tech Lead",
+            "Engineering Manager"
+        ]
+    },
+    {
+        "id": "react-developer",
+        "title": "React Developer",
+        "category": "Web Development",
+        "description": "Specializes in building web applications using React.js ecosystem.",
+        "avgSalary": "$78,000 - $135,000",
+        "demandLevel": "Very High",
+        "requiredSkills": [
+            "React",
+            "JavaScript",
+            "TypeScript",
+            "HTML",
+            "CSS",
+            "Redux",
+            "REST APIs",
+            "Git"
+        ],
+        "niceToHave": [
+            "Next.js",
+            "React Query",
+            "Testing Library",
+            "Storybook",
+            "GraphQL"
+        ],
+        "responsibilities": [
+            "Build React components",
+            "Manage state",
+            "Optimize performance",
+            "Write unit tests"
+        ],
+        "careerPath": [
+            "Junior React Dev",
+            "React Developer",
+            "Senior React Developer",
+            "Frontend Lead",
+            "Frontend Architect"
+        ]
+    },
+    {
+        "id": "angular-developer",
+        "title": "Angular Developer",
+        "category": "Web Development",
+        "description": "Specializes in building enterprise-grade web applications using Angular framework.",
+        "avgSalary": "$75,000 - $130,000",
+        "demandLevel": "Medium",
+        "requiredSkills": [
+            "Angular",
+            "TypeScript",
+            "HTML",
+            "CSS",
+            "RxJS",
+            "Git",
+            "REST APIs",
+            "NgRx"
+        ],
+        "niceToHave": [
+            "Jest",
+            "Karma",
+            "Angular Material",
+            "PWA",
+            "Webpack"
+        ],
+        "responsibilities": [
+            "Build Angular applications",
+            "Implement reactive programming",
+            "Performance optimization",
+            "Enterprise integrations"
+        ],
+        "careerPath": [
+            "Junior Angular Dev",
+            "Angular Developer",
+            "Senior Angular Developer",
+            "Frontend Lead"
+        ]
+    },
+    {
+        "id": "nodejs-developer",
+        "title": "Node.js Developer",
+        "category": "Backend Development",
+        "description": "Builds scalable server-side applications using Node.js and JavaScript runtime.",
+        "avgSalary": "$80,000 - $140,000",
+        "demandLevel": "High",
+        "requiredSkills": [
+            "Node.js",
+            "JavaScript",
+            "Express.js",
+            "REST APIs",
+            "SQL",
+            "MongoDB",
+            "Git",
+            "Authentication"
+        ],
+        "niceToHave": [
+            "TypeScript",
+            "GraphQL",
+            "Redis",
+            "Docker",
+            "AWS",
+            "Microservices"
+        ],
+        "responsibilities": [
+            "Build REST APIs",
+            "Manage server infrastructure",
+            "Database optimization",
+            "Security implementation"
+        ],
+        "careerPath": [
+            "Junior Node.js Dev",
+            "Node.js Developer",
+            "Senior Backend Developer",
+            "Backend Architect"
+        ]
+    },
+    {
+        "id": "java-developer",
+        "title": "Java Developer",
+        "category": "Software Development",
+        "description": "Develops robust enterprise applications using Java and its ecosystem.",
+        "avgSalary": "$85,000 - $150,000",
+        "demandLevel": "High",
+        "requiredSkills": [
+            "Java",
+            "Spring Boot",
+            "SQL",
+            "OOP",
+            "Git",
+            "Maven",
+            "REST APIs",
+            "JUnit"
+        ],
+        "niceToHave": [
+            "Microservices",
+            "Docker",
+            "Kubernetes",
+            "AWS",
+            "Kafka",
+            "Hibernate"
+        ],
+        "responsibilities": [
+            "Build enterprise applications",
+            "Design microservices",
+            "Database management",
+            "Performance optimization"
+        ],
+        "careerPath": [
+            "Junior Java Developer",
+            "Java Developer",
+            "Senior Java Developer",
+            "Java Architect",
+            "Principal Engineer"
+        ]
+    },
+    {
+        "id": "python-developer",
+        "title": "Python Developer",
+        "category": "Software Development",
+        "description": "Builds applications, automation scripts, and data pipelines using Python.",
+        "avgSalary": "$80,000 - $145,000",
+        "demandLevel": "Very High",
+        "requiredSkills": [
+            "Python",
+            "Django",
+            "Flask",
+            "SQL",
+            "REST APIs",
+            "Git",
+            "Linux",
+            "OOP"
+        ],
+        "niceToHave": [
+            "FastAPI",
+            "Celery",
+            "Redis",
+            "Docker",
+            "AWS",
+            "Machine Learning basics"
+        ],
+        "responsibilities": [
+            "Build Python applications",
+            "Create automation scripts",
+            "API development",
+            "Data processing"
+        ],
+        "careerPath": [
+            "Junior Python Dev",
+            "Python Developer",
+            "Senior Python Developer",
+            "Tech Lead"
+        ]
+    },
+    {
+        "id": "software-engineer",
+        "title": "Software Engineer",
+        "category": "Software Development",
+        "description": "Designs, develops, and maintains software systems across various domains.",
+        "avgSalary": "$90,000 - $160,000",
+        "demandLevel": "Very High",
+        "requiredSkills": [
+            "Data Structures",
+            "Algorithms",
+            "OOP",
+            "System Design",
+            "Git",
+            "SQL",
+            "Problem Solving"
+        ],
+        "niceToHave": [
+            "Cloud",
+            "Microservices",
+            "CI/CD",
+            "Docker",
+            "Testing",
+            "Distributed Systems"
+        ],
+        "responsibilities": [
+            "Software design",
+            "Code development",
+            "System architecture",
+            "Technical mentoring"
+        ],
+        "careerPath": [
+            "Software Engineer I",
+            "Software Engineer II",
+            "Senior SWE",
+            "Staff Engineer",
+            "Principal Engineer"
+        ]
+    },
+    {
+        "id": "data-analyst",
+        "title": "Data Analyst",
+        "category": "Data & Analytics",
+        "description": "Analyzes data to generate insights and support business decision making.",
+        "avgSalary": "$65,000 - $115,000",
+        "demandLevel": "High",
+        "requiredSkills": [
+            "SQL",
+            "Python",
+            "Excel",
+            "Data Visualization",
+            "Statistics",
+            "Tableau",
+            "Power BI"
+        ],
+        "niceToHave": [
+            "R",
+            "Machine Learning",
+            "ETL",
+            "Big Data",
+            "Spark",
+            "Looker"
+        ],
+        "responsibilities": [
+            "Analyze datasets",
+            "Build dashboards",
+            "Write SQL queries",
+            "Present insights"
+        ],
+        "careerPath": [
+            "Junior Data Analyst",
+            "Data Analyst",
+            "Senior Data Analyst",
+            "Analytics Manager",
+            "Director of Analytics"
+        ]
+    },
+    {
+        "id": "data-scientist",
+        "title": "Data Scientist",
+        "category": "Data & Analytics",
+        "description": "Uses statistical and machine learning techniques to extract value from data.",
+        "avgSalary": "$100,000 - $170,000",
+        "demandLevel": "Very High",
+        "requiredSkills": [
+            "Python",
+            "Machine Learning",
+            "Statistics",
+            "SQL",
+            "Pandas",
+            "NumPy",
+            "Scikit-learn",
+            "Data Visualization"
+        ],
+        "niceToHave": [
+            "TensorFlow",
+            "PyTorch",
+            "Spark",
+            "Deep Learning",
+            "NLP",
+            "A/B Testing"
+        ],
+        "responsibilities": [
+            "Build ML models",
+            "Statistical analysis",
+            "Feature engineering",
+            "Model deployment"
+        ],
+        "careerPath": [
+            "Junior Data Scientist",
+            "Data Scientist",
+            "Senior Data Scientist",
+            "Lead Data Scientist",
+            "Head of Data Science"
+        ]
+    },
+    {
+        "id": "ml-engineer",
+        "title": "Machine Learning Engineer",
+        "category": "AI & Machine Learning",
+        "description": "Develops and deploys machine learning models into production environments.",
+        "avgSalary": "$110,000 - $185,000",
+        "demandLevel": "Very High",
+        "requiredSkills": [
+            "Python",
+            "Machine Learning",
+            "TensorFlow",
+            "PyTorch",
+            "MLOps",
+            "SQL",
+            "Docker",
+            "Cloud"
+        ],
+        "niceToHave": [
+            "Kubernetes",
+            "Spark",
+            "Deep Learning",
+            "NLP",
+            "Computer Vision",
+            "Airflow"
+        ],
+        "responsibilities": [
+            "Train ML models",
+            "Deploy models to production",
+            "Monitor model performance",
+            "Build ML pipelines"
+        ],
+        "careerPath": [
+            "Junior ML Engineer",
+            "ML Engineer",
+            "Senior ML Engineer",
+            "ML Lead",
+            "AI/ML Director"
+        ]
+    },
+    {
+        "id": "ai-engineer",
+        "title": "AI Engineer",
+        "category": "AI & Machine Learning",
+        "description": "Designs and implements AI systems and solutions using cutting-edge techniques.",
+        "avgSalary": "$120,000 - $200,000",
+        "demandLevel": "Very High",
+        "requiredSkills": [
+            "Python",
+            "Deep Learning",
+            "NLP",
+            "LLMs",
+            "Transformers",
+            "PyTorch",
+            "Cloud AI",
+            "APIs"
+        ],
+        "niceToHave": [
+            "Langchain",
+            "Vector Databases",
+            "Fine-tuning",
+            "RAG",
+            "Computer Vision",
+            "Reinforcement Learning"
+        ],
+        "responsibilities": [
+            "Build AI applications",
+            "LLM integration",
+            "Prompt engineering",
+            "AI system design"
+        ],
+        "careerPath": [
+            "AI Engineer",
+            "Senior AI Engineer",
+            "AI Research Engineer",
+            "AI Architect",
+            "VP of AI"
+        ]
+    },
+    {
+        "id": "devops-engineer",
+        "title": "DevOps Engineer",
+        "category": "DevOps & Cloud",
+        "description": "Bridges development and operations through automation, CI/CD, and infrastructure management.",
+        "avgSalary": "$95,000 - $165,000",
+        "demandLevel": "Very High",
+        "requiredSkills": [
+            "Linux",
+            "Docker",
+            "Kubernetes",
+            "CI/CD",
+            "Git",
+            "Bash",
+            "AWS/GCP/Azure",
+            "Terraform"
+        ],
+        "niceToHave": [
+            "Ansible",
+            "Prometheus",
+            "Grafana",
+            "ELK Stack",
+            "Jenkins",
+            "ArgoCD"
+        ],
+        "responsibilities": [
+            "Manage CI/CD pipelines",
+            "Infrastructure automation",
+            "Container orchestration",
+            "Monitoring and alerting"
+        ],
+        "careerPath": [
+            "Junior DevOps",
+            "DevOps Engineer",
+            "Senior DevOps",
+            "DevOps Architect",
+            "VP Engineering"
+        ]
+    },
+    {
+        "id": "cloud-engineer",
+        "title": "Cloud Engineer",
+        "category": "DevOps & Cloud",
+        "description": "Designs and manages cloud infrastructure for scalable and reliable applications.",
+        "avgSalary": "$100,000 - $175,000",
+        "demandLevel": "Very High",
+        "requiredSkills": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Terraform",
+            "Docker",
+            "Kubernetes",
+            "Linux",
+            "Networking"
+        ],
+        "niceToHave": [
+            "CDK",
+            "Serverless",
+            "Cost Optimization",
+            "Security",
+            "Multi-cloud",
+            "Pulumi"
+        ],
+        "responsibilities": [
+            "Design cloud architecture",
+            "Cost optimization",
+            "Security implementation",
+            "Disaster recovery"
+        ],
+        "careerPath": [
+            "Cloud Associate",
+            "Cloud Engineer",
+            "Senior Cloud Engineer",
+            "Cloud Architect",
+            "Principal Cloud Architect"
+        ]
+    },
+    {
+        "id": "cybersecurity-analyst",
+        "title": "Cybersecurity Analyst",
+        "category": "Security",
+        "description": "Protects organizations from cyber threats by monitoring and analyzing security events.",
+        "avgSalary": "$85,000 - $145,000",
+        "demandLevel": "Very High",
+        "requiredSkills": [
+            "Network Security",
+            "SIEM",
+            "Threat Analysis",
+            "Incident Response",
+            "Linux",
+            "Security Tools",
+            "Risk Assessment"
+        ],
+        "niceToHave": [
+            "CEH",
+            "CISSP",
+            "Penetration Testing",
+            "Forensics",
+            "Cloud Security",
+            "SOAR"
+        ],
+        "responsibilities": [
+            "Monitor security events",
+            "Incident response",
+            "Vulnerability assessments",
+            "Security reporting"
+        ],
+        "careerPath": [
+            "SOC Analyst",
+            "Security Analyst",
+            "Senior Security Analyst",
+            "Security Manager",
+            "CISO"
+        ]
+    },
+    {
+        "id": "security-engineer",
+        "title": "Security Engineer",
+        "category": "Security",
+        "description": "Designs and implements security systems to protect infrastructure and applications.",
+        "avgSalary": "$110,000 - $180,000",
+        "demandLevel": "High",
+        "requiredSkills": [
+            "Application Security",
+            "Network Security",
+            "Penetration Testing",
+            "Python",
+            "Cloud Security",
+            "IAM",
+            "Cryptography"
+        ],
+        "niceToHave": [
+            "Zero Trust",
+            "SAST/DAST",
+            "Bug Bounty",
+            "DevSecOps",
+            "Kubernetes Security"
+        ],
+        "responsibilities": [
+            "Security architecture",
+            "Penetration testing",
+            "Code security reviews",
+            "Security automation"
+        ],
+        "careerPath": [
+            "Security Analyst",
+            "Security Engineer",
+            "Senior Security Engineer",
+            "Security Architect",
+            "CISO"
+        ]
+    },
+    {
+        "id": "uiux-designer",
+        "title": "UI/UX Designer",
+        "category": "Design",
+        "description": "Creates intuitive, visually appealing user interfaces and experience designs.",
+        "avgSalary": "$70,000 - $130,000",
+        "demandLevel": "High",
+        "requiredSkills": [
+            "Figma",
+            "UI Design",
+            "UX Research",
+            "Wireframing",
+            "Prototyping",
+            "Design Systems",
+            "User Testing"
+        ],
+        "niceToHave": [
+            "Adobe XD",
+            "Sketch",
+            "Motion Design",
+            "HTML/CSS basics",
+            "Accessibility"
+        ],
+        "responsibilities": [
+            "Design user interfaces",
+            "Conduct user research",
+            "Create prototypes",
+            "Maintain design systems"
+        ],
+        "careerPath": [
+            "Junior Designer",
+            "UI/UX Designer",
+            "Senior Designer",
+            "Design Lead",
+            "Head of Design"
+        ]
+    },
+    {
+        "id": "qa-engineer",
+        "title": "QA Engineer",
+        "category": "Quality Assurance",
+        "description": "Ensures software quality through systematic testing and quality processes.",
+        "avgSalary": "$65,000 - $120,000",
+        "demandLevel": "Medium",
+        "requiredSkills": [
+            "Manual Testing",
+            "Test Planning",
+            "Bug Tracking",
+            "Selenium",
+            "API Testing",
+            "SQL",
+            "JIRA"
+        ],
+        "niceToHave": [
+            "Cypress",
+            "Postman",
+            "Performance Testing",
+            "CI/CD",
+            "Python",
+            "Mobile Testing"
+        ],
+        "responsibilities": [
+            "Write test cases",
+            "Execute test plans",
+            "Bug reporting",
+            "Regression testing"
+        ],
+        "careerPath": [
+            "Junior QA",
+            "QA Engineer",
+            "Senior QA Engineer",
+            "QA Lead",
+            "QA Manager"
+        ]
+    },
+    {
+        "id": "automation-tester",
+        "title": "Automation Tester",
+        "category": "Quality Assurance",
+        "description": "Builds and maintains automated test suites to ensure software reliability.",
+        "avgSalary": "$75,000 - $130,000",
+        "demandLevel": "Medium",
+        "requiredSkills": [
+            "Selenium",
+            "Python/Java",
+            "TestNG/JUnit",
+            "CI/CD",
+            "API Testing",
+            "Git",
+            "Test Frameworks"
+        ],
+        "niceToHave": [
+            "Playwright",
+            "Cypress",
+            "Performance Testing",
+            "Mobile Automation",
+            "BDD/Cucumber"
+        ],
+        "responsibilities": [
+            "Build test automation",
+            "Framework development",
+            "CI/CD integration",
+            "Test reporting"
+        ],
+        "careerPath": [
+            "Junior Automation Tester",
+            "Automation Tester",
+            "Senior Automation Engineer",
+            "QA Lead"
+        ]
+    },
+    {
+        "id": "mobile-developer",
+        "title": "Mobile App Developer",
+        "category": "Mobile Development",
+        "description": "Develops mobile applications for iOS and Android platforms.",
+        "avgSalary": "$80,000 - $145,000",
+        "demandLevel": "High",
+        "requiredSkills": [
+            "React Native",
+            "JavaScript",
+            "Mobile UI",
+            "APIs",
+            "Git",
+            "App Store Deployment",
+            "State Management"
+        ],
+        "niceToHave": [
+            "Flutter",
+            "TypeScript",
+            "Push Notifications",
+            "Performance Optimization",
+            "Analytics"
+        ],
+        "responsibilities": [
+            "Build mobile apps",
+            "Cross-platform development",
+            "App store submissions",
+            "Performance optimization"
+        ],
+        "careerPath": [
+            "Junior Mobile Dev",
+            "Mobile Developer",
+            "Senior Mobile Developer",
+            "Mobile Lead",
+            "Mobile Architect"
+        ]
+    },
+    {
+        "id": "android-developer",
+        "title": "Android Developer",
+        "category": "Mobile Development",
+        "description": "Builds native Android applications using Kotlin and Android SDK.",
+        "avgSalary": "$85,000 - $150,000",
+        "demandLevel": "High",
+        "requiredSkills": [
+            "Kotlin",
+            "Android SDK",
+            "Java",
+            "Jetpack Compose",
+            "REST APIs",
+            "Git",
+            "MVVM"
+        ],
+        "niceToHave": [
+            "Coroutines",
+            "Room DB",
+            "Hilt",
+            "Testing",
+            "Firebase",
+            "Material Design"
+        ],
+        "responsibilities": [
+            "Build Android apps",
+            "UI implementation",
+            "API integration",
+            "Google Play deployment"
+        ],
+        "careerPath": [
+            "Junior Android Dev",
+            "Android Developer",
+            "Senior Android Developer",
+            "Android Lead"
+        ]
+    },
+    {
+        "id": "ios-developer",
+        "title": "iOS Developer",
+        "category": "Mobile Development",
+        "description": "Develops native iOS applications using Swift and Apple frameworks.",
+        "avgSalary": "$90,000 - $160,000",
+        "demandLevel": "High",
+        "requiredSkills": [
+            "Swift",
+            "iOS SDK",
+            "UIKit",
+            "SwiftUI",
+            "REST APIs",
+            "Git",
+            "Xcode"
+        ],
+        "niceToHave": [
+            "Combine",
+            "CoreData",
+            "Testing",
+            "Firebase",
+            "App Store Optimization"
+        ],
+        "responsibilities": [
+            "Build iOS apps",
+            "SwiftUI implementation",
+            "App Store submissions",
+            "Performance optimization"
+        ],
+        "careerPath": [
+            "Junior iOS Dev",
+            "iOS Developer",
+            "Senior iOS Developer",
+            "iOS Lead",
+            "Mobile Architect"
+        ]
+    },
+    {
+        "id": "product-manager",
+        "title": "Product Manager",
+        "category": "Product & Business",
+        "description": "Defines product vision and roadmap, working across engineering, design, and business teams.",
+        "avgSalary": "$100,000 - $175,000",
+        "demandLevel": "High",
+        "requiredSkills": [
+            "Product Strategy",
+            "Roadmapping",
+            "User Research",
+            "Data Analysis",
+            "Agile",
+            "Communication",
+            "Stakeholder Management"
+        ],
+        "niceToHave": [
+            "SQL",
+            "A/B Testing",
+            "Product Analytics",
+            "Technical Background",
+            "Go-to-Market"
+        ],
+        "responsibilities": [
+            "Define product roadmap",
+            "Prioritize features",
+            "Work with stakeholders",
+            "Data-driven decisions"
+        ],
+        "careerPath": [
+            "Associate PM",
+            "Product Manager",
+            "Senior PM",
+            "Director of Product",
+            "VP of Product",
+            "CPO"
+        ]
+    },
+    {
+        "id": "business-analyst",
+        "title": "Business Analyst",
+        "category": "Product & Business",
+        "description": "Bridges business needs and technology solutions through analysis and documentation.",
+        "avgSalary": "$70,000 - $125,000",
+        "demandLevel": "Medium",
+        "requiredSkills": [
+            "Requirements Gathering",
+            "SQL",
+            "Data Analysis",
+            "Process Mapping",
+            "Excel",
+            "Communication",
+            "JIRA"
+        ],
+        "niceToHave": [
+            "Power BI",
+            "Tableau",
+            "Agile",
+            "Stakeholder Management",
+            "Project Management"
+        ],
+        "responsibilities": [
+            "Requirements documentation",
+            "Process analysis",
+            "Stakeholder communication",
+            "Data reporting"
+        ],
+        "careerPath": [
+            "Junior BA",
+            "Business Analyst",
+            "Senior BA",
+            "Lead BA",
+            "Product Owner",
+            "Product Manager"
+        ]
+    }
+]

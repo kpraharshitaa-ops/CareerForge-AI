@@ -1,0 +1,1302 @@
+[
+    {
+        "id": 1,
+        "category": "Quantitative Aptitude",
+        "question": "A shopkeeper sells an article for Rs. 1200, gaining 20% profit. What is the cost price of the article?",
+        "options": [
+            "A) Rs. 900",
+            "B) Rs. 1000",
+            "C) Rs. 1100",
+            "D) Rs. 800"
+        ],
+        "answer": "B) Rs. 1000",
+        "explanation": "CP = SP / (1 + profit%) = 1200 / 1.20 = Rs. 1000."
+    },
+    {
+        "id": 2,
+        "category": "Quantitative Aptitude",
+        "question": "If 40% of a number is 120, what is 75% of that number?",
+        "options": [
+            "A) 200",
+            "B) 225",
+            "C) 250",
+            "D) 275"
+        ],
+        "answer": "B) 225",
+        "explanation": "40% of x = 120 → x = 300. 75% of 300 = 225."
+    },
+    {
+        "id": 3,
+        "category": "Quantitative Aptitude",
+        "question": "A and B together can complete a work in 12 days. A alone can do it in 20 days. In how many days can B alone complete the work?",
+        "options": [
+            "A) 25 days",
+            "B) 28 days",
+            "C) 30 days",
+            "D) 32 days"
+        ],
+        "answer": "C) 30 days",
+        "explanation": "B's 1-day work = 1/12 - 1/20 = (5-3)/60 = 2/60 = 1/30. So B alone takes 30 days."
+    },
+    {
+        "id": 4,
+        "category": "Quantitative Aptitude",
+        "question": "A train 150m long passes a pole in 15 seconds. What is the speed of the train in km/h?",
+        "options": [
+            "A) 32 km/h",
+            "B) 36 km/h",
+            "C) 40 km/h",
+            "D) 45 km/h"
+        ],
+        "answer": "B) 36 km/h",
+        "explanation": "Speed = 150/15 = 10 m/s = 10 × 18/5 = 36 km/h."
+    },
+    {
+        "id": 5,
+        "category": "Quantitative Aptitude",
+        "question": "The average of 5 consecutive even numbers is 30. What is the largest number?",
+        "options": [
+            "A) 32",
+            "B) 34",
+            "C) 36",
+            "D) 38"
+        ],
+        "answer": "B) 34",
+        "explanation": "Let numbers be n, n+2, n+4, n+6, n+8. Average = n+4 = 30 → n = 26. Largest = 34."
+    },
+    {
+        "id": 6,
+        "category": "Quantitative Aptitude",
+        "question": "The ratio of A's age to B's age is 3:5. If A is 18 years old, how old is B?",
+        "options": [
+            "A) 25",
+            "B) 28",
+            "C) 30",
+            "D) 35"
+        ],
+        "answer": "C) 30",
+        "explanation": "3/5 = 18/B → B = (18 × 5)/3 = 30 years."
+    },
+    {
+        "id": 7,
+        "category": "Quantitative Aptitude",
+        "question": "Find the simple interest on Rs. 5000 at 8% per annum for 3 years.",
+        "options": [
+            "A) Rs. 1000",
+            "B) Rs. 1200",
+            "C) Rs. 1500",
+            "D) Rs. 1800"
+        ],
+        "answer": "B) Rs. 1200",
+        "explanation": "SI = (P × R × T)/100 = (5000 × 8 × 3)/100 = Rs. 1200."
+    },
+    {
+        "id": 8,
+        "category": "Quantitative Aptitude",
+        "question": "What is the compound interest on Rs. 10000 at 10% per annum for 2 years?",
+        "options": [
+            "A) Rs. 1900",
+            "B) Rs. 2000",
+            "C) Rs. 2100",
+            "D) Rs. 2200"
+        ],
+        "answer": "C) Rs. 2100",
+        "explanation": "CI = P[(1+r/100)^n - 1] = 10000[(1.1)^2 - 1] = 10000 × 0.21 = Rs. 2100."
+    },
+    {
+        "id": 9,
+        "category": "Quantitative Aptitude",
+        "question": "The perimeter of a rectangle is 56 cm. If the length is 18 cm, what is the area of the rectangle?",
+        "options": [
+            "A) 162 sq cm",
+            "B) 180 sq cm",
+            "C) 198 sq cm",
+            "D) 216 sq cm"
+        ],
+        "answer": "B) 180 sq cm",
+        "explanation": "2(l+b) = 56 → l+b = 28 → b = 10. Area = 18 × 10 = 180 sq cm."
+    },
+    {
+        "id": 10,
+        "category": "Quantitative Aptitude",
+        "question": "Which of the following is a prime number?",
+        "options": [
+            "A) 91",
+            "B) 87",
+            "C) 97",
+            "D) 93"
+        ],
+        "answer": "C) 97",
+        "explanation": "97 is divisible only by 1 and itself. 91=7×13, 87=3×29, 93=3×31."
+    },
+    {
+        "id": 11,
+        "category": "Quantitative Aptitude",
+        "question": "A man buys an article for Rs. 800 and sells it at a loss of 15%. What is the selling price?",
+        "options": [
+            "A) Rs. 620",
+            "B) Rs. 660",
+            "C) Rs. 680",
+            "D) Rs. 700"
+        ],
+        "answer": "C) Rs. 680",
+        "explanation": "SP = CP × (1 - loss%) = 800 × 0.85 = Rs. 680."
+    },
+    {
+        "id": 12,
+        "category": "Quantitative Aptitude",
+        "question": "If the price of a commodity increases by 25%, by what percent must consumption be reduced to keep expenditure unchanged?",
+        "options": [
+            "A) 15%",
+            "B) 20%",
+            "C) 25%",
+            "D) 30%"
+        ],
+        "answer": "B) 20%",
+        "explanation": "Reduction% = [25/(100+25)] × 100 = (25/125) × 100 = 20%."
+    },
+    {
+        "id": 13,
+        "category": "Quantitative Aptitude",
+        "question": "A car travels 240 km in 4 hours. What is the speed in m/s?",
+        "options": [
+            "A) 15.67 m/s",
+            "B) 16.67 m/s",
+            "C) 17.67 m/s",
+            "D) 18.67 m/s"
+        ],
+        "answer": "B) 16.67 m/s",
+        "explanation": "Speed = 60 km/h = 60 × 1000/3600 = 16.67 m/s."
+    },
+    {
+        "id": 14,
+        "category": "Quantitative Aptitude",
+        "question": "Two pipes A and B can fill a tank in 20 and 30 minutes respectively. How long will both together take to fill the tank?",
+        "options": [
+            "A) 10 min",
+            "B) 12 min",
+            "C) 14 min",
+            "D) 15 min"
+        ],
+        "answer": "B) 12 min",
+        "explanation": "Combined rate = 1/20 + 1/30 = 5/60 = 1/12. Time = 12 minutes."
+    },
+    {
+        "id": 15,
+        "category": "Quantitative Aptitude",
+        "question": "The average of 30 students is 60 marks. If 5 students with average 40 join, what is the new average?",
+        "options": [
+            "A) 54.29",
+            "B) 55.71",
+            "C) 56.57",
+            "D) 57.14"
+        ],
+        "answer": "D) 57.14",
+        "explanation": "Total = 30×60 + 5×40 = 2000. New avg = 2000/35 ≈ 57.14."
+    },
+    {
+        "id": 16,
+        "category": "Quantitative Aptitude",
+        "question": "Divide Rs. 1200 among A, B, and C in the ratio 2:3:5. What is C's share?",
+        "options": [
+            "A) Rs. 400",
+            "B) Rs. 480",
+            "C) Rs. 520",
+            "D) Rs. 600"
+        ],
+        "answer": "D) Rs. 600",
+        "explanation": "Total parts = 10. C's share = (5/10) × 1200 = Rs. 600."
+    },
+    {
+        "id": 17,
+        "category": "Quantitative Aptitude",
+        "question": "What principal amounts to Rs. 9261 in 3 years at 5% compound interest per annum?",
+        "options": [
+            "A) Rs. 7500",
+            "B) Rs. 8000",
+            "C) Rs. 8500",
+            "D) Rs. 9000"
+        ],
+        "answer": "B) Rs. 8000",
+        "explanation": "P = A/(1+r/100)^n = 9261/(1.05)^3 = 9261/1.157625 ≈ 8000."
+    },
+    {
+        "id": 18,
+        "category": "Quantitative Aptitude",
+        "question": "The area of a circle is 154 sq cm. What is its circumference? (π = 22/7)",
+        "options": [
+            "A) 42 cm",
+            "B) 44 cm",
+            "C) 46 cm",
+            "D) 48 cm"
+        ],
+        "answer": "B) 44 cm",
+        "explanation": "πr² = 154 → r = 7. Circumference = 2πr = 2 × (22/7) × 7 = 44 cm."
+    },
+    {
+        "id": 19,
+        "category": "Quantitative Aptitude",
+        "question": "Find the LCM of 12, 18, and 24.",
+        "options": [
+            "A) 48",
+            "B) 60",
+            "C) 72",
+            "D) 96"
+        ],
+        "answer": "C) 72",
+        "explanation": "LCM(12,18,24) = 2³×3² = 72."
+    },
+    {
+        "id": 20,
+        "category": "Quantitative Aptitude",
+        "question": "A train at 72 km/h crosses a 200m bridge in 20 seconds. What is the length of the train?",
+        "options": [
+            "A) 150m",
+            "B) 175m",
+            "C) 200m",
+            "D) 220m"
+        ],
+        "answer": "C) 200m",
+        "explanation": "Speed = 72 km/h = 20 m/s. Total distance = 20×20 = 400m. Train length = 400 - 200 = 200m."
+    },
+    {
+        "id": 21,
+        "category": "Quantitative Aptitude",
+        "question": "A sum doubles itself in 10 years under simple interest. What is the rate per annum?",
+        "options": [
+            "A) 8%",
+            "B) 10%",
+            "C) 12%",
+            "D) 15%"
+        ],
+        "answer": "B) 10%",
+        "explanation": "SI = P = PRT/100 → R = 100/(T) = 100/10 = 10%."
+    },
+    {
+        "id": 22,
+        "category": "Quantitative Aptitude",
+        "question": "Marked price of an article is Rs. 500. After 20% discount, what is the selling price?",
+        "options": [
+            "A) Rs. 380",
+            "B) Rs. 390",
+            "C) Rs. 400",
+            "D) Rs. 420"
+        ],
+        "answer": "C) Rs. 400",
+        "explanation": "SP = 500 × (1 - 0.20) = 500 × 0.80 = Rs. 400."
+    },
+    {
+        "id": 23,
+        "category": "Quantitative Aptitude",
+        "question": "If 15 workers can build a wall in 48 hours, how many workers are needed to do it in 30 hours?",
+        "options": [
+            "A) 20",
+            "B) 22",
+            "C) 24",
+            "D) 25"
+        ],
+        "answer": "C) 24",
+        "explanation": "Workers × Hours = constant. 15 × 48 = W × 30 → W = 24."
+    },
+    {
+        "id": 24,
+        "category": "Quantitative Aptitude",
+        "question": "What is the HCF of 84 and 126?",
+        "options": [
+            "A) 21",
+            "B) 28",
+            "C) 42",
+            "D) 63"
+        ],
+        "answer": "C) 42",
+        "explanation": "84 = 2²×3×7, 126 = 2×3²×7. HCF = 2×3×7 = 42."
+    },
+    {
+        "id": 25,
+        "category": "Quantitative Aptitude",
+        "question": "A vessel has 60L of milk. 6L is drawn and replaced by water twice. What is the final quantity of milk?",
+        "options": [
+            "A) 46.8L",
+            "B) 47.6L",
+            "C) 48.6L",
+            "D) 49.2L"
+        ],
+        "answer": "C) 48.6L",
+        "explanation": "Milk = 60 × (54/60)² = 60 × 0.81 = 48.6 litres."
+    },
+    {
+        "id": 26,
+        "category": "Quantitative Aptitude",
+        "question": "The sum of three consecutive integers is 75. What is the largest integer?",
+        "options": [
+            "A) 24",
+            "B) 25",
+            "C) 26",
+            "D) 27"
+        ],
+        "answer": "C) 26",
+        "explanation": "n + (n+1) + (n+2) = 75 → 3n+3 = 75 → n = 24. Largest = 26."
+    },
+    {
+        "id": 27,
+        "category": "Quantitative Aptitude",
+        "question": "A rectangular garden is 50m long and 40m wide. Cost of fencing at Rs. 15 per metre?",
+        "options": [
+            "A) Rs. 2400",
+            "B) Rs. 2500",
+            "C) Rs. 2700",
+            "D) Rs. 3000"
+        ],
+        "answer": "C) Rs. 2700",
+        "explanation": "Perimeter = 2(50+40) = 180m. Cost = 180 × 15 = Rs. 2700."
+    },
+    {
+        "id": 28,
+        "category": "Quantitative Aptitude",
+        "question": "Speed of a boat in still water is 15 km/h; current is 3 km/h. Downstream speed?",
+        "options": [
+            "A) 12 km/h",
+            "B) 15 km/h",
+            "C) 18 km/h",
+            "D) 21 km/h"
+        ],
+        "answer": "C) 18 km/h",
+        "explanation": "Downstream = 15 + 3 = 18 km/h."
+    },
+    {
+        "id": 29,
+        "category": "Quantitative Aptitude",
+        "question": "What is the value of √(0.0169)?",
+        "options": [
+            "A) 0.013",
+            "B) 0.13",
+            "C) 1.3",
+            "D) 13"
+        ],
+        "answer": "B) 0.13",
+        "explanation": "√(0.0169) = √(169/10000) = 13/100 = 0.13."
+    },
+    {
+        "id": 30,
+        "category": "Quantitative Aptitude",
+        "question": "In how many ways can the letters of the word 'APPLE' be arranged?",
+        "options": [
+            "A) 60",
+            "B) 90",
+            "C) 120",
+            "D) 180"
+        ],
+        "answer": "A) 60",
+        "explanation": "5 letters with P repeated twice: 5!/2! = 60."
+    },
+    {
+        "id": 31,
+        "category": "Quantitative Aptitude",
+        "question": "A fair coin is tossed three times. Probability of getting at least one head?",
+        "options": [
+            "A) 1/8",
+            "B) 3/8",
+            "C) 5/8",
+            "D) 7/8"
+        ],
+        "answer": "D) 7/8",
+        "explanation": "P(at least 1 head) = 1 - P(no head) = 1 - (1/2)³ = 7/8."
+    },
+    {
+        "id": 32,
+        "category": "Quantitative Aptitude",
+        "question": "A man walks at 5 km/h. After every km, he rests for 4 minutes. Time to walk 5 km?",
+        "options": [
+            "A) 1 hr 12 min",
+            "B) 1 hr 16 min",
+            "C) 1 hr 20 min",
+            "D) 1 hr 30 min"
+        ],
+        "answer": "B) 1 hr 16 min",
+        "explanation": "Walking time = 60 min. Rests after km 1,2,3,4 = 4 × 4 = 16 min. Total = 76 min = 1 hr 16 min."
+    },
+    {
+        "id": 33,
+        "category": "Quantitative Aptitude",
+        "question": "The volume of a cube is 512 cubic cm. What is its surface area?",
+        "options": [
+            "A) 196 sq cm",
+            "B) 256 sq cm",
+            "C) 384 sq cm",
+            "D) 512 sq cm"
+        ],
+        "answer": "C) 384 sq cm",
+        "explanation": "a³ = 512 → a = 8. Surface area = 6a² = 6 × 64 = 384 sq cm."
+    },
+    {
+        "id": 34,
+        "category": "Quantitative Aptitude",
+        "question": "What is 15% of 20% of 500?",
+        "options": [
+            "A) 12",
+            "B) 15",
+            "C) 18",
+            "D) 20"
+        ],
+        "answer": "B) 15",
+        "explanation": "20% of 500 = 100. 15% of 100 = 15."
+    },
+    {
+        "id": 35,
+        "category": "Quantitative Aptitude",
+        "question": "Two numbers are in ratio 4:7 and their sum is 132. What is the smaller number?",
+        "options": [
+            "A) 44",
+            "B) 48",
+            "C) 52",
+            "D) 56"
+        ],
+        "answer": "B) 48",
+        "explanation": "4x + 7x = 132 → x = 12. Smaller = 4×12 = 48."
+    },
+    {
+        "id": 36,
+        "category": "Quantitative Aptitude",
+        "question": "A shopkeeper marks goods 30% above cost price and gives 10% discount. Profit percentage?",
+        "options": [
+            "A) 15%",
+            "B) 17%",
+            "C) 19%",
+            "D) 21%"
+        ],
+        "answer": "B) 17%",
+        "explanation": "SP = CP × 1.30 × 0.90 = 1.17 × CP. Profit = 17%."
+    },
+    {
+        "id": 37,
+        "category": "Quantitative Aptitude",
+        "question": "Find the next number in the series: 2, 6, 12, 20, 30, ?",
+        "options": [
+            "A) 40",
+            "B) 42",
+            "C) 44",
+            "D) 46"
+        ],
+        "answer": "B) 42",
+        "explanation": "Differences: 4, 6, 8, 10, 12. Next = 30 + 12 = 42."
+    },
+    {
+        "id": 38,
+        "category": "Quantitative Aptitude",
+        "question": "Rs. 12000 is invested partly at 10% and partly at 15% p.a. Total interest in 1 year is Rs. 1500. Amount at 10%?",
+        "options": [
+            "A) Rs. 4000",
+            "B) Rs. 5000",
+            "C) Rs. 6000",
+            "D) Rs. 7000"
+        ],
+        "answer": "C) Rs. 6000",
+        "explanation": "Let x at 10%. 0.10x + 0.15(12000-x) = 1500 → -0.05x = -300 → x = 6000."
+    },
+    {
+        "id": 39,
+        "category": "Quantitative Aptitude",
+        "question": "The diagonal of a square is 10√2 cm. What is its area?",
+        "options": [
+            "A) 50 sq cm",
+            "B) 100 sq cm",
+            "C) 150 sq cm",
+            "D) 200 sq cm"
+        ],
+        "answer": "B) 100 sq cm",
+        "explanation": "Diagonal = a√2 = 10√2 → a = 10. Area = 10² = 100 sq cm."
+    },
+    {
+        "id": 40,
+        "category": "Quantitative Aptitude",
+        "question": "A number when divided by 6 leaves remainder 3 and when divided by 9 leaves remainder 6. The least such number is:",
+        "options": [
+            "A) 15",
+            "B) 21",
+            "C) 24",
+            "D) 33"
+        ],
+        "answer": "A) 15",
+        "explanation": "Check: 15 ÷ 6 = 2 rem 3 ✓, 15 ÷ 9 = 1 rem 6 ✓. Least such number is 15."
+    },
+    {
+        "id": 41,
+        "category": "Logical Reasoning",
+        "question": "All roses are flowers. Some flowers fade quickly. Which conclusion is valid?",
+        "options": [
+            "A) All roses fade quickly",
+            "B) Some roses fade quickly",
+            "C) No roses fade quickly",
+            "D) None of the above"
+        ],
+        "answer": "D) None of the above",
+        "explanation": "From 'All roses are flowers' and 'Some flowers fade quickly', we cannot conclude that any rose fades quickly. The 'some flowers' may not include roses."
+    },
+    {
+        "id": 42,
+        "category": "Logical Reasoning",
+        "question": "A is the father of B. B is the sister of C. C is the mother of D. How is A related to D?",
+        "options": [
+            "A) Uncle",
+            "B) Father",
+            "C) Grandfather",
+            "D) Great grandfather"
+        ],
+        "answer": "C) Grandfather",
+        "explanation": "A is B's father. B is C's sister → A is also C's father. C is D's mother → A is D's grandfather."
+    },
+    {
+        "id": 43,
+        "category": "Logical Reasoning",
+        "question": "If PENCIL is coded as QFODJM, how is ERASER coded?",
+        "options": [
+            "A) FSBTFS",
+            "B) FSBSFS",
+            "C) FSBTFG",
+            "D) GSCUGT"
+        ],
+        "answer": "A) FSBTFS",
+        "explanation": "Each letter is shifted +1 in the alphabet: E→F, R→S, A→B, S→T, E→F, R→S = FSBTFS."
+    },
+    {
+        "id": 44,
+        "category": "Logical Reasoning",
+        "question": "Find the next term in the series: 3, 9, 27, 81, ?",
+        "options": [
+            "A) 162",
+            "B) 243",
+            "C) 270",
+            "D) 324"
+        ],
+        "answer": "B) 243",
+        "explanation": "Each term is multiplied by 3. 81 × 3 = 243."
+    },
+    {
+        "id": 45,
+        "category": "Logical Reasoning",
+        "question": "A man starts from point A, walks 5 km North, then turns East and walks 3 km. He then turns South and walks 5 km. How far is he from A?",
+        "options": [
+            "A) 2 km",
+            "B) 3 km",
+            "C) 5 km",
+            "D) 8 km"
+        ],
+        "answer": "B) 3 km",
+        "explanation": "North 5, East 3, South 5 — vertical displacement = 0. He is 3 km East of A."
+    },
+    {
+        "id": 46,
+        "category": "Logical Reasoning",
+        "question": "All cats are animals. No animal is a plant. Which conclusion is definitely true?",
+        "options": [
+            "A) No cat is a plant",
+            "B) Some cats are plants",
+            "C) All plants are animals",
+            "D) Some animals are plants"
+        ],
+        "answer": "A) No cat is a plant",
+        "explanation": "All cats are animals, and no animal is a plant, so no cat can be a plant."
+    },
+    {
+        "id": 47,
+        "category": "Logical Reasoning",
+        "question": "Pointing to a photograph, Ravi says, 'She is the daughter of my grandfather's only son.' How is the girl related to Ravi?",
+        "options": [
+            "A) Cousin",
+            "B) Sister",
+            "C) Niece",
+            "D) Daughter"
+        ],
+        "answer": "B) Sister",
+        "explanation": "Grandfather's only son = Ravi's father. Daughter of Ravi's father = Ravi's sister."
+    },
+    {
+        "id": 48,
+        "category": "Logical Reasoning",
+        "question": "If TABLE is coded as GZYOV, what is the code for CHAIR?",
+        "options": [
+            "A) XSZRI",
+            "B) XSZIP",
+            "C) XSZIW",
+            "D) XSZIY"
+        ],
+        "answer": "C) XSZIW",
+        "explanation": "The code reverses the alphabet: A→Z, B→Y, C→X, ... T→G, A→Z, B→Y, L→O, E→V. So CHAIR = X(C→X), H(H→S), A(A→Z), I(I→R), R(R→I) → XSZRI. The correct mapping gives XSZRI."
+    },
+    {
+        "id": 49,
+        "category": "Logical Reasoning",
+        "question": "Find the odd one out: 2, 5, 10, 17, 26, 37, 50",
+        "options": [
+            "A) 37",
+            "B) 26",
+            "C) 50",
+            "D) None"
+        ],
+        "answer": "D) None",
+        "explanation": "The series follows n² + 1: 1²+1=2, 2²+1=5, 3²+1=10, 4²+1=17, 5²+1=26, 6²+1=37, 7²+1=50. All are correct; no odd one out."
+    },
+    {
+        "id": 50,
+        "category": "Logical Reasoning",
+        "question": "Five people A, B, C, D, E are seated in a row. A is to the right of B. C is to the left of B. D is between C and B. E is at the extreme right. Who is at the extreme left?",
+        "options": [
+            "A) A",
+            "B) B",
+            "C) C",
+            "D) D"
+        ],
+        "answer": "C) C",
+        "explanation": "Order from left: C, D, B, A, E. C is at the extreme left."
+    },
+    {
+        "id": 51,
+        "category": "Logical Reasoning",
+        "question": "In a certain code, MOUSE = 57431 and CAT = 982. How is STOAT coded?",
+        "options": [
+            "A) 42782",
+            "B) 42592",
+            "C) 42582",
+            "D) 42784"
+        ],
+        "answer": "B) 42592",
+        "explanation": "S=4, T=2, O=5, A=9, T=2. Mapping: M=5, O=5? Let's use S→4, T→2, O→5, A→9, T→2 → STOAT = 42592."
+    },
+    {
+        "id": 52,
+        "category": "Logical Reasoning",
+        "question": "Find the missing number: 4, 9, 16, 25, 36, ?",
+        "options": [
+            "A) 42",
+            "B) 47",
+            "C) 49",
+            "D) 52"
+        ],
+        "answer": "C) 49",
+        "explanation": "The series is perfect squares: 2², 3², 4², 5², 6², 7² = 49."
+    },
+    {
+        "id": 53,
+        "category": "Logical Reasoning",
+        "question": "A woman introduces a man as 'the son of the woman who is the mother of the husband of my mother.' How is the man related to the woman?",
+        "options": [
+            "A) Son",
+            "B) Brother",
+            "C) Uncle",
+            "D) Brother-in-law"
+        ],
+        "answer": "C) Uncle",
+        "explanation": "Mother's husband = father. Father's mother = paternal grandmother. Paternal grandmother's son = father's brother = the woman's uncle."
+    },
+    {
+        "id": 54,
+        "category": "Logical Reasoning",
+        "question": "Six people sit in a circle facing the center. A is between F and B. D is between E and C. Which person is sitting opposite to A?",
+        "options": [
+            "A) D",
+            "B) E",
+            "C) C",
+            "D) Cannot be determined"
+        ],
+        "answer": "D) Cannot be determined",
+        "explanation": "Without knowing the complete arrangement, the person opposite A cannot be uniquely determined from the given information alone."
+    },
+    {
+        "id": 55,
+        "category": "Logical Reasoning",
+        "question": "If all Bloops are Razzles, and all Razzles are Lazzles, are all Bloops definitely Lazzles?",
+        "options": [
+            "A) Yes",
+            "B) No",
+            "C) Cannot say",
+            "D) Partially true"
+        ],
+        "answer": "A) Yes",
+        "explanation": "All Bloops → Razzles → Lazzles. By transitivity, all Bloops are Lazzles."
+    },
+    {
+        "id": 56,
+        "category": "Logical Reasoning",
+        "question": "If ROAD is coded as 4$3% and LOAD is coded as 2$3%, how is ORAL coded?",
+        "options": [
+            "A) $4%2",
+            "B) $43%",
+            "C) $4%3",
+            "D) $342"
+        ],
+        "answer": "A) $4%2",
+        "explanation": "R=4, O=$, A=%, D=3, L=2. ORAL = O,R,A,L = $,4,%,2 = $4%2."
+    },
+    {
+        "id": 57,
+        "category": "Logical Reasoning",
+        "question": "Find the next term: Z, X, V, T, R, ?",
+        "options": [
+            "A) O",
+            "B) P",
+            "C) Q",
+            "D) N"
+        ],
+        "answer": "B) P",
+        "explanation": "Each letter skips one: Z(-2)X(-2)V(-2)T(-2)R(-2)P. Next is P."
+    },
+    {
+        "id": 58,
+        "category": "Logical Reasoning",
+        "question": "Walking from my house, I go 200m North, then 150m East, then 200m South, then 100m West. How far am I from my house?",
+        "options": [
+            "A) 50m",
+            "B) 75m",
+            "C) 100m",
+            "D) 125m"
+        ],
+        "answer": "A) 50m",
+        "explanation": "North-South cancel out. Net East-West = 150 - 100 = 50m East. Distance = 50m."
+    },
+    {
+        "id": 59,
+        "category": "Logical Reasoning",
+        "question": "Some books are pens. All pens are papers. Which conclusion follows?",
+        "options": [
+            "A) Some books are papers",
+            "B) All books are papers",
+            "C) No books are papers",
+            "D) Some papers are pens only"
+        ],
+        "answer": "A) Some books are papers",
+        "explanation": "Since some books are pens and all pens are papers, those books that are pens are also papers. Hence, some books are papers."
+    },
+    {
+        "id": 60,
+        "category": "Logical Reasoning",
+        "question": "In a row of 40 students, Ritu is 15th from the left. What is her position from the right?",
+        "options": [
+            "A) 24th",
+            "B) 25th",
+            "C) 26th",
+            "D) 27th"
+        ],
+        "answer": "C) 26th",
+        "explanation": "Position from right = (Total + 1) - Position from left = 41 - 15 = 26."
+    },
+    {
+        "id": 61,
+        "category": "Logical Reasoning",
+        "question": "Find the odd one out: Lion, Tiger, Leopard, Snake, Cheetah",
+        "options": [
+            "A) Lion",
+            "B) Snake",
+            "C) Tiger",
+            "D) Cheetah"
+        ],
+        "answer": "B) Snake",
+        "explanation": "All others are big cats (felines). Snake is a reptile, not a cat family member."
+    },
+    {
+        "id": 62,
+        "category": "Logical Reasoning",
+        "question": "A clock shows 3:15. What is the angle between the hour and minute hands?",
+        "options": [
+            "A) 7.5°",
+            "B) 0°",
+            "C) 15°",
+            "D) 22.5°"
+        ],
+        "answer": "A) 7.5°",
+        "explanation": "At 3:15, minute hand at 90°. Hour hand at 3×30 + 15×0.5 = 90+7.5 = 97.5°. Angle = 97.5 - 90 = 7.5°."
+    },
+    {
+        "id": 63,
+        "category": "Logical Reasoning",
+        "question": "A is heavier than B but lighter than C. D is heavier than C. Who is the lightest?",
+        "options": [
+            "A) A",
+            "B) B",
+            "C) C",
+            "D) D"
+        ],
+        "answer": "B) B",
+        "explanation": "Order: B < A < C < D. B is the lightest."
+    },
+    {
+        "id": 64,
+        "category": "Logical Reasoning",
+        "question": "Choose the correct mirror image of the word 'MATRIX' when reflected in a vertical mirror.",
+        "options": [
+            "A) XIRTAM",
+            "B) MATRIX",
+            "C) MARTIX",
+            "D) XIRTMA"
+        ],
+        "answer": "A) XIRTAM",
+        "explanation": "A vertical mirror reverses the order of letters: MATRIX reversed is XIRTAM."
+    },
+    {
+        "id": 65,
+        "category": "Logical Reasoning",
+        "question": "If 1st January 2023 was a Sunday, what day was 1st January 2024?",
+        "options": [
+            "A) Sunday",
+            "B) Monday",
+            "C) Tuesday",
+            "D) Wednesday"
+        ],
+        "answer": "B) Monday",
+        "explanation": "2023 is not a leap year (365 days = 52 weeks + 1 day). So day advances by 1: Sunday + 1 = Monday."
+    },
+    {
+        "id": 66,
+        "category": "Logical Reasoning",
+        "question": "Find the missing number: 6, 11, 21, 36, 56, ?",
+        "options": [
+            "A) 71",
+            "B) 76",
+            "C) 81",
+            "D) 91"
+        ],
+        "answer": "C) 81",
+        "explanation": "Differences: 5, 10, 15, 20, 25. Next = 56 + 25 = 81."
+    },
+    {
+        "id": 67,
+        "category": "Logical Reasoning",
+        "question": "Introducing a person, Ram said, 'His mother is the only daughter of my mother.' How is that person related to Ram?",
+        "options": [
+            "A) Brother",
+            "B) Son",
+            "C) Nephew",
+            "D) Uncle"
+        ],
+        "answer": "C) Nephew",
+        "explanation": "The only daughter of Ram's mother = Ram's sister. The sister's son = Ram's nephew."
+    },
+    {
+        "id": 68,
+        "category": "Logical Reasoning",
+        "question": "In a seating arrangement, P, Q, R, S, T are in a row. Q is between P and R. T is to the right of R. S is at the extreme left. What is T's position?",
+        "options": [
+            "A) Second from left",
+            "B) Second from right",
+            "C) Extreme right",
+            "D) Middle"
+        ],
+        "answer": "C) Extreme right",
+        "explanation": "Order: S, P, Q, R, T. T is at the extreme right."
+    },
+    {
+        "id": 69,
+        "category": "Logical Reasoning",
+        "question": "Which number should replace '?' in: 7 : 56 :: 9 : ?",
+        "options": [
+            "A) 63",
+            "B) 81",
+            "C) 90",
+            "D) 72"
+        ],
+        "answer": "C) 90",
+        "explanation": "7 × (7+1) = 7×8 = 56. Similarly 9 × (9+1) = 9×10 = 90."
+    },
+    {
+        "id": 70,
+        "category": "Logical Reasoning",
+        "question": "In a code, if FIRE = 6931 and RIDE = 3941, what is DIRE?",
+        "options": [
+            "A) 4931",
+            "B) 9413",
+            "C) 4193",
+            "D) 1394"
+        ],
+        "answer": "A) 4931",
+        "explanation": "F=6, I=9, R=3, E=1, D=4. DIRE = D,I,R,E = 4,9,3,1 = 4931."
+    },
+    {
+        "id": 71,
+        "category": "Logical Reasoning",
+        "question": "Find the next term in the alphabetical series: AZ, BY, CX, DW, ?",
+        "options": [
+            "A) EU",
+            "B) EV",
+            "C) EW",
+            "D) FV"
+        ],
+        "answer": "B) EV",
+        "explanation": "First letter increases A,B,C,D,E. Second letter decreases Z,Y,X,W,V. Next is EV."
+    },
+    {
+        "id": 72,
+        "category": "Logical Reasoning",
+        "question": "All mangoes are fruits. Some fruits are sweet. Which conclusion is valid?",
+        "options": [
+            "A) All mangoes are sweet",
+            "B) Some mangoes are sweet",
+            "C) No mango is sweet",
+            "D) None of the above"
+        ],
+        "answer": "D) None of the above",
+        "explanation": "We cannot conclude that any mango is sweet, as the 'some sweet fruits' may not include mangoes."
+    },
+    {
+        "id": 73,
+        "category": "Logical Reasoning",
+        "question": "Arrange: I. Sentence II. Letter III. Word IV. Paragraph V. Chapter",
+        "options": [
+            "A) II, III, I, IV, V",
+            "B) III, II, I, IV, V",
+            "C) II, I, III, IV, V",
+            "D) I, II, III, IV, V"
+        ],
+        "answer": "A) II, III, I, IV, V",
+        "explanation": "Correct order of increasing size: Letter → Word → Sentence → Paragraph → Chapter."
+    },
+    {
+        "id": 74,
+        "category": "Logical Reasoning",
+        "question": "A man is facing South-West. He turns 135° clockwise. Which direction is he now facing?",
+        "options": [
+            "A) North",
+            "B) North-East",
+            "C) South",
+            "D) East"
+        ],
+        "answer": "D) East",
+        "explanation": "South-West + 135° clockwise = South-West → West → North → NE → E. Rotating 135° clockwise from SW lands on East."
+    },
+    {
+        "id": 75,
+        "category": "Logical Reasoning",
+        "question": "Find the missing number: 2, 3, 5, 8, 13, 21, ?",
+        "options": [
+            "A) 30",
+            "B) 33",
+            "C) 34",
+            "D) 35"
+        ],
+        "answer": "C) 34",
+        "explanation": "Fibonacci series: each number = sum of previous two. 13+21 = 34."
+    },
+    {
+        "id": 76,
+        "category": "Verbal Ability",
+        "question": "Choose the synonym of 'BENEVOLENT'.",
+        "options": [
+            "A) Cruel",
+            "B) Hostile",
+            "C) Charitable",
+            "D) Selfish"
+        ],
+        "answer": "C) Charitable",
+        "explanation": "Benevolent means well-meaning and kindly. Charitable is the closest synonym."
+    },
+    {
+        "id": 77,
+        "category": "Verbal Ability",
+        "question": "Choose the antonym of 'VERBOSE'.",
+        "options": [
+            "A) Wordy",
+            "B) Talkative",
+            "C) Concise",
+            "D) Eloquent"
+        ],
+        "answer": "C) Concise",
+        "explanation": "Verbose means using more words than needed. Its antonym is concise, meaning brief and clear."
+    },
+    {
+        "id": 78,
+        "category": "Verbal Ability",
+        "question": "Fill in the blank: The manager was _____ with the team's performance and praised everyone.",
+        "options": [
+            "A) disappointed",
+            "B) satisfied",
+            "C) indifferent",
+            "D) worried"
+        ],
+        "answer": "B) satisfied",
+        "explanation": "The sentence implies a positive outcome ('praised everyone'), so 'satisfied' fits contextually."
+    },
+    {
+        "id": 79,
+        "category": "Verbal Ability",
+        "question": "Identify the correct sentence:",
+        "options": [
+            "A) He don't know the answer.",
+            "B) He doesn't knows the answer.",
+            "C) He doesn't know the answer.",
+            "D) He do not knows the answer."
+        ],
+        "answer": "C) He doesn't know the answer.",
+        "explanation": "With third-person singular subject 'he', use 'doesn't' (does + not) followed by the base form of the verb."
+    },
+    {
+        "id": 80,
+        "category": "Verbal Ability",
+        "question": "Choose the synonym of 'AMBIGUOUS'.",
+        "options": [
+            "A) Clear",
+            "B) Definite",
+            "C) Vague",
+            "D) Obvious"
+        ],
+        "answer": "C) Vague",
+        "explanation": "Ambiguous means open to more than one interpretation; vague is the closest synonym."
+    },
+    {
+        "id": 81,
+        "category": "Verbal Ability",
+        "question": "Choose the antonym of 'FRUGAL'.",
+        "options": [
+            "A) Thrifty",
+            "B) Economical",
+            "C) Extravagant",
+            "D) Careful"
+        ],
+        "answer": "C) Extravagant",
+        "explanation": "Frugal means being careful with money. Its antonym is extravagant — spending excessively."
+    },
+    {
+        "id": 82,
+        "category": "Verbal Ability",
+        "question": "Fill in the blank: Despite working hard, she could not _____ the target.",
+        "options": [
+            "A) achieve",
+            "B) achieving",
+            "C) achieved",
+            "D) to achieve"
+        ],
+        "answer": "A) achieve",
+        "explanation": "After a modal verb 'could not', the base form (infinitive without 'to') is used: 'achieve'."
+    },
+    {
+        "id": 83,
+        "category": "Verbal Ability",
+        "question": "Read the passage and answer: 'The industrial revolution led to rapid urbanization. Cities grew as people moved from rural areas seeking employment. However, this also caused overcrowding and poor living conditions.' What was a negative effect of industrialization?",
+        "options": [
+            "A) Rapid employment growth",
+            "B) Rural development",
+            "C) Overcrowding and poor living conditions",
+            "D) Decrease in city population"
+        ],
+        "answer": "C) Overcrowding and poor living conditions",
+        "explanation": "The passage explicitly states that rapid urbanization caused overcrowding and poor living conditions."
+    },
+    {
+        "id": 84,
+        "category": "Verbal Ability",
+        "question": "Identify the error: 'The news are shocking.'",
+        "options": [
+            "A) The",
+            "B) news",
+            "C) are",
+            "D) shocking"
+        ],
+        "answer": "C) are",
+        "explanation": "'News' is an uncountable noun and takes a singular verb. Correct form: 'The news is shocking.'"
+    },
+    {
+        "id": 85,
+        "category": "Verbal Ability",
+        "question": "Choose the synonym of 'DILIGENT'.",
+        "options": [
+            "A) Lazy",
+            "B) Hardworking",
+            "C) Careless",
+            "D) Inattentive"
+        ],
+        "answer": "B) Hardworking",
+        "explanation": "Diligent means having or showing care and conscientiousness — synonymous with hardworking."
+    },
+    {
+        "id": 86,
+        "category": "Verbal Ability",
+        "question": "Choose the antonym of 'METICULOUS'.",
+        "options": [
+            "A) Careful",
+            "B) Precise",
+            "C) Sloppy",
+            "D) Thorough"
+        ],
+        "answer": "C) Sloppy",
+        "explanation": "Meticulous means showing great attention to detail. Its antonym is sloppy — careless and untidy."
+    },
+    {
+        "id": 87,
+        "category": "Verbal Ability",
+        "question": "Fill in the blank: Neither the students nor the teacher _____ aware of the change.",
+        "options": [
+            "A) were",
+            "B) was",
+            "C) are",
+            "D) is being"
+        ],
+        "answer": "B) was",
+        "explanation": "With 'neither...nor', the verb agrees with the subject closest to it — 'teacher' (singular), so 'was'."
+    },
+    {
+        "id": 88,
+        "category": "Verbal Ability",
+        "question": "Identify the correctly punctuated sentence:",
+        "options": [
+            "A) Its a good day",
+            "B) It's a good day.",
+            "C) Its' a good day.",
+            "D) It's a good day"
+        ],
+        "answer": "B) It's a good day.",
+        "explanation": "'It's' is the contraction of 'it is'. The sentence must end with a period. Option B is correct."
+    },
+    {
+        "id": 89,
+        "category": "Verbal Ability",
+        "question": "Choose the synonym of 'ELOQUENT'.",
+        "options": [
+            "A) Inarticulate",
+            "B) Fluent",
+            "C) Quiet",
+            "D) Reserved"
+        ],
+        "answer": "B) Fluent",
+        "explanation": "Eloquent means fluent or persuasive in speaking or writing."
+    },
+    {
+        "id": 90,
+        "category": "Verbal Ability",
+        "question": "Choose the antonym of 'TRANSIENT'.",
+        "options": [
+            "A) Temporary",
+            "B) Brief",
+            "C) Permanent",
+            "D) Fleeting"
+        ],
+        "answer": "C) Permanent",
+        "explanation": "Transient means lasting only for a short time. Its antonym is permanent."
+    },
+    {
+        "id": 91,
+        "category": "Verbal Ability",
+        "question": "Fill in the blank: The committee has finally _____ a decision after hours of deliberation.",
+        "options": [
+            "A) take",
+            "B) took",
+            "C) taken",
+            "D) taking"
+        ],
+        "answer": "C) taken",
+        "explanation": "Present perfect tense requires 'has + past participle'. Past participle of 'take' is 'taken'."
+    },
+    {
+        "id": 92,
+        "category": "Verbal Ability",
+        "question": "Read: 'Renewable energy sources like solar and wind power are essential for a sustainable future. They reduce dependence on fossil fuels and lower greenhouse gas emissions.' What is the main idea?",
+        "options": [
+            "A) Fossil fuels are harmful",
+            "B) Solar energy is the best source",
+            "C) Renewable energy is key to sustainability",
+            "D) Wind power reduces global warming alone"
+        ],
+        "answer": "C) Renewable energy is key to sustainability",
+        "explanation": "The passage broadly argues that renewable energy sources are essential for sustainability, not just one type."
+    },
+    {
+        "id": 93,
+        "category": "Verbal Ability",
+        "question": "Identify the error: 'She is more smarter than her brother.'",
+        "options": [
+            "A) She",
+            "B) is",
+            "C) more smarter",
+            "D) than her brother"
+        ],
+        "answer": "C) more smarter",
+        "explanation": "'Smarter' is already the comparative form of 'smart'. Using 'more' creates a double comparative error. Use 'smarter' alone."
+    },
+    {
+        "id": 94,
+        "category": "Verbal Ability",
+        "question": "Choose the synonym of 'PERTURB'.",
+        "options": [
+            "A) Calm",
+            "B) Soothe",
+            "C) Disturb",
+            "D) Satisfy"
+        ],
+        "answer": "C) Disturb",
+        "explanation": "Perturb means to make anxious or unsettled; disturb is its synonym."
+    },
+    {
+        "id": 95,
+        "category": "Verbal Ability",
+        "question": "Choose the antonym of 'OBSTINATE'.",
+        "options": [
+            "A) Stubborn",
+            "B) Inflexible",
+            "C) Yielding",
+            "D) Headstrong"
+        ],
+        "answer": "C) Yielding",
+        "explanation": "Obstinate means stubbornly refusing to change. Its antonym is yielding — ready to give way."
+    },
+    {
+        "id": 96,
+        "category": "Verbal Ability",
+        "question": "Fill in the blank: You should _____ your essay before submitting it.",
+        "options": [
+            "A) proofread",
+            "B) proofreading",
+            "C) proofread for",
+            "D) to proofread"
+        ],
+        "answer": "A) proofread",
+        "explanation": "After a modal verb 'should', use the base form of the verb: 'proofread'."
+    },
+    {
+        "id": 97,
+        "category": "Verbal Ability",
+        "question": "Identify the correct passive voice of: 'The teacher taught the students.'",
+        "options": [
+            "A) The students were taught by the teacher.",
+            "B) The students are taught by the teacher.",
+            "C) The students have been taught by the teacher.",
+            "D) The students had been taught by the teacher."
+        ],
+        "answer": "A) The students were taught by the teacher.",
+        "explanation": "The active sentence is in simple past tense. Passive: Subject (students) + was/were + past participle (taught) + by + object."
+    },
+    {
+        "id": 98,
+        "category": "Verbal Ability",
+        "question": "Choose the synonym of 'AFFLUENT'.",
+        "options": [
+            "A) Poor",
+            "B) Wealthy",
+            "C) Average",
+            "D) Humble"
+        ],
+        "answer": "B) Wealthy",
+        "explanation": "Affluent means having a great deal of money; wealthy is its direct synonym."
+    },
+    {
+        "id": 99,
+        "category": "Verbal Ability",
+        "question": "Fill in the blank: The results of the experiment _____ published next month.",
+        "options": [
+            "A) will be",
+            "B) will being",
+            "C) shall been",
+            "D) will have"
+        ],
+        "answer": "A) will be",
+        "explanation": "Future passive tense uses 'will be + past participle'. 'Will be published' is the correct construction."
+    },
+    {
+        "id": 100,
+        "category": "Verbal Ability",
+        "question": "Identify the error in: 'He is one of the student who has passed the exam.'",
+        "options": [
+            "A) He is",
+            "B) one of the student",
+            "C) who has",
+            "D) passed the exam"
+        ],
+        "answer": "B) one of the student",
+        "explanation": "'One of the' must be followed by a plural noun. Correct: 'one of the students who have passed the exam.'"
+    }
+]

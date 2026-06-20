@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Recommendations — CareerForge AI</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">🚀 <span>CareerForge AI</span></a>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"></button>
+                <span style="font-size:0.9rem;font-weight:600;color:var(--text-muted)">Welcome, <span id="navUserName"
+                        style="color:var(--primary)">User</span></span>
+                <button onclick="Auth.logout()" class="btn btn-ghost btn-sm">Logout</button>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+    <div class="dashboard-layout">
+        <aside class="sidebar" id="sidebar">
+            <div style="padding:20px 24px;border-bottom:1px solid var(--border)">
+                <div style="display:flex;align-items:center;gap:12px">
+                    <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.1rem"
+                        id="sidebarAvatar">U</div>
+                    <div>
+                        <div style="font-weight:700;font-size:0.95rem" id="sidebarName">Loading...</div>
+                        <div style="font-size:0.75rem;color:var(--text-muted)" id="sidebarEmail"></div>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Overview</div>
+                    <a href="/dashboard" class="sidebar-link"><span class="sidebar-icon">🏠</span>Dashboard</a>
+                    <a href="/resume" class="sidebar-link"><span class="sidebar-icon">📄</span>Resume Analyzer</a>
+                    <a href="/careers" class="sidebar-link active"><span class="sidebar-icon">🎯</span>Career Roles</a>
+                    <a href="/roadmap" class="sidebar-link"><span class="sidebar-icon">🗺️</span>Roadmaps</a>
+                    <a href="/jobs" class="sidebar-link"><span class="sidebar-icon">💼</span>Job Discovery</a>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Interview Prep</div>
+                    <a href="/hr-interview" class="sidebar-link"><span class="sidebar-icon">🤝</span>HR Interview</a>
+                    <a href="/technical-interview" class="sidebar-link"><span
+                            class="sidebar-icon">💻</span>Technical</a>
+                    <a href="/aptitude" class="sidebar-link"><span class="sidebar-icon">🧮</span>Aptitude</a>
+                    <a href="/voice-interview" class="sidebar-link"><span class="sidebar-icon">🎤</span>Voice Mock</a>
+                </div>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div class="page-header">
+                <h1 class="page-title">🎯 Career Recommendations</h1>
+                <p class="page-subtitle">Discover roles that match your skills and experience</p>
+            </div>
+
+            <!-- Skill Input -->
+            <div class="card mb-24" style="margin-bottom:24px" id="skillInputCard">
+                <div class="card-body">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+                        <div class="card-title">Your Skills</div>
+                        <span style="font-size:0.82rem;color:var(--text-muted)">Add skills to get personalized
+                            matches</span>
+                    </div>
+                    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+                        <input type="text" id="skillInput" class="form-control" style="flex:1;min-width:200px"
+                            placeholder="Add a skill (e.g. React, Python, SQL)" />
+                        <button class="btn btn-primary btn-sm" onclick="addSkill()">+ Add</button>
+                    </div>
+                    <div id="skillChips" class="skills-chips" style="min-height:32px"></div>
+                    <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap">
+                        <button class="btn btn-primary" id="matchBtn" onclick="findMatches()">🎯 Find Career
+                            Matches</button>
+                        <button class="btn btn-ghost btn-sm" onclick="loadFromResume()">📄 Load from Resume</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="resultsDiv" style="display:none">
+                <div
+                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px">
+                    <h2 style="font-size:1.1rem;font-weight:800">📊 Role Matches (<span id="matchCount">0</span> roles)
+                    </h2>
+                    <div style="display:flex;gap:8px">
+                        <select id="filterCategory" class="select-filter" onchange="filterRoles()">
+                            <option value="">All Categories</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="Data & Analytics">Data & Analytics</option>
+                            <option value="AI & Machine Learning">AI & ML</option>
+                            <option value="DevOps & Cloud">DevOps & Cloud</option>
+                            <option value="Security">Security</option>
+                            <option value="Mobile Development">Mobile</option>
+                            <option value="Design">Design</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="roles-grid" id="rolesGrid"></div>
+            </div>
+
+            <div id="allRolesSection">
+                <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:20px">🌐 All Available Roles</h2>
+                <div class="roles-grid" id="allRolesGrid">
+                    <div style="text-align:center;padding:32px">
+                        <div class="spinner" style="margin:0 auto"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/js/utils.js"></script>
+    <script>
+        Auth.requireAuth(); ThemeManager.init();
+        const user = Auth.getUser();
+        if (user) { document.getElementById('navUserName').textContent = user.fullName?.split(' ')[0] || 'User'; document.getElementById('sidebarName').textContent = user.fullName; document.getElementById('sidebarEmail').textContent = user.email; document.getElementById('sidebarAvatar').textContent = (user.fullName || 'U')[0].toUpperCase(); }
+        document.getElementById('hamburger').addEventListener('click', () => document.getElementById('sidebar').classList.toggle('mobile-open'));
+
+        let userSkills = [];
+        let allMatches = [];
+
+        const DEMAND_COLORS = { 'Very High': 'success', 'High': 'primary', 'Medium': 'warning' };
+        const CAT_ICONS = { 'Web Development': '🌐', 'Data & Analytics': '📊', 'AI & Machine Learning': '🤖', 'DevOps & Cloud': '☁️', 'Security': '🔒', 'Mobile Development': '📱', 'Design': '🎨', 'Quality Assurance': '🧪', 'Software Development': '💻', 'Product & Business': '📋' };
+
+        function addSkill() {
+            const inp = document.getElementById('skillInput');
+            const skill = inp.value.trim();
+            if (!skill || userSkills.includes(skill)) { inp.value = ''; return; }
+            userSkills.push(skill);
+            inp.value = '';
+            renderSkillChips();
+        }
+        document.getElementById('skillInput').addEventListener('keydown', e => { if (e.key === 'Enter') addSkill(); });
+        function removeSkill(s) { userSkills = userSkills.filter(x => x !== s); renderSkillChips(); }
+        function renderSkillChips() {
+            document.getElementById('skillChips').innerHTML = userSkills.map(s => `<span class="skill-chip" style="cursor:pointer" onclick="removeSkill('${s.replace(/'/g, '')}')">${s} ×</span>`).join('');
+        }
+
+        async function loadFromResume() {
+            try {
+                const res = await API.get('/resume/analysis');
+                if (res.success && res.analysis?.skills?.length) {
+                    userSkills = [...new Set([...userSkills, ...res.analysis.skills])];
+                    renderSkillChips();
+                    Toast.success('Skills loaded from your resume!');
+                } else {
+                    Toast.warning('No resume analysis found. Please upload your resume first.');
+                }
+            } catch { Toast.error('Failed to load resume skills.'); }
+        }
+
+        async function findMatches() {
+            if (userSkills.length === 0) { Toast.warning('Please add at least one skill'); return; }
+            const btn = document.getElementById('matchBtn');
+            UI.setLoading(btn, true, 'Matching...');
+            try {
+                const res = await API.post('/roles/match', { skills: userSkills });
+                UI.setLoading(btn, false);
+                if (res.success) {
+                    allMatches = res.matches;
+                    document.getElementById('matchCount').textContent = allMatches.length;
+                    document.getElementById('resultsDiv').style.display = 'block';
+                    renderMatches(allMatches);
+                    document.getElementById('resultsDiv').scrollIntoView({ behavior: 'smooth' });
+                }
+            } catch { UI.setLoading(btn, false); Toast.error('Matching failed. Please try again.'); }
+        }
+
+        function filterRoles() {
+            const cat = document.getElementById('filterCategory').value;
+            const filtered = cat ? allMatches.filter(r => r.category === cat) : allMatches;
+            renderMatches(filtered);
+        }
+
+        function renderMatches(matches) {
+            document.getElementById('rolesGrid').innerHTML = matches.map(r => renderRoleCard(r, true)).join('') || '<div class="empty-state"><div class="empty-state-icon">🎯</div><div class="empty-state-title">No roles match this filter</div></div>';
+        }
+
+        function renderRoleCard(r, showMatch = false) {
+            const demandColor = DEMAND_COLORS[r.demandLevel] || 'gray';
+            const catIcon = CAT_ICONS[r.category] || '💼';
+            const matchPct = r.matchPercent !== undefined ? r.matchPercent : null;
+            const matchColor = matchPct !== null ? (matchPct >= 70 ? 'var(--success)' : matchPct >= 40 ? 'var(--primary)' : 'var(--warning)') : 'var(--primary)';
+            const missing = r.missingSkills?.slice(0, 4) || [];
+            return `<div class="role-card">
+      <div class="role-card-header">
+        <div>
+          <div style="font-size:0.78rem;color:var(--text-muted);margin-bottom:4px">${catIcon} ${r.category}</div>
+          <div style="font-weight:800;font-size:1rem">${r.title}</div>
+        </div>
+        ${showMatch && matchPct !== null ? `<div style="text-align:right"><div class="match-percent" style="color:${matchColor}">${matchPct}%</div><div style="font-size:0.72rem;color:var(--text-muted)">Match</div></div>` : ''}
+      </div>
+      <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:14px;line-height:1.6">${r.description}</p>
+      ${showMatch && matchPct !== null ? `<div class="progress-container" style="margin-bottom:14px"><div class="progress-bar"><div class="progress-fill" style="width:${matchPct}%;background:${matchColor}"></div></div></div>` : ''}
+      <div class="d-flex justify-between align-center mb-16" style="flex-wrap:wrap;gap:8px;margin-bottom:14px">
+        <span class="badge badge-${demandColor}">${r.demandLevel} Demand</span>
+        <span style="font-size:0.82rem;font-weight:600;color:var(--success)">${r.avgSalary}</span>
+      </div>
+      ${missing.length > 0 ? `<div style="margin-bottom:14px"><div style="font-size:0.75rem;color:var(--danger);font-weight:600;margin-bottom:6px">Missing: ${missing.join(', ')}</div></div>` : ''}
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a href="/roadmap?role=${r.id}" class="btn btn-primary btn-sm">🗺️ Roadmap</a>
+        <a href="/jobs?q=${encodeURIComponent(r.title)}" class="btn btn-outline btn-sm">💼 Jobs</a>
+      </div>
+    </div>`;
+        }
+
+        async function loadAllRoles() {
+            try {
+                const res = await API.get('/roles');
+                if (res.success) {
+                    document.getElementById('allRolesGrid').innerHTML = res.roles.map(r => renderRoleCard(r, false)).join('');
+                }
+            } catch { document.getElementById('allRolesGrid').innerHTML = '<div class="empty-state"><div class="empty-state-icon">⚠️</div><div class="empty-state-title">Failed to load roles</div></div>'; }
+        }
+
+        // Auto-load skills from resume on page load
+        async function init() {
+            loadAllRoles();
+            try {
+                const res = await API.get('/roles/recommendations/me');
+                if (res.success && res.userSkills?.length) {
+                    userSkills = res.userSkills;
+                    renderSkillChips();
+                    if (res.matches?.length) { allMatches = res.matches; document.getElementById('matchCount').textContent = allMatches.length; document.getElementById('resultsDiv').style.display = 'block'; renderMatches(allMatches); }
+                }
+            } catch { }
+        }
+        init();
+    </script>
+</body>
+
+</html>
