@@ -18,16 +18,35 @@ router.post('/evaluate-answer', verifyToken, async (req, res) => {
 
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey || apiKey === 'your_gemini_api_key_here') {
-        return res.json({ success: true, evaluation: getMockEvaluation(answer) });
+        return res.json({ success: true, evaluation: getMockEvaluation(answer, questionType) });
     }
 
-    const prompt = `You are an expert interview coach evaluating a candidate's interview response.
+    // Build a type-aware prompt so Gemini gives domain-appropriate feedback
+    const isTechnical = questionType === 'technical';
+    const evaluationFocus = isTechnical
+        ? `Focus your evaluation on:
+- Technical accuracy and correctness
+- Completeness (are all key aspects covered?)
+- Depth of explanation (surface-level vs. expert understanding)
+- Problem-solving approach and reasoning
+- Missing concepts, edge cases, or caveats
+- Best practices and real-world considerations
+Do NOT use HR / behavioural framing. Do NOT mention the STAR method.`
+        : `Focus your evaluation on:
+- Communication clarity and structure
+- Use of specific examples (STAR method: Situation, Task, Action, Result)
+- Professionalism and confidence in tone
+- Relevance to the question asked
+- Missing context, quantified outcomes, or lessons learned`;
+
+    const prompt = `You are an expert interview coach evaluating a candidate's ${isTechnical ? 'technical' : 'HR behavioural'} interview response.
 
 Question: ${question}
 Candidate's Answer: ${answer}
-Question Type: ${questionType}
 
-Evaluate the answer and respond ONLY with valid JSON in this exact format:
+${evaluationFocus}
+
+Respond ONLY with valid JSON in this exact format:
 {
   "communicationScore": <number 0-100>,
   "confidenceScore": <number 0-100>,
@@ -52,10 +71,10 @@ Evaluate the answer and respond ONLY with valid JSON in this exact format:
         if (jsonMatch) {
             return res.json({ success: true, evaluation: JSON.parse(jsonMatch[0]) });
         }
-        res.json({ success: true, evaluation: getMockEvaluation(answer) });
+        res.json({ success: true, evaluation: getMockEvaluation(answer, questionType) });
     } catch (err) {
         console.error('Gemini evaluation error:', err.message);
-        res.json({ success: true, evaluation: getMockEvaluation(answer) });
+        res.json({ success: true, evaluation: getMockEvaluation(answer, questionType) });
     }
 });
 
@@ -85,7 +104,23 @@ router.post('/generate-question', verifyToken, async (req, res) => {
     }
 });
 
-function getMockEvaluation(answer) {
+/**
+ * Route mock evaluation to the correct type-specific function.
+ * questionType: 'hr' (default) | 'technical'
+ */
+function getMockEvaluation(answer, questionType) {
+    if (questionType === 'technical') {
+        return getMockTechnicalEvaluation(answer);
+    }
+    return getMockHrEvaluation(answer);
+}
+
+/**
+ * Mock evaluation for HR / behavioural questions.
+ * Feedback focuses on communication, structure, and storytelling (STAR).
+ * This function is unchanged from the original — HR interview behaviour preserved.
+ */
+function getMockHrEvaluation(answer) {
     const len = answer.split(' ').length;
     const baseScore = Math.min(90, Math.max(40, 50 + len * 0.8));
     return {
@@ -107,6 +142,64 @@ function getMockEvaluation(answer) {
         idealAnswer: 'An ideal answer would use the STAR method with specific examples, measurable outcomes, and a clear connection to the skills required for the role.',
         rating: baseScore > 75 ? 'Good' : baseScore > 60 ? 'Average' : 'Needs Improvement',
         summary: 'The response shows basic understanding but could be strengthened with more specific examples and quantified results.'
+    };
+}
+
+/**
+ * Mock evaluation for technical interview questions.
+ * Feedback focuses on technical accuracy, completeness, depth, and best practices.
+ * No HR / STAR / behavioural language used here.
+ */
+function getMockTechnicalEvaluation(answer) {
+    const len = answer.split(' ').length;
+    const baseScore = Math.min(90, Math.max(40, 50 + len * 0.8));
+
+    // Vary feedback slightly based on answer length so longer answers score higher
+    const isDetailed = len >= 40;
+    const isShort = len < 15;
+
+    const strengths = isDetailed
+        ? [
+            'Covered the core concept accurately',
+            'Provided a concrete example to support the explanation',
+            'Demonstrated awareness of practical trade-offs'
+        ]
+        : [
+            'Identified the key concept in the question',
+            'Gave a direct answer without unnecessary filler'
+        ];
+
+    const improvements = isShort
+        ? [
+            'Expand the explanation — interviewers expect depth, not just a definition',
+            'Include a concrete code example or real-world use case',
+            'Mention edge cases or known limitations of the concept',
+            'Discuss time/space complexity or performance implications where applicable'
+        ]
+        : [
+            'Mention any relevant edge cases or failure scenarios',
+            'Compare with alternative approaches and explain when each is preferred',
+            'Reference best practices or common pitfalls developers encounter',
+            'Discuss how this concept behaves in production at scale'
+        ];
+
+    const idealAnswer = isShort
+        ? 'An ideal answer defines the concept precisely, demonstrates it with a working code snippet or concrete example, explains why it works that way, and notes any important edge cases or performance considerations.'
+        : 'An ideal answer goes beyond the definition: it compares alternatives, discusses real-world trade-offs, mentions best practices, and addresses edge cases or complexity implications that a senior engineer would consider.';
+
+    return {
+        communicationScore: Math.round(baseScore + Math.random() * 10),
+        confidenceScore: Math.round(baseScore - 5 + Math.random() * 15),
+        clarityScore: Math.round(baseScore + Math.random() * 8),
+        professionalismScore: Math.round(baseScore + 5 + Math.random() * 10),
+        overallScore: Math.round(baseScore + Math.random() * 10),
+        strengths,
+        improvements,
+        idealAnswer,
+        rating: baseScore > 75 ? 'Good' : baseScore > 60 ? 'Average' : 'Needs Improvement',
+        summary: isShort
+            ? 'The answer touches on the concept but lacks the depth and examples expected at a technical interview. Expand with specifics.'
+            : 'The answer demonstrates a solid understanding of the topic. Adding edge cases and trade-off comparisons would elevate it to an excellent response.'
     };
 }
 
